@@ -11,12 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Python.Runtime;
+
 namespace ParkingLotManagement.UserControls
 {
     public partial class BangDK : UserControl
     {
         public BangDK()
         {
+            
             InitializeComponent();
         }
 
@@ -29,6 +32,7 @@ namespace ParkingLotManagement.UserControls
 
         private void BangDK_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filterInfoCollection)
             {
@@ -85,10 +89,22 @@ namespace ParkingLotManagement.UserControls
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (pictureBox.Image != null)
-            {
+            label7.Text = DateTime.Now.ToLongTimeString();
+            label8.Text = DateTime.Now.ToLongDateString();
+        }
 
-            }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
 
         }
     }
