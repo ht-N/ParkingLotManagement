@@ -88,7 +88,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1366, 71);
+            this.panel2.Size = new System.Drawing.Size(1366, 46);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -108,7 +108,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.HoverState.CustomBorderColor = System.Drawing.Color.Red;
-            this.guna2Button3.Location = new System.Drawing.Point(439, 24);
+            this.guna2Button3.Location = new System.Drawing.Point(440, -1);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(214, 45);
             this.guna2Button3.TabIndex = 2;
@@ -131,7 +131,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.HoverState.CustomBorderColor = System.Drawing.Color.Red;
-            this.guna2Button2.Location = new System.Drawing.Point(219, 24);
+            this.guna2Button2.Location = new System.Drawing.Point(220, -1);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(214, 45);
             this.guna2Button2.TabIndex = 1;
@@ -155,7 +155,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.Red;
-            this.guna2Button1.Location = new System.Drawing.Point(-1, 24);
+            this.guna2Button1.Location = new System.Drawing.Point(0, -1);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(214, 45);
             this.guna2Button1.TabIndex = 0;
@@ -165,9 +165,9 @@
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 71);
+            this.panelContainer.Location = new System.Drawing.Point(0, 46);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1366, 649);
+            this.panelContainer.Size = new System.Drawing.Size(1366, 674);
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
