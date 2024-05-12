@@ -45,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,7 +185,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(756, 547);
+            this.label8.Location = new System.Drawing.Point(756, 546);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 27);
             this.label8.TabIndex = 15;
@@ -204,9 +205,20 @@
             this.label9.Text = "BẢNG ĐIỀU KHIỂN";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Location = new System.Drawing.Point(987, 487);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(333, 41);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Lưu";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // BangDK
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
     }
 }
