@@ -10,6 +10,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 using Python.Runtime;
 
@@ -111,6 +112,74 @@ namespace ParkingLotManagement.UserControls
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string db_path = @"BAIXE.db";
+        
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+            {
+                // Mở kết nối
+                connection.Open();
+                // Tạo bảng trong cơ sở dữ liệu
+                string create_table = @"CREATE TABLE IF NOT EXISTS PHIEU (
+                                     MAPHIEU INTEGER PRIMARY KEY, 
+                                     LOAIPHIEU TEXT, 
+                                     BIENSO TEXT, 
+                                     LOAIXE TEXT)";
+                // Tạo đối tượng SQLiteCommand
+                using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
+                {
+                    // Thực thi câu lệnh tạo bảng
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            
+            // Tạo kết nối đến cơ sở dữ liệu SQLite
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+            {
+                // Mở kết nối
+                connection.Open();
+                
+                string mp = maPhieu.Text;
+                string lp = loaiPhieu.Text;
+                string bs = bienSo.Text;
+                string lx = loaiXe.Text;
+
+                string insert_query = "INSERT INTO Phieu (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe)";
+
+                using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
+                {
+                    // Thêm các tham số và giá trị tương ứng vào câu lệnh SQL
+                    command.Parameters.AddWithValue("@MaPhieu", mp);
+                    command.Parameters.AddWithValue("@LoaiPhieu", lp);
+                    command.Parameters.AddWithValue("@BienSo", bs);
+                    command.Parameters.AddWithValue("@LoaiXe", lx);
+
+                    // Thực thi câu lệnh SQL
+                    command.ExecuteNonQuery();
+                }
+
+            }
+
+            // Sau khi thêm dữ liệu, bạn có thể hiển thị một thông báo thành công hoặc thực hiện các xử lý khác.
         }
     }
 }
