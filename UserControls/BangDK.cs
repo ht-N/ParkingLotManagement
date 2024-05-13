@@ -90,8 +90,8 @@ namespace ParkingLotManagement.UserControls
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label7.Text = DateTime.Now.ToLongTimeString();
-            label8.Text = DateTime.Now.ToLongDateString();
+            Time.Text = DateTime.Now.ToLongTimeString();
+            Date.Text = DateTime.Now.ToLongDateString();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -142,7 +142,9 @@ namespace ParkingLotManagement.UserControls
                                      MAPHIEU INTEGER PRIMARY KEY, 
                                      LOAIPHIEU TEXT, 
                                      BIENSO TEXT, 
-                                     LOAIXE TEXT)";
+                                     LOAIXE TEXT,
+                                     THOIGIAN TEXT,
+                                     NGAY TEXT)";
                 // Tạo đối tượng SQLiteCommand
                 using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
                 {
@@ -150,7 +152,8 @@ namespace ParkingLotManagement.UserControls
                     command.ExecuteNonQuery();
                 }
             }
-
+            
+            
             
             // Tạo kết nối đến cơ sở dữ liệu SQLite
             using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
@@ -162,8 +165,10 @@ namespace ParkingLotManagement.UserControls
                 string lp = loaiPhieu.Text;
                 string bs = bienSo.Text;
                 string lx = loaiXe.Text;
+                string time = Time.Text;
+                string date = Date.Text;
 
-                string insert_query = "INSERT INTO Phieu (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe)";
+                string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN, NGAY) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date)";
 
                 using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
                 {
@@ -172,6 +177,8 @@ namespace ParkingLotManagement.UserControls
                     command.Parameters.AddWithValue("@LoaiPhieu", lp);
                     command.Parameters.AddWithValue("@BienSo", bs);
                     command.Parameters.AddWithValue("@LoaiXe", lx);
+                    command.Parameters.AddWithValue("@Time", time);
+                    command.Parameters.AddWithValue("@Date", date);
 
                     // Thực thi câu lệnh SQL
                     command.ExecuteNonQuery();
