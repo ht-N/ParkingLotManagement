@@ -34,14 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.maPhieu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bienSo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.loaiPhieu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.loaiXe = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -92,14 +92,15 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // textBox1
+            // maPhieu
             // 
-            this.textBox1.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(761, 71);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(559, 56);
-            this.textBox1.TabIndex = 6;
+            this.maPhieu.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.maPhieu.Location = new System.Drawing.Point(761, 71);
+            this.maPhieu.Multiline = true;
+            this.maPhieu.Name = "maPhieu";
+            this.maPhieu.Size = new System.Drawing.Size(559, 56);
+            this.maPhieu.TabIndex = 6;
+            this.maPhieu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -121,15 +122,16 @@
             this.label4.Size = new System.Drawing.Size(96, 27);
             this.label4.TabIndex = 9;
             this.label4.Text = "Biển số";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox2
+            // bienSo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(761, 177);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(559, 56);
-            this.textBox2.TabIndex = 8;
+            this.bienSo.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
+            this.bienSo.Location = new System.Drawing.Point(761, 177);
+            this.bienSo.Multiline = true;
+            this.bienSo.Name = "bienSo";
+            this.bienSo.Size = new System.Drawing.Size(559, 56);
+            this.bienSo.TabIndex = 8;
             // 
             // label5
             // 
@@ -142,14 +144,15 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Loại phiếu";
             // 
-            // textBox3
+            // loaiPhieu
             // 
-            this.textBox3.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(761, 283);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(559, 56);
-            this.textBox3.TabIndex = 10;
+            this.loaiPhieu.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
+            this.loaiPhieu.Location = new System.Drawing.Point(761, 283);
+            this.loaiPhieu.Multiline = true;
+            this.loaiPhieu.Name = "loaiPhieu";
+            this.loaiPhieu.Size = new System.Drawing.Size(559, 56);
+            this.loaiPhieu.TabIndex = 10;
+            this.loaiPhieu.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label6
             // 
@@ -161,14 +164,14 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Loại xe";
             // 
-            // textBox4
+            // loaiXe
             // 
-            this.textBox4.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(761, 389);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(559, 56);
-            this.textBox4.TabIndex = 12;
+            this.loaiXe.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
+            this.loaiXe.Location = new System.Drawing.Point(761, 389);
+            this.loaiXe.Multiline = true;
+            this.loaiXe.Name = "loaiXe";
+            this.loaiXe.Size = new System.Drawing.Size(559, 56);
+            this.loaiXe.TabIndex = 12;
             // 
             // label7
             // 
@@ -214,6 +217,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // BangDK
             // 
@@ -222,13 +226,13 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.loaiXe);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.loaiPhieu);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.bienSo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.maPhieu);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboDevice);
@@ -250,14 +254,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox maPhieu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox bienSo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox loaiPhieu;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox loaiXe;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
