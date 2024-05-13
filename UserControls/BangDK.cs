@@ -57,28 +57,16 @@ namespace ParkingLotManagement.UserControls
 
         private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            // Clone the frame
             Bitmap frame = (Bitmap)eventArgs.Frame.Clone();
-
-            // Flip the image horizontally
-            // frame.RotateFlip(RotateFlipType.RotateNoneFlipX);
-
-            // Calculate the position to center the image horizontally
             int xOffset = (pictureBox.Width - frame.Width) / 2;
 
-            // Create a new bitmap to draw the adjusted frame
             Bitmap adjustedFrame = new Bitmap(pictureBox.Width, pictureBox.Height);
 
             using (Graphics g = Graphics.FromImage(adjustedFrame))
             {
-                // Clear the graphics surface with a transparent color
                 g.Clear(Color.Transparent);
-
-                // Draw the adjusted frame onto the graphics surface
                 g.DrawImage(frame, xOffset, 0, frame.Width, frame.Height);
             }
-
-            // Display the adjusted frame in the pictureBox
             pictureBox.Image = adjustedFrame;
         }
 
@@ -135,9 +123,7 @@ namespace ParkingLotManagement.UserControls
         
             using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
             {
-                // Mở kết nối
                 connection.Open();
-                // Tạo bảng trong cơ sở dữ liệu
                 string create_table = @"CREATE TABLE IF NOT EXISTS PHIEU (
                                      MAPHIEU INTEGER PRIMARY KEY, 
                                      LOAIPHIEU TEXT, 
@@ -145,10 +131,8 @@ namespace ParkingLotManagement.UserControls
                                      LOAIXE TEXT,
                                      THOIGIAN TEXT,
                                      NGAY TEXT)";
-                // Tạo đối tượng SQLiteCommand
                 using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
                 {
-                    // Thực thi câu lệnh tạo bảng
                     command.ExecuteNonQuery();
                 }
             }
@@ -172,21 +156,15 @@ namespace ParkingLotManagement.UserControls
 
                 using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
                 {
-                    // Thêm các tham số và giá trị tương ứng vào câu lệnh SQL
                     command.Parameters.AddWithValue("@MaPhieu", mp);
                     command.Parameters.AddWithValue("@LoaiPhieu", lp);
                     command.Parameters.AddWithValue("@BienSo", bs);
                     command.Parameters.AddWithValue("@LoaiXe", lx);
                     command.Parameters.AddWithValue("@Time", time);
                     command.Parameters.AddWithValue("@Date", date);
-
-                    // Thực thi câu lệnh SQL
                     command.ExecuteNonQuery();
                 }
-
             }
-
-            // Sau khi thêm dữ liệu, bạn có thể hiển thị một thông báo thành công hoặc thực hiện các xử lý khác.
         }
     }
 }
