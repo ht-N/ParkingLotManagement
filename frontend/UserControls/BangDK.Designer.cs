@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.videoBox = new System.Windows.Forms.PictureBox();
             this.cboDevice = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
@@ -46,21 +46,21 @@
             this.Date = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Capture = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.Capture_picture = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox
+            // videoBox
             // 
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(39, 31);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(475, 497);
-            this.pictureBox.TabIndex = 2;
-            this.pictureBox.TabStop = false;
+            this.videoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.videoBox.Location = new System.Drawing.Point(39, 31);
+            this.videoBox.Name = "videoBox";
+            this.videoBox.Size = new System.Drawing.Size(475, 497);
+            this.videoBox.TabIndex = 2;
+            this.videoBox.TabStop = false;
             // 
             // cboDevice
             // 
@@ -219,24 +219,26 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(272, 337);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 191);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Location = new System.Drawing.Point(272, 337);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(242, 191);
+            this.pictureBox.TabIndex = 19;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Capture
+            // Capture_picture
             // 
-            this.Capture.Location = new System.Drawing.Point(438, 592);
-            this.Capture.Name = "Capture";
-            this.Capture.Size = new System.Drawing.Size(75, 23);
-            this.Capture.TabIndex = 20;
-            this.Capture.Text = "Chụp";
-            this.Capture.UseVisualStyleBackColor = true;
+            this.Capture_picture.Location = new System.Drawing.Point(438, 592);
+            this.Capture_picture.Name = "Capture_picture";
+            this.Capture_picture.Size = new System.Drawing.Size(75, 23);
+            this.Capture_picture.TabIndex = 20;
+            this.Capture_picture.Text = "Chụp";
+            this.Capture_picture.UseVisualStyleBackColor = true;
+            this.Capture_picture.Click += new System.EventHandler(this.Capture_Click);
             // 
             // label1
             // 
@@ -253,8 +255,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Capture);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Capture_picture);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Time);
@@ -269,21 +271,21 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboDevice);
-            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.videoBox);
             this.Controls.Add(this.label9);
             this.Name = "BangDK";
             this.Size = new System.Drawing.Size(1366, 649);
             this.Load += new System.EventHandler(this.BangDK_Load);
             this.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.BangDK_Closing);
+            ((System.ComponentModel.ISupportInitialize)(this.videoBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox videoBox;
         private System.Windows.Forms.ComboBox cboDevice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnStart;
@@ -300,8 +302,8 @@
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Capture;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button Capture_picture;
         private System.Windows.Forms.Label label1;
     }
 }

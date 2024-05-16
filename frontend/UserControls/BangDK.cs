@@ -50,16 +50,16 @@ namespace ParkingLotManagement.UserControls
         private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap frame = (Bitmap)eventArgs.Frame.Clone();
-            int xOffset = (pictureBox.Width - frame.Width) / 2;
+            int xOffset = (videoBox.Width - frame.Width) / 2;
 
-            Bitmap adjustedFrame = new Bitmap(pictureBox.Width, pictureBox.Height);
+            Bitmap adjustedFrame = new Bitmap(videoBox.Width, videoBox.Height);
 
             using (Graphics g = Graphics.FromImage(adjustedFrame))
             {
                 g.Clear(Color.Transparent);
                 g.DrawImage(frame, xOffset, 0, frame.Width, frame.Height);
             }
-            pictureBox.Image = adjustedFrame;
+            videoBox.Image = adjustedFrame;
         }
 
         private void BangDK_Closing(object sender, ControlEventArgs e)
@@ -191,6 +191,49 @@ namespace ParkingLotManagement.UserControls
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Capture_Click(object sender, EventArgs e)
+        {
+            if (videoBox.Image != null)
+            {
+                Bitmap capturedImage = new Bitmap(videoBox.Image);
+                pictureBox.Image = capturedImage;
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string appDataPath = Path.Combine(baseDirectory, "..\\..\\AppData\\Vehicles_pictures");
+                if (!Directory.Exists(appDataPath))
+                {
+                    Directory.CreateDirectory(appDataPath);
+                }
+
+                int imageIndex = 1;
+                string imagePath;
+                do
+                {
+                    imagePath = Path.Combine(appDataPath, $"xe_{imageIndex}.png");
+                    imageIndex++;
+                } while (File.Exists(imagePath));
+
+                try
+                {
+                    capturedImage.Save(imagePath, System.Drawing.Imaging.ImageFormat.Png);
+                    MessageBox.Show("Image captured and saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while saving the image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No image to capture!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
