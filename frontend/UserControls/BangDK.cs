@@ -1,18 +1,10 @@
-﻿using AForge.Video;
-using AForge.Video.DirectShow;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System;
 using System.Data.SQLite;
-
-using Python.Runtime;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.DirectShow;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -20,12 +12,12 @@ namespace ParkingLotManagement.UserControls
     {
         public BangDK()
         {
-            
             InitializeComponent();
         }
 
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice captureDevice;
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -119,51 +111,83 @@ namespace ParkingLotManagement.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string db_path = @"BAIXE.db";
-        
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+            // Get the base directory for the application
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Create the path for the AppData folder at the same level as the UserControls folder
+            string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
+            string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
+
+            if (!Directory.Exists(dbFolderPath))
             {
-                connection.Open();
-                string create_table = @"CREATE TABLE IF NOT EXISTS PHIEU (
-                                     MAPHIEU INTEGER PRIMARY KEY, 
-                                     LOAIPHIEU TEXT, 
-                                     BIENSO TEXT, 
-                                     LOAIXE TEXT,
-                                     THOIGIAN TEXT,
-                                     NGAY TEXT)";
-                using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
+                Directory.CreateDirectory(dbFolderPath);
             }
-            
-            
-            
-            // Tạo kết nối đến cơ sở dữ liệu SQLite
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+
+            string absoluteDbPath = Path.GetFullPath(db_path);
+
+            // Print the absolute path to a message box or console for debugging
+            // MessageBox.Show($"Absolute path to the database: {absoluteDbPath}", "Database Path", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Console.WriteLine($"Absolute path to the database: {absoluteDbPath}");
+
+            try
             {
-                // Mở kết nối
-                connection.Open();
-                
-                string mp = maPhieu.Text;
-                string lp = loaiPhieu.Text;
-                string bs = bienSo.Text;
-                string lx = loaiXe.Text;
-                string time = Time.Text;
-                string date = Date.Text;
-
-                string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN, NGAY) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date)";
-
-                using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
+                using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
                 {
-                    command.Parameters.AddWithValue("@MaPhieu", mp);
-                    command.Parameters.AddWithValue("@LoaiPhieu", lp);
-                    command.Parameters.AddWithValue("@BienSo", bs);
-                    command.Parameters.AddWithValue("@LoaiXe", lx);
-                    command.Parameters.AddWithValue("@Time", time);
-                    command.Parameters.AddWithValue("@Date", date);
-                    command.ExecuteNonQuery();
+                    connection.Open();
+                    string create_table = @"CREATE TABLE IF NOT EXISTS PHIEU (
+                                            MAPHIEU INTEGER PRIMARY KEY, 
+                                            LOAIPHIEU TEXT, 
+                                            BIENSO TEXT, 
+                                            LOAIXE TEXT,
+                                            THOIGIAN TEXT,
+                                            NGAY TEXT)";
+                    using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
                 }
+
+                // Ensure the fields are not empty
+                if (string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
+                    string.IsNullOrWhiteSpace(bienSo.Text) ||
+                    string.IsNullOrWhiteSpace(loaiXe.Text) ||
+                    string.IsNullOrWhiteSpace(Time.Text) ||
+                    string.IsNullOrWhiteSpace(Date.Text))
+                {
+                    MessageBox.Show("Các trường dữ liệu có sai sót. Hãy kiểm tra lại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Tạo kết nối đến cơ sở dữ liệu SQLite
+                using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+                {
+                    // Mở kết nối
+                    connection.Open();
+
+                    string lp = loaiPhieu.Text;
+                    string bs = bienSo.Text;
+                    string lx = loaiXe.Text;
+                    string time = Time.Text;
+                    string date = Date.Text;
+
+                    string insert_query = "INSERT INTO PHIEU (LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN, NGAY) VALUES (@LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date)";
+
+                    using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
+                    {
+                        command.Parameters.AddWithValue("@LoaiPhieu", lp);
+                        command.Parameters.AddWithValue("@BienSo", bs);
+                        command.Parameters.AddWithValue("@LoaiXe", lx);
+                        command.Parameters.AddWithValue("@Time", time);
+                        command.Parameters.AddWithValue("@Date", date);
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Xe đã vào bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

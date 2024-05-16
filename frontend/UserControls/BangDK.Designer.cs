@@ -95,7 +95,7 @@
             // maPhieu
             // 
             this.maPhieu.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.maPhieu.Location = new System.Drawing.Point(761, 71);
+            this.maPhieu.Location = new System.Drawing.Point(761, 71);  
             this.maPhieu.Multiline = true;
             this.maPhieu.Name = "maPhieu";
             this.maPhieu.Size = new System.Drawing.Size(559, 56);
