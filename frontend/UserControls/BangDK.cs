@@ -147,14 +147,21 @@ namespace ParkingLotManagement.UserControls
                     }
                 }
 
-                // Ensure the fields are not empty
-                if (string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
+                if (string.IsNullOrWhiteSpace(maPhieu.Text) ||
+                    string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
                     string.IsNullOrWhiteSpace(bienSo.Text) ||
                     string.IsNullOrWhiteSpace(loaiXe.Text) ||
                     string.IsNullOrWhiteSpace(Time.Text) ||
                     string.IsNullOrWhiteSpace(Date.Text))
                 {
-                    MessageBox.Show("Các trường dữ liệu có sai sót. Hãy kiểm tra lại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Các trường dữ liệu đã có sai sót.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+ 
+                // Check if MaPhieu can be converted to an integer
+                if (!int.TryParse(maPhieu.Text, out int maPhieuValue))
+                {
+                    MessageBox.Show("Mã phiếu phải là số.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
