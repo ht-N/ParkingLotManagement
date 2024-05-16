@@ -111,10 +111,8 @@ namespace ParkingLotManagement.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Get the base directory for the application
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            // Create the path for the AppData folder at the same level as the UserControls folder
             string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
             string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
 
@@ -125,7 +123,6 @@ namespace ParkingLotManagement.UserControls
 
             string absoluteDbPath = Path.GetFullPath(db_path);
 
-            // Print the absolute path to a message box or console for debugging
             // MessageBox.Show($"Absolute path to the database: {absoluteDbPath}", "Database Path", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // Console.WriteLine($"Absolute path to the database: {absoluteDbPath}");
 
@@ -147,33 +144,38 @@ namespace ParkingLotManagement.UserControls
                     }
                 }
 
-                // Ensure the fields are not empty
-                if (string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
+                if (string.IsNullOrWhiteSpace(maPhieu.Text) ||
+                    string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
                     string.IsNullOrWhiteSpace(bienSo.Text) ||
                     string.IsNullOrWhiteSpace(loaiXe.Text) ||
                     string.IsNullOrWhiteSpace(Time.Text) ||
                     string.IsNullOrWhiteSpace(Date.Text))
                 {
-                    MessageBox.Show("Các trường dữ liệu có sai sót. Hãy kiểm tra lại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Các trường dữ liệu đã có sai sót.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+ 
+                if (!int.TryParse(maPhieu.Text, out int maPhieuValue))
+                {
+                    MessageBox.Show("Mã phiếu phải là số.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Tạo kết nối đến cơ sở dữ liệu SQLite
                 using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
                 {
-                    // Mở kết nối
                     connection.Open();
-
+                    int mp = int.Parse(maPhieu.Text);
                     string lp = loaiPhieu.Text;
                     string bs = bienSo.Text;
                     string lx = loaiXe.Text;
                     string time = Time.Text;
                     string date = Date.Text;
 
-                    string insert_query = "INSERT INTO PHIEU (LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN, NGAY) VALUES (@LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date)";
+                    string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN, NGAY) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date)";
 
                     using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
                     {
+                        command.Parameters.AddWithValue("@MaPhieu", mp);
                         command.Parameters.AddWithValue("@LoaiPhieu", lp);
                         command.Parameters.AddWithValue("@BienSo", bs);
                         command.Parameters.AddWithValue("@LoaiXe", lx);
