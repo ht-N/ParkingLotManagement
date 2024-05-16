@@ -46,7 +46,11 @@
             this.Date = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Capture = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox
@@ -94,11 +98,10 @@
             // 
             // maPhieu
             // 
-            this.maPhieu.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.maPhieu.Location = new System.Drawing.Point(761, 71);  
-            this.maPhieu.Multiline = true;
+            this.maPhieu.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.maPhieu.Location = new System.Drawing.Point(761, 82);
             this.maPhieu.Name = "maPhieu";
-            this.maPhieu.Size = new System.Drawing.Size(559, 56);
+            this.maPhieu.Size = new System.Drawing.Size(559, 46);
             this.maPhieu.TabIndex = 6;
             this.maPhieu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -106,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(628, 85);
+            this.label3.Location = new System.Drawing.Point(628, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 27);
             this.label3.TabIndex = 7;
@@ -117,7 +120,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(628, 191);
+            this.label4.Location = new System.Drawing.Point(628, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 27);
             this.label4.TabIndex = 9;
@@ -126,11 +129,10 @@
             // 
             // bienSo
             // 
-            this.bienSo.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
-            this.bienSo.Location = new System.Drawing.Point(761, 177);
-            this.bienSo.Multiline = true;
+            this.bienSo.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.bienSo.Location = new System.Drawing.Point(761, 191);
             this.bienSo.Name = "bienSo";
-            this.bienSo.Size = new System.Drawing.Size(559, 56);
+            this.bienSo.Size = new System.Drawing.Size(559, 46);
             this.bienSo.TabIndex = 8;
             // 
             // label5
@@ -138,7 +140,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(604, 302);
+            this.label5.Location = new System.Drawing.Point(604, 307);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 27);
             this.label5.TabIndex = 11;
@@ -146,11 +148,10 @@
             // 
             // loaiPhieu
             // 
-            this.loaiPhieu.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
-            this.loaiPhieu.Location = new System.Drawing.Point(761, 283);
-            this.loaiPhieu.Multiline = true;
+            this.loaiPhieu.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiPhieu.Location = new System.Drawing.Point(761, 300);
             this.loaiPhieu.Name = "loaiPhieu";
-            this.loaiPhieu.Size = new System.Drawing.Size(559, 56);
+            this.loaiPhieu.Size = new System.Drawing.Size(559, 46);
             this.loaiPhieu.TabIndex = 10;
             this.loaiPhieu.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -158,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(628, 403);
+            this.label6.Location = new System.Drawing.Point(628, 408);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 27);
             this.label6.TabIndex = 13;
@@ -166,18 +167,17 @@
             // 
             // loaiXe
             // 
-            this.loaiXe.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold);
-            this.loaiXe.Location = new System.Drawing.Point(761, 389);
-            this.loaiXe.Multiline = true;
+            this.loaiXe.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiXe.Location = new System.Drawing.Point(761, 402);
             this.loaiXe.Name = "loaiXe";
-            this.loaiXe.Size = new System.Drawing.Size(559, 56);
+            this.loaiXe.Size = new System.Drawing.Size(559, 46);
             this.loaiXe.TabIndex = 12;
             // 
             // Time
             // 
             this.Time.AutoSize = true;
             this.Time.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Time.Location = new System.Drawing.Point(756, 501);
+            this.Time.Location = new System.Drawing.Point(756, 517);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(60, 27);
             this.Time.TabIndex = 14;
@@ -188,7 +188,7 @@
             // 
             this.Date.AutoSize = true;
             this.Date.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Date.Location = new System.Drawing.Point(756, 546);
+            this.Date.Location = new System.Drawing.Point(756, 562);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(60, 27);
             this.Date.TabIndex = 15;
@@ -201,7 +201,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label9.Location = new System.Drawing.Point(531, 302);
+            this.label9.Location = new System.Drawing.Point(531, 307);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(304, 44);
             this.label9.TabIndex = 16;
@@ -211,7 +211,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(987, 487);
+            this.button2.Location = new System.Drawing.Point(987, 503);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(333, 41);
             this.button2.TabIndex = 18;
@@ -219,9 +219,42 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(272, 337);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 191);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Capture
+            // 
+            this.Capture.Location = new System.Drawing.Point(438, 592);
+            this.Capture.Name = "Capture";
+            this.Capture.Size = new System.Drawing.Size(75, 23);
+            this.Capture.TabIndex = 20;
+            this.Capture.Text = "Chụp";
+            this.Capture.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(346, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 27);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Biển số";
+            // 
             // BangDK
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Capture);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Time);
@@ -243,6 +276,7 @@
             this.Load += new System.EventHandler(this.BangDK_Load);
             this.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.BangDK_Closing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +300,8 @@
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Capture;
+        private System.Windows.Forms.Label label1;
     }
 }
