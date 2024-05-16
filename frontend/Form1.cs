@@ -12,6 +12,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using System.Runtime.InteropServices;
 
 
 
@@ -110,6 +111,47 @@ namespace ParkingLotManagement
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        
+        
+        
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void OnMouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        private void minimized_Click_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void maximize_Click_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void close_Click_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
