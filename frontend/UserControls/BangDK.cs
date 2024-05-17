@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using System.Diagnostics;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -74,6 +75,11 @@ namespace ParkingLotManagement.UserControls
             Date.Text = DateTime.Now.ToLongDateString();
         }
 
+        private void bienSo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -114,6 +120,7 @@ namespace ParkingLotManagement.UserControls
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
             string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
+            Console.WriteLine($"dbfolderpath: {dbFolderPath}");
             string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
 
             if (!Directory.Exists(dbFolderPath))
@@ -193,6 +200,54 @@ namespace ParkingLotManagement.UserControls
             }
         }
 
+        static string getPlate()
+        {
+            // Use 'python' or 'python3' to use the Python executable from the PATH
+            string pythonCommand = "python"; // or "python3" depending on the environment
+
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
+            string modelPath= Path.Combine(projectDirectory, @"backend\model\detect.py");
+            // Specify the path to the Python script
+            string scriptPath = @"..\..\..\backend\model\detect.py";
+
+            // Create a new process to run the Python script
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = pythonCommand,
+                Arguments = modelPath,
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            try
+            {
+                using (Process process = Process.Start(psi))
+                {
+                    // Read the output from the Python script
+                    using (System.IO.StreamReader reader = process.StandardOutput)
+                    {
+                        string result = reader.ReadToEnd();
+                        process.WaitForExit();
+                        return result; // Return the result
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"An error occurred: {e.Message}");
+                return string.Empty; // Return an empty string on error
+            }
+        }
+
+
+        static int getID()
+        {
+            Random random = new Random();
+            return random.Next(100000, 1000000); // 100000 is inclusive, 1000000 is exclusive
+        }
+
         private void Capture_Click(object sender, EventArgs e)
         {
             if (videoBox.Image != null)
@@ -200,13 +255,14 @@ namespace ParkingLotManagement.UserControls
                 Bitmap capturedImage = new Bitmap(videoBox.Image);
                 pictureBox.Image = capturedImage;
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string appDataPath = Path.Combine(baseDirectory, "..\\..\\AppData\\Vehicles_pictures");
+                string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\"));
+                string appDataPath = Path.Combine(projectDirectory, "AppData\\Vehicle_pictures");
                 if (!Directory.Exists(appDataPath))
                 {
                     Directory.CreateDirectory(appDataPath);
                 }
 
-                int imageIndex = 1;
+                int imageIndex = 0;
                 string imagePath;
                 do
                 {
@@ -218,11 +274,18 @@ namespace ParkingLotManagement.UserControls
                 {
                     capturedImage.Save(imagePath, System.Drawing.Imaging.ImageFormat.Png);
                     MessageBox.Show("Image captured and saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    string plate = getPlate();
+                    Console.WriteLine($"Detected plate: {plate}");
+                    bienSo.Text = plate;
+                    maPhieu.Text = getID().ToString();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"An error occurred while saving the image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
+
             }
             else
             {
