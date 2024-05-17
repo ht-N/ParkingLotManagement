@@ -134,6 +134,7 @@
             this.bienSo.Name = "bienSo";
             this.bienSo.Size = new System.Drawing.Size(559, 46);
             this.bienSo.TabIndex = 8;
+            this.bienSo.TextChanged += new System.EventHandler(this.bienSo_TextChanged);
             // 
             // label5
             // 
