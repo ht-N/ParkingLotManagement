@@ -33,18 +33,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.close_Click = new System.Windows.Forms.Button();
-            this.maximize_Click = new System.Windows.Forms.Button();
-            this.minimized_Click = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +57,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Snow;
@@ -73,6 +70,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
@@ -87,7 +85,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.nightControlBox1);
             this.panel2.Controls.Add(this.guna2Button3);
             this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.guna2Button1);
@@ -97,10 +95,36 @@
             this.panel2.Size = new System.Drawing.Size(1366, 46);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            this.panel2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDoubleClick);
+            // 
+            // nightControlBox1
+            // 
+            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox1.DefaultLocation = true;
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMinimizeButton = true;
+            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.Location = new System.Drawing.Point(1225, 0);
+            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.Gray;
+            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.Gray;
+            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Name = "nightControlBox1";
+            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox1.TabIndex = 0;
+            this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click);
             // 
             // guna2Button3
             // 
+            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button3.Animated = true;
             this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button3.CheckedState.BorderColor = System.Drawing.Color.Transparent;
@@ -124,6 +148,7 @@
             // 
             // guna2Button2
             // 
+            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button2.Animated = true;
             this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button2.CheckedState.BorderColor = System.Drawing.Color.Transparent;
@@ -147,6 +172,7 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button1.Animated = true;
             this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button1.Checked = true;
@@ -181,69 +207,9 @@
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.panel1;
+            this.guna2DragControl1.DragStartTransparencyValue = 1D;
+            this.guna2DragControl1.TargetControl = this.panel2;
             this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::ParkingLotManagement.Properties.Resources.minimize;
-            this.panel3.Controls.Add(this.close_Click);
-            this.panel3.Controls.Add(this.maximize_Click);
-            this.panel3.Controls.Add(this.minimized_Click);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1179, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(185, 44);
-            this.panel3.TabIndex = 3;
-            // 
-            // close_Click
-            // 
-            this.close_Click.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.close_Click.BackgroundImage = global::ParkingLotManagement.Properties.Resources.close;
-            this.close_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.close_Click.FlatAppearance.BorderSize = 0;
-            this.close_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_Click.ForeColor = System.Drawing.Color.Transparent;
-            this.close_Click.Location = new System.Drawing.Point(133, 4);
-            this.close_Click.Name = "close_Click";
-            this.close_Click.Size = new System.Drawing.Size(36, 36);
-            this.close_Click.TabIndex = 2;
-            this.close_Click.UseMnemonic = false;
-            this.close_Click.UseVisualStyleBackColor = false;
-            this.close_Click.Click += new System.EventHandler(this.close_Click_Click);
-            // 
-            // maximize_Click
-            // 
-            this.maximize_Click.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.maximize_Click.BackgroundImage = global::ParkingLotManagement.Properties.Resources.maximize;
-            this.maximize_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.maximize_Click.FlatAppearance.BorderSize = 0;
-            this.maximize_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximize_Click.ForeColor = System.Drawing.Color.Transparent;
-            this.maximize_Click.Location = new System.Drawing.Point(77, 4);
-            this.maximize_Click.Name = "maximize_Click";
-            this.maximize_Click.Size = new System.Drawing.Size(36, 36);
-            this.maximize_Click.TabIndex = 1;
-            this.maximize_Click.UseMnemonic = false;
-            this.maximize_Click.UseVisualStyleBackColor = false;
-            this.maximize_Click.Click += new System.EventHandler(this.maximize_Click_Click);
-            // 
-            // minimized_Click
-            // 
-            this.minimized_Click.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.minimized_Click.BackgroundImage = global::ParkingLotManagement.Properties.Resources.minimize;
-            this.minimized_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.minimized_Click.FlatAppearance.BorderSize = 0;
-            this.minimized_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimized_Click.ForeColor = System.Drawing.Color.Transparent;
-            this.minimized_Click.Location = new System.Drawing.Point(20, 4);
-            this.minimized_Click.Name = "minimized_Click";
-            this.minimized_Click.Size = new System.Drawing.Size(36, 36);
-            this.minimized_Click.TabIndex = 0;
-            this.minimized_Click.UseMnemonic = false;
-            this.minimized_Click.UseVisualStyleBackColor = false;
-            this.minimized_Click.Click += new System.EventHandler(this.minimized_Click_Click);
             // 
             // Form1
             // 
@@ -261,7 +227,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -276,10 +241,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button minimized_Click;
-        private System.Windows.Forms.Button close_Click;
-        private System.Windows.Forms.Button maximize_Click;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
     }
 }
 

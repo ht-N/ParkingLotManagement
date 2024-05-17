@@ -55,6 +55,7 @@
             // 
             // videoBox
             // 
+            this.videoBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.videoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.videoBox.Location = new System.Drawing.Point(39, 31);
             this.videoBox.Name = "videoBox";
@@ -64,6 +65,7 @@
             // 
             // cboDevice
             // 
+            this.cboDevice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboDevice.FormattingEnabled = true;
             this.cboDevice.Location = new System.Drawing.Point(321, 550);
             this.cboDevice.Name = "cboDevice";
@@ -72,6 +74,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(35, 548);
@@ -83,6 +86,7 @@
             // 
             // btnStart
             // 
+            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStart.Location = new System.Drawing.Point(321, 592);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
@@ -98,6 +102,7 @@
             // 
             // maPhieu
             // 
+            this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.maPhieu.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maPhieu.Location = new System.Drawing.Point(761, 82);
             this.maPhieu.Name = "maPhieu";
@@ -107,6 +112,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(628, 90);
@@ -118,6 +124,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(628, 196);
@@ -129,6 +136,7 @@
             // 
             // bienSo
             // 
+            this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bienSo.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.bienSo.Location = new System.Drawing.Point(761, 191);
             this.bienSo.Name = "bienSo";
@@ -138,6 +146,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
@@ -149,6 +158,7 @@
             // 
             // loaiPhieu
             // 
+            this.loaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loaiPhieu.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loaiPhieu.Location = new System.Drawing.Point(761, 300);
             this.loaiPhieu.Name = "loaiPhieu";
@@ -158,6 +168,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(628, 408);
@@ -168,6 +179,7 @@
             // 
             // loaiXe
             // 
+            this.loaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loaiXe.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loaiXe.Location = new System.Drawing.Point(761, 402);
             this.loaiXe.Name = "loaiXe";
@@ -176,6 +188,7 @@
             // 
             // Time
             // 
+            this.Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Time.AutoSize = true;
             this.Time.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Time.Location = new System.Drawing.Point(756, 517);
@@ -187,6 +200,7 @@
             // 
             // Date
             // 
+            this.Date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Date.AutoSize = true;
             this.Date.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Date.Location = new System.Drawing.Point(756, 562);
@@ -198,6 +212,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Cascadia Code", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -211,6 +226,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button2.Location = new System.Drawing.Point(987, 503);
             this.button2.Name = "button2";
@@ -222,6 +238,7 @@
             // 
             // pictureBox
             // 
+            this.pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Location = new System.Drawing.Point(272, 337);
@@ -233,6 +250,7 @@
             // 
             // Capture_picture
             // 
+            this.Capture_picture.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Capture_picture.Location = new System.Drawing.Point(438, 592);
             this.Capture_picture.Name = "Capture_picture";
             this.Capture_picture.Size = new System.Drawing.Size(75, 23);
@@ -243,10 +261,11 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(346, 347);
+            this.label1.Location = new System.Drawing.Point(346, 348);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 27);
             this.label1.TabIndex = 21;

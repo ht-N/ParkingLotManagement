@@ -99,3 +99,5 @@ C:\Users\hello\Source\Repos\ParkingLotManagement\frontend\obj\Debug\ParkingLotMa
 C:\Users\hello\Source\Repos\ParkingLotManagement\frontend\obj\Debug\ParkingL.9B38B8BE.Up2Date
 C:\Users\hello\Source\Repos\ParkingLotManagement\frontend\obj\Debug\ParkingLotManagement.exe
 C:\Users\hello\Source\Repos\ParkingLotManagement\frontend\obj\Debug\ParkingLotManagement.pdb
+C:\Users\hello\source\repos\ParkingLotManagement\frontend\bin\Debug\ReaLTaiizor.dll
+C:\Users\hello\source\repos\ParkingLotManagement\frontend\bin\Debug\ReaLTaiizor.xml
