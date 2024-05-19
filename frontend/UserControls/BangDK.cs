@@ -32,7 +32,7 @@ namespace ParkingLotManagement.UserControls
 
         public static async Task<string> ProcessImage(string imagePath)
         {
-            string url = "http://127.0.0.1:5000/detect";
+            string url = "http://192.168.28.41:8080/detect";
 
             using (var content = new MultipartFormDataContent())
             {
