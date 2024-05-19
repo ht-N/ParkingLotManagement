@@ -11,43 +11,6 @@ using System.Threading.Tasks;
 
 namespace ParkingLotManagement.UserControls
 {
-
-    class Program
-    {
-        private static readonly HttpClient client = new HttpClient();
-
-        static async Task<int> Main(string[] args)
-        {
-            if (args.Length < 1)
-            {
-                Console.WriteLine("Usage: Program <imagePath>");
-                return 1;
-            }
-
-            string imagePath = args[0];
-            string response = await ProcessImage(imagePath);
-            Console.WriteLine(response);
-            return 0;
-        }
-
-        public static async Task<string> ProcessImage(string imagePath)
-        {
-            string url = "http://192.168.28.41:8080/detect";
-
-            using (var content = new MultipartFormDataContent())
-            {
-                byte[] imageData = File.ReadAllBytes(imagePath);
-                var imageContent = new ByteArrayContent(imageData);
-                content.Add(imageContent, "image", Path.GetFileName(imagePath));
-
-                var response = await client.PostAsync(url, content);
-                var responseString = await response.Content.ReadAsStringAsync();
-                
-                return responseString;
-            }
-        }
-    }
-
     public partial class BangDK : UserControl
     {
         public BangDK()
@@ -340,6 +303,42 @@ namespace ParkingLotManagement.UserControls
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+    }
+
+    class Program
+    {
+        private static readonly HttpClient client = new HttpClient();
+
+        static async Task<int> Main(string[] args)
+        {
+            if (args.Length < 1)
+            {
+                Console.WriteLine("Usage: Program <imagePath>");
+                return 1;
+            }
+
+            string imagePath = args[0];
+            string response = await ProcessImage(imagePath);
+            Console.WriteLine(response);
+            return 0;
+        }
+
+        public static async Task<string> ProcessImage(string imagePath)
+        {
+            string url = "http://192.168.28.41:8080/detect";
+
+            using (var content = new MultipartFormDataContent())
+            {
+                byte[] imageData = File.ReadAllBytes(imagePath);
+                var imageContent = new ByteArrayContent(imageData);
+                content.Add(imageContent, "image", Path.GetFileName(imagePath));
+
+                var response = await client.PostAsync(url, content);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                return responseString;
+            }
         }
     }
 }
