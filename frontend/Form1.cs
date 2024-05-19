@@ -136,5 +136,12 @@ namespace ParkingLotManagement
                 this.WindowState = FormWindowState.Maximized;
             }
         }
+
+
+        private void guna2Button4_Click_1(object sender, EventArgs e)
+        {
+            BangDK_ra uc = new BangDK_ra();
+            AddUserControl(uc);
+        }
     }
 }

@@ -32,7 +32,6 @@
             this.videoBox = new System.Windows.Forms.PictureBox();
             this.cboDevice = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.maPhieu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,20 +45,17 @@
             this.Date = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.Capture_picture = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // videoBox
             // 
             this.videoBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.videoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.videoBox.Location = new System.Drawing.Point(39, 31);
+            this.videoBox.Location = new System.Drawing.Point(19, 18);
             this.videoBox.Name = "videoBox";
-            this.videoBox.Size = new System.Drawing.Size(475, 497);
+            this.videoBox.Size = new System.Drawing.Size(832, 497);
             this.videoBox.TabIndex = 2;
             this.videoBox.TabStop = false;
             // 
@@ -67,9 +63,9 @@
             // 
             this.cboDevice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboDevice.FormattingEnabled = true;
-            this.cboDevice.Location = new System.Drawing.Point(321, 550);
+            this.cboDevice.Location = new System.Drawing.Point(240, 537);
             this.cboDevice.Name = "cboDevice";
-            this.cboDevice.Size = new System.Drawing.Size(192, 32);
+            this.cboDevice.Size = new System.Drawing.Size(620, 32);
             this.cboDevice.TabIndex = 3;
             // 
             // label2
@@ -77,24 +73,12 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(35, 548);
+            this.label2.Location = new System.Drawing.Point(15, 540);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 24);
+            this.label2.Size = new System.Drawing.Size(219, 24);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Chọn camera muốn hoạt động:";
+            this.label2.Text = "Camera đang được chọn:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // btnStart
-            // 
-            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStart.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnStart.Location = new System.Drawing.Point(39, 592);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(184, 35);
-            this.btnStart.TabIndex = 5;
-            this.btnStart.Text = "Mở cam";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // timer1
             // 
@@ -105,9 +89,9 @@
             // 
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.maPhieu.Location = new System.Drawing.Point(761, 82);
+            this.maPhieu.Location = new System.Drawing.Point(987, 80);
             this.maPhieu.Name = "maPhieu";
-            this.maPhieu.Size = new System.Drawing.Size(559, 32);
+            this.maPhieu.Size = new System.Drawing.Size(333, 32);
             this.maPhieu.TabIndex = 6;
             this.maPhieu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -116,7 +100,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(628, 90);
+            this.label3.Location = new System.Drawing.Point(889, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 7;
@@ -128,7 +112,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(628, 196);
+            this.label4.Location = new System.Drawing.Point(889, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 24);
             this.label4.TabIndex = 9;
@@ -139,9 +123,9 @@
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bienSo.Location = new System.Drawing.Point(761, 191);
+            this.bienSo.Location = new System.Drawing.Point(987, 191);
             this.bienSo.Name = "bienSo";
-            this.bienSo.Size = new System.Drawing.Size(559, 32);
+            this.bienSo.Size = new System.Drawing.Size(333, 32);
             this.bienSo.TabIndex = 8;
             this.bienSo.TextChanged += new System.EventHandler(this.bienSo_TextChanged);
             // 
@@ -151,7 +135,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(604, 307);
+            this.label5.Location = new System.Drawing.Point(882, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 11;
@@ -161,9 +145,9 @@
             // 
             this.loaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiPhieu.Location = new System.Drawing.Point(761, 300);
+            this.loaiPhieu.Location = new System.Drawing.Point(987, 300);
             this.loaiPhieu.Name = "loaiPhieu";
-            this.loaiPhieu.Size = new System.Drawing.Size(559, 32);
+            this.loaiPhieu.Size = new System.Drawing.Size(333, 32);
             this.loaiPhieu.TabIndex = 10;
             this.loaiPhieu.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -172,7 +156,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(628, 408);
+            this.label6.Location = new System.Drawing.Point(893, 402);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 24);
             this.label6.TabIndex = 13;
@@ -182,9 +166,9 @@
             // 
             this.loaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loaiXe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiXe.Location = new System.Drawing.Point(761, 402);
+            this.loaiXe.Location = new System.Drawing.Point(987, 402);
             this.loaiXe.Name = "loaiXe";
-            this.loaiXe.Size = new System.Drawing.Size(559, 32);
+            this.loaiXe.Size = new System.Drawing.Size(333, 32);
             this.loaiXe.TabIndex = 12;
             // 
             // Time
@@ -192,7 +176,7 @@
             this.Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Time.AutoSize = true;
             this.Time.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Time.Location = new System.Drawing.Point(756, 517);
+            this.Time.Location = new System.Drawing.Point(1016, 476);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(51, 24);
             this.Time.TabIndex = 14;
@@ -204,7 +188,7 @@
             this.Date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Date.AutoSize = true;
             this.Date.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Date.Location = new System.Drawing.Point(756, 562);
+            this.Date.Location = new System.Drawing.Point(1016, 518);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(49, 24);
             this.Date.TabIndex = 15;
@@ -229,56 +213,30 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(987, 503);
+            this.button2.Location = new System.Drawing.Point(893, 576);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(333, 41);
+            this.button2.Size = new System.Drawing.Size(427, 41);
             this.button2.TabIndex = 18;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(272, 337);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(242, 191);
-            this.pictureBox.TabIndex = 19;
-            this.pictureBox.TabStop = false;
-            this.pictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Capture_picture
             // 
             this.Capture_picture.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Capture_picture.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Capture_picture.Location = new System.Drawing.Point(249, 592);
+            this.Capture_picture.Location = new System.Drawing.Point(19, 582);
             this.Capture_picture.Name = "Capture_picture";
-            this.Capture_picture.Size = new System.Drawing.Size(264, 35);
+            this.Capture_picture.Size = new System.Drawing.Size(841, 35);
             this.Capture_picture.TabIndex = 20;
             this.Capture_picture.Text = "Chụp";
             this.Capture_picture.UseVisualStyleBackColor = true;
             this.Capture_picture.Click += new System.EventHandler(this.Capture_Click);
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(354, 348);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 24);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Biển số";
-            // 
             // BangDK
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Capture_picture);
-            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Time);
@@ -290,7 +248,6 @@
             this.Controls.Add(this.bienSo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.maPhieu);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboDevice);
             this.Controls.Add(this.videoBox);
@@ -301,7 +258,6 @@
             this.Load += new System.EventHandler(this.BangDK_Load);
             this.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.BangDK_Closing);
             ((System.ComponentModel.ISupportInitialize)(this.videoBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +267,6 @@
         private System.Windows.Forms.PictureBox videoBox;
         private System.Windows.Forms.ComboBox cboDevice;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox maPhieu;
         private System.Windows.Forms.Label label3;
@@ -325,8 +280,6 @@
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button Capture_picture;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -120,6 +120,12 @@
     <Compile Include="UserControls\BangDK.Designer.cs">
       <DependentUpon>BangDK.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\BangDK_ra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BangDK_ra.Designer.cs">
+      <DependentUpon>BangDK_ra.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\BaoCao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\BangDK.resx">
       <DependentUpon>BangDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BangDK_ra.resx">
+      <DependentUpon>BangDK_ra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>

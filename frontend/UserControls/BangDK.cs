@@ -42,6 +42,11 @@ namespace ParkingLotManagement.UserControls
                 cboDevice.Items.Add(filterInfo.Name);
             }
             cboDevice.SelectedIndex = 0;
+
+            captureDevice = new VideoCaptureDevice(filterInfoCollection[cboDevice.SelectedIndex].MonikerString);
+            captureDevice.NewFrame += CaptureDevice_NewFrame;
+            captureDevice.Start();
+            timer1.Start();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -51,10 +56,6 @@ namespace ParkingLotManagement.UserControls
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            captureDevice = new VideoCaptureDevice(filterInfoCollection[cboDevice.SelectedIndex].MonikerString);
-            captureDevice.NewFrame += CaptureDevice_NewFrame;
-            captureDevice.Start();
-            timer1.Start();
         }
 
         private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -262,7 +263,6 @@ namespace ParkingLotManagement.UserControls
             if (videoBox.Image != null)
             {
                 Bitmap capturedImage = new Bitmap(videoBox.Image);
-                pictureBox.Image = capturedImage;
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\"));
                 string appDataPath = Path.Combine(projectDirectory, "AppData\\Vehicle_pictures");

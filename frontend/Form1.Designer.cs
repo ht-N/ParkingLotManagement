@@ -39,6 +39,7 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.guna2Button4);
             this.panel2.Controls.Add(this.nightControlBox1);
             this.panel2.Controls.Add(this.guna2Button3);
             this.panel2.Controls.Add(this.guna2Button2);
@@ -139,7 +141,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.HoverState.CustomBorderColor = System.Drawing.Color.Red;
-            this.guna2Button3.Location = new System.Drawing.Point(440, -1);
+            this.guna2Button3.Location = new System.Drawing.Point(421, 0);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(214, 45);
             this.guna2Button3.TabIndex = 2;
@@ -163,7 +165,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.HoverState.CustomBorderColor = System.Drawing.Color.Red;
-            this.guna2Button2.Location = new System.Drawing.Point(220, -1);
+            this.guna2Button2.Location = new System.Drawing.Point(201, 0);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(214, 45);
             this.guna2Button2.TabIndex = 1;
@@ -190,9 +192,9 @@
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.Red;
             this.guna2Button1.Location = new System.Drawing.Point(0, -1);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(214, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(102, 45);
             this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "BẢNG ĐIỀU KHIỂN";
+            this.guna2Button1.Text = "Xe vào";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // panelContainer
@@ -210,6 +212,30 @@
             this.guna2DragControl1.DragStartTransparencyValue = 1D;
             this.guna2DragControl1.TargetControl = this.panel2;
             this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Button4.Animated = true;
+            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button4.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button4.CheckedState.CustomBorderColor = System.Drawing.Color.Red;
+            this.guna2Button4.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button4.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button4.HoverState.CustomBorderColor = System.Drawing.Color.Red;
+            this.guna2Button4.Location = new System.Drawing.Point(108, 0);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(87, 45);
+            this.guna2Button4.TabIndex = 3;
+            this.guna2Button4.Text = "Xe ra";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click_1);
             // 
             // Form1
             // 
@@ -242,6 +268,7 @@
         private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }
 
