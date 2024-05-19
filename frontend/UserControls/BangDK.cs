@@ -304,6 +304,36 @@ namespace ParkingLotManagement.UserControls
         {
 
         }
+
+        private void cboDevice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loaiPhieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loaiXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void videoBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     class Program
