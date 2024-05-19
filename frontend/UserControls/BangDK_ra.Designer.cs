@@ -41,10 +41,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.videoBox = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.hour_In = new System.Windows.Forms.Label();
-            this.day_In = new System.Windows.Forms.Label();
-            this.hour_box = new System.Windows.Forms.TextBox();
+            this.time_In = new System.Windows.Forms.Label();
             this.day_Box = new System.Windows.Forms.TextBox();
+            this.money = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(913, 558);
+            this.button2.Location = new System.Drawing.Point(908, 559);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(427, 41);
             this.button2.TabIndex = 35;
@@ -64,7 +65,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(904, 307);
+            this.label6.Location = new System.Drawing.Point(927, 322);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 24);
             this.label6.TabIndex = 31;
@@ -74,9 +75,9 @@
             // 
             this.loaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loaiXe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiXe.Location = new System.Drawing.Point(998, 307);
+            this.loaiXe.Location = new System.Drawing.Point(1033, 322);
             this.loaiXe.Name = "loaiXe";
-            this.loaiXe.Size = new System.Drawing.Size(333, 32);
+            this.loaiXe.Size = new System.Drawing.Size(302, 32);
             this.loaiXe.TabIndex = 30;
             // 
             // label5
@@ -85,7 +86,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(893, 223);
+            this.label5.Location = new System.Drawing.Point(912, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 29;
@@ -95,18 +96,18 @@
             // 
             this.loaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiPhieu.Location = new System.Drawing.Point(998, 220);
+            this.loaiPhieu.Location = new System.Drawing.Point(1033, 235);
             this.loaiPhieu.Name = "loaiPhieu";
-            this.loaiPhieu.Size = new System.Drawing.Size(333, 32);
+            this.loaiPhieu.Size = new System.Drawing.Size(302, 32);
             this.loaiPhieu.TabIndex = 28;
             // 
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bienSo.Location = new System.Drawing.Point(998, 128);
+            this.bienSo.Location = new System.Drawing.Point(1033, 143);
             this.bienSo.Name = "bienSo";
-            this.bienSo.Size = new System.Drawing.Size(333, 32);
+            this.bienSo.Size = new System.Drawing.Size(302, 32);
             this.bienSo.TabIndex = 26;
             // 
             // label3
@@ -114,7 +115,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(900, 60);
+            this.label3.Location = new System.Drawing.Point(919, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 25;
@@ -124,9 +125,9 @@
             // 
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.maPhieu.Location = new System.Drawing.Point(998, 52);
+            this.maPhieu.Location = new System.Drawing.Point(1033, 67);
             this.maPhieu.Name = "maPhieu";
-            this.maPhieu.Size = new System.Drawing.Size(333, 32);
+            this.maPhieu.Size = new System.Drawing.Size(302, 32);
             this.maPhieu.TabIndex = 24;
             // 
             // timer1
@@ -138,7 +139,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(908, 131);
+            this.label4.Location = new System.Drawing.Point(927, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 24);
             this.label4.TabIndex = 27;
@@ -167,54 +168,66 @@
             this.label9.TabIndex = 34;
             this.label9.Text = "BẢNG ĐIỀU KHIỂN";
             // 
-            // hour_In
+            // time_In
             // 
-            this.hour_In.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.hour_In.AutoSize = true;
-            this.hour_In.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.hour_In.Location = new System.Drawing.Point(904, 396);
-            this.hour_In.Name = "hour_In";
-            this.hour_In.Size = new System.Drawing.Size(75, 24);
-            this.hour_In.TabIndex = 36;
-            this.hour_In.Text = "Giờ vào";
-            // 
-            // day_In
-            // 
-            this.day_In.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.day_In.AutoSize = true;
-            this.day_In.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.day_In.Location = new System.Drawing.Point(900, 479);
-            this.day_In.Name = "day_In";
-            this.day_In.Size = new System.Drawing.Size(86, 24);
-            this.day_In.TabIndex = 37;
-            this.day_In.Text = "Ngày vào";
-            // 
-            // hour_box
-            // 
-            this.hour_box.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.hour_box.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.hour_box.Location = new System.Drawing.Point(998, 393);
-            this.hour_box.Name = "hour_box";
-            this.hour_box.Size = new System.Drawing.Size(333, 32);
-            this.hour_box.TabIndex = 38;
+            this.time_In.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.time_In.AutoSize = true;
+            this.time_In.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.time_In.Location = new System.Drawing.Point(895, 405);
+            this.time_In.Name = "time_In";
+            this.time_In.Size = new System.Drawing.Size(123, 24);
+            this.time_In.TabIndex = 37;
+            this.time_In.Text = "Thời gian vào";
             // 
             // day_Box
             // 
             this.day_Box.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.day_Box.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.day_Box.Location = new System.Drawing.Point(998, 476);
+            this.day_Box.Location = new System.Drawing.Point(1033, 402);
             this.day_Box.Name = "day_Box";
-            this.day_Box.Size = new System.Drawing.Size(333, 32);
+            this.day_Box.Size = new System.Drawing.Size(302, 32);
             this.day_Box.TabIndex = 39;
+            // 
+            // money
+            // 
+            this.money.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.money.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.money.Location = new System.Drawing.Point(1033, 494);
+            this.money.Name = "money";
+            this.money.Size = new System.Drawing.Size(302, 32);
+            this.money.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(912, 497);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 24);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Phí giữ xe";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(353, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 24);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Biển số xe lúc vào bãi";
             // 
             // BangDK_ra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.money);
             this.Controls.Add(this.day_Box);
-            this.Controls.Add(this.hour_box);
-            this.Controls.Add(this.day_In);
-            this.Controls.Add(this.hour_In);
+            this.Controls.Add(this.time_In);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.loaiXe);
@@ -251,9 +264,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox videoBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label hour_In;
-        private System.Windows.Forms.Label day_In;
-        private System.Windows.Forms.TextBox hour_box;
+        private System.Windows.Forms.Label time_In;
         private System.Windows.Forms.TextBox day_Box;
+        private System.Windows.Forms.TextBox money;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -38,14 +38,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.bienSo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.loaiPhieu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.loaiXe = new System.Windows.Forms.TextBox();
             this.Time = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.Capture_picture = new System.Windows.Forms.Button();
+            this.loaiPhieu = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.loaiXe = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(889, 199);
+            this.label4.Location = new System.Drawing.Point(889, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 24);
             this.label4.TabIndex = 9;
@@ -141,16 +141,6 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Loại phiếu";
             // 
-            // loaiPhieu
-            // 
-            this.loaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiPhieu.Location = new System.Drawing.Point(987, 300);
-            this.loaiPhieu.Name = "loaiPhieu";
-            this.loaiPhieu.Size = new System.Drawing.Size(333, 32);
-            this.loaiPhieu.TabIndex = 10;
-            this.loaiPhieu.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -161,15 +151,6 @@
             this.label6.Size = new System.Drawing.Size(67, 24);
             this.label6.TabIndex = 13;
             this.label6.Text = "Loại xe";
-            // 
-            // loaiXe
-            // 
-            this.loaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loaiXe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiXe.Location = new System.Drawing.Point(987, 402);
-            this.loaiXe.Name = "loaiXe";
-            this.loaiXe.Size = new System.Drawing.Size(333, 32);
-            this.loaiXe.TabIndex = 12;
             // 
             // Time
             // 
@@ -233,17 +214,54 @@
             this.Capture_picture.UseVisualStyleBackColor = true;
             this.Capture_picture.Click += new System.EventHandler(this.Capture_Click);
             // 
+            // loaiPhieu
+            // 
+            this.loaiPhieu.BackColor = System.Drawing.Color.Transparent;
+            this.loaiPhieu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.loaiPhieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.loaiPhieu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loaiPhieu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loaiPhieu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.loaiPhieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.loaiPhieu.ItemHeight = 30;
+            this.loaiPhieu.Items.AddRange(new object[] {
+            "Ngày",
+            "Tháng"});
+            this.loaiPhieu.Location = new System.Drawing.Point(987, 298);
+            this.loaiPhieu.Name = "loaiPhieu";
+            this.loaiPhieu.Size = new System.Drawing.Size(333, 36);
+            this.loaiPhieu.TabIndex = 21;
+            // 
+            // loaiXe
+            // 
+            this.loaiXe.BackColor = System.Drawing.Color.Transparent;
+            this.loaiXe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.loaiXe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.loaiXe.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loaiXe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loaiXe.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.loaiXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.loaiXe.ItemHeight = 30;
+            this.loaiXe.Items.AddRange(new object[] {
+            "Xe máy",
+            "Ô tô",
+            "Xe đạp"});
+            this.loaiXe.Location = new System.Drawing.Point(987, 402);
+            this.loaiXe.Name = "loaiXe";
+            this.loaiXe.Size = new System.Drawing.Size(333, 36);
+            this.loaiXe.TabIndex = 22;
+            // 
             // BangDK
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.loaiXe);
+            this.Controls.Add(this.loaiPhieu);
             this.Controls.Add(this.Capture_picture);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Time);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.loaiXe);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.loaiPhieu);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.bienSo);
             this.Controls.Add(this.label3);
@@ -273,13 +291,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox bienSo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox loaiPhieu;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox loaiXe;
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Capture_picture;
+        private Guna.UI2.WinForms.Guna2ComboBox loaiPhieu;
+        private Guna.UI2.WinForms.Guna2ComboBox loaiXe;
     }
 }
