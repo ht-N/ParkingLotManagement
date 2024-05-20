@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
@@ -273,14 +273,15 @@ namespace ParkingLotManagement.UserControls
             if (videoBox.Image != null)
             {
                 Bitmap capturedImage = new Bitmap(videoBox.Image);
-                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\"));
-                string appDataPath = Path.Combine(projectDirectory, "AppData\\Vehicle_pictures");
+
+                string currentDirectory = Directory.GetCurrentDirectory();
+                string projectRoot = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
+                string appDataPath = Path.Combine(projectRoot, "frontend", "AppData", "Vehicle_pictures");
+                Console.WriteLine("AppDataPath: " + appDataPath);
                 if (!Directory.Exists(appDataPath))
                 {
                     Directory.CreateDirectory(appDataPath);
                 }
-
                 int imageIndex = 0;
                 string imagePath;
                 do
