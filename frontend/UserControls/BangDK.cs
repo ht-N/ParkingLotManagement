@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Threading;
+using System.Globalization;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -18,6 +19,8 @@ namespace ParkingLotManagement.UserControls
         public BangDK()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
         }
 
         FilterInfoCollection filterInfoCollection;
@@ -83,8 +86,8 @@ namespace ParkingLotManagement.UserControls
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Time.Text = DateTime.Now.ToLongTimeString();
-            Date.Text = DateTime.Now.ToLongDateString();
+            Time.Text = DateTime.Now.ToString("T", CultureInfo.CurrentCulture);
+            Date.Text = DateTime.Now.ToString("D", CultureInfo.CurrentCulture);
         }
 
         private void bienSo_TextChanged(object sender, EventArgs e)
@@ -367,7 +370,7 @@ namespace ParkingLotManagement.UserControls
 
         public static async Task<string> ProcessImage(string imagePath)
         {
-            string url = "http://127.0.0.1:5000/detect";
+            string url = "http://192.168.28.41:1234/detect";
 
             using (var content = new MultipartFormDataContent())
             {
