@@ -74,9 +74,11 @@
             // loaiXe
             // 
             this.loaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loaiXe.Enabled = false;
             this.loaiXe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiXe.Location = new System.Drawing.Point(1033, 322);
+            this.loaiXe.Location = new System.Drawing.Point(1033, 321);
             this.loaiXe.Name = "loaiXe";
+            this.loaiXe.ReadOnly = true;
             this.loaiXe.Size = new System.Drawing.Size(302, 32);
             this.loaiXe.TabIndex = 30;
             // 
@@ -86,7 +88,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(912, 238);
+            this.label5.Location = new System.Drawing.Point(897, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 29;
@@ -95,18 +97,22 @@
             // loaiPhieu
             // 
             this.loaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loaiPhieu.Enabled = false;
             this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loaiPhieu.Location = new System.Drawing.Point(1033, 235);
             this.loaiPhieu.Name = "loaiPhieu";
+            this.loaiPhieu.ReadOnly = true;
             this.loaiPhieu.Size = new System.Drawing.Size(302, 32);
             this.loaiPhieu.TabIndex = 28;
             // 
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bienSo.Enabled = false;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.bienSo.Location = new System.Drawing.Point(1033, 143);
             this.bienSo.Name = "bienSo";
+            this.bienSo.ReadOnly = true;
             this.bienSo.Size = new System.Drawing.Size(302, 32);
             this.bienSo.TabIndex = 26;
             // 
@@ -115,7 +121,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(919, 75);
+            this.label3.Location = new System.Drawing.Point(904, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 25;
@@ -139,7 +145,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(927, 146);
+            this.label4.Location = new System.Drawing.Point(923, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 24);
             this.label4.TabIndex = 27;
@@ -173,7 +179,7 @@
             this.time_In.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.time_In.AutoSize = true;
             this.time_In.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.time_In.Location = new System.Drawing.Point(895, 405);
+            this.time_In.Location = new System.Drawing.Point(871, 402);
             this.time_In.Name = "time_In";
             this.time_In.Size = new System.Drawing.Size(123, 24);
             this.time_In.TabIndex = 37;
@@ -182,18 +188,22 @@
             // day_Box
             // 
             this.day_Box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.day_Box.Enabled = false;
             this.day_Box.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.day_Box.Location = new System.Drawing.Point(1033, 402);
             this.day_Box.Name = "day_Box";
+            this.day_Box.ReadOnly = true;
             this.day_Box.Size = new System.Drawing.Size(302, 32);
             this.day_Box.TabIndex = 39;
             // 
             // money
             // 
             this.money.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.money.Enabled = false;
             this.money.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.money.Location = new System.Drawing.Point(1033, 494);
             this.money.Name = "money";
+            this.money.ReadOnly = true;
             this.money.Size = new System.Drawing.Size(302, 32);
             this.money.TabIndex = 40;
             // 
@@ -202,7 +212,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(912, 497);
+            this.label1.Location = new System.Drawing.Point(904, 497);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 24);
             this.label1.TabIndex = 41;

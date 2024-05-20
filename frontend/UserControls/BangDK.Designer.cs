@@ -90,9 +90,11 @@
             // maPhieu
             // 
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.maPhieu.Enabled = false;
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maPhieu.Location = new System.Drawing.Point(987, 80);
             this.maPhieu.Name = "maPhieu";
+            this.maPhieu.ReadOnly = true;
             this.maPhieu.Size = new System.Drawing.Size(333, 36);
             this.maPhieu.TabIndex = 6;
             this.maPhieu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -102,7 +104,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(889, 81);
+            this.label3.Location = new System.Drawing.Point(884, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 28);
             this.label3.TabIndex = 7;
@@ -114,7 +116,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(889, 191);
+            this.label4.Location = new System.Drawing.Point(898, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 28);
             this.label4.TabIndex = 9;
@@ -124,9 +126,11 @@
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bienSo.Enabled = false;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.bienSo.Location = new System.Drawing.Point(987, 183);
             this.bienSo.Name = "bienSo";
+            this.bienSo.ReadOnly = true;
             this.bienSo.Size = new System.Drawing.Size(333, 36);
             this.bienSo.TabIndex = 8;
             this.bienSo.TextChanged += new System.EventHandler(this.bienSo_TextChanged);
@@ -137,7 +141,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(874, 292);
+            this.label5.Location = new System.Drawing.Point(876, 296);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 28);
             this.label5.TabIndex = 11;
@@ -149,7 +153,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(889, 402);
+            this.label6.Location = new System.Drawing.Point(902, 400);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 28);
             this.label6.TabIndex = 13;
@@ -161,7 +165,7 @@
             this.Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Time.AutoSize = true;
             this.Time.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Time.Location = new System.Drawing.Point(1016, 469);
+            this.Time.Location = new System.Drawing.Point(921, 541);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(57, 28);
             this.Time.TabIndex = 14;
@@ -173,7 +177,7 @@
             this.Date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Date.AutoSize = true;
             this.Date.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Date.Location = new System.Drawing.Point(1016, 518);
+            this.Date.Location = new System.Drawing.Point(921, 582);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(56, 28);
             this.Date.TabIndex = 15;
@@ -197,10 +201,10 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(893, 576);
+            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Location = new System.Drawing.Point(882, 480);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(427, 41);
+            this.button2.Size = new System.Drawing.Size(438, 35);
             this.button2.TabIndex = 18;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
@@ -253,7 +257,7 @@
             "Xe máy",
             "Ô tô",
             "Xe đạp"});
-            this.loaiXe.Location = new System.Drawing.Point(987, 402);
+            this.loaiXe.Location = new System.Drawing.Point(987, 396);
             this.loaiXe.Name = "loaiXe";
             this.loaiXe.Size = new System.Drawing.Size(333, 36);
             this.loaiXe.TabIndex = 22;

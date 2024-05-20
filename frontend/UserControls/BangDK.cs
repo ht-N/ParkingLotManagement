@@ -8,6 +8,8 @@ using AForge.Video.DirectShow;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Collections.Concurrent;
+using System.Threading;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -252,10 +254,18 @@ namespace ParkingLotManagement.UserControls
         }
 
 
+        // Getting unique ID (not these one in the DB)
+        private static ConcurrentDictionary<int, byte> generatedIDs = new ConcurrentDictionary<int, byte>();
+        private static ThreadLocal<Random> random = new ThreadLocal<Random>(() => new Random());
         static int getID()
         {
-            Random random = new Random();
-            return random.Next(100000, 1000000); // 100000 is inclusive, 1000000 is exclusive
+            int newID;
+            do
+            {
+                newID = random.Value.Next(100000, 1000000);
+            } while (!generatedIDs.TryAdd(newID, 0));
+
+            return newID;
         }
 
         private async void Capture_Click(object sender, EventArgs e)
@@ -356,7 +366,7 @@ namespace ParkingLotManagement.UserControls
 
         public static async Task<string> ProcessImage(string imagePath)
         {
-            string url = "http://192.168.28.41:8080/detect";
+            string url = "http://127.0.0.1:5000/detect";
 
             using (var content = new MultipartFormDataContent())
             {
