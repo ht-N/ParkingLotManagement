@@ -66,7 +66,7 @@
             this.cboDevice.FormattingEnabled = true;
             this.cboDevice.Location = new System.Drawing.Point(240, 537);
             this.cboDevice.Name = "cboDevice";
-            this.cboDevice.Size = new System.Drawing.Size(611, 32);
+            this.cboDevice.Size = new System.Drawing.Size(611, 27);
             this.cboDevice.TabIndex = 3;
             this.cboDevice.SelectedIndexChanged += new System.EventHandler(this.cboDevice_SelectedIndexChanged);
             // 
@@ -77,7 +77,7 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(15, 540);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 24);
+            this.label2.Size = new System.Drawing.Size(174, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Camera đang được chọn:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -90,10 +90,12 @@
             // maPhieu
             // 
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.maPhieu.Enabled = false;
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maPhieu.Location = new System.Drawing.Point(987, 80);
             this.maPhieu.Name = "maPhieu";
-            this.maPhieu.Size = new System.Drawing.Size(333, 36);
+            this.maPhieu.ReadOnly = true;
+            this.maPhieu.Size = new System.Drawing.Size(333, 30);
             this.maPhieu.TabIndex = 6;
             this.maPhieu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -104,7 +106,7 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(884, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 28);
+            this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "Mã phiếu";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -116,7 +118,7 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(898, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 28);
+            this.label4.Size = new System.Drawing.Size(65, 23);
             this.label4.TabIndex = 9;
             this.label4.Text = "Biển số";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -124,10 +126,12 @@
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bienSo.Enabled = false;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.bienSo.Location = new System.Drawing.Point(987, 183);
             this.bienSo.Name = "bienSo";
-            this.bienSo.Size = new System.Drawing.Size(333, 36);
+            this.bienSo.ReadOnly = true;
+            this.bienSo.Size = new System.Drawing.Size(333, 30);
             this.bienSo.TabIndex = 8;
             this.bienSo.TextChanged += new System.EventHandler(this.bienSo_TextChanged);
             // 
@@ -139,7 +143,7 @@
             this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(876, 296);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 28);
+            this.label5.Size = new System.Drawing.Size(88, 23);
             this.label5.TabIndex = 11;
             this.label5.Text = "Loại phiếu";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -151,7 +155,7 @@
             this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(902, 400);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 28);
+            this.label6.Size = new System.Drawing.Size(61, 23);
             this.label6.TabIndex = 13;
             this.label6.Text = "Loại xe";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -163,7 +167,7 @@
             this.Time.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Time.Location = new System.Drawing.Point(1019, 540);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(57, 28);
+            this.Time.Size = new System.Drawing.Size(47, 23);
             this.Time.TabIndex = 14;
             this.Time.Text = "Time";
             this.Time.Click += new System.EventHandler(this.label7_Click);
@@ -175,7 +179,7 @@
             this.Date.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Date.Location = new System.Drawing.Point(1019, 589);
             this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(56, 28);
+            this.Date.Size = new System.Drawing.Size(46, 23);
             this.Date.TabIndex = 15;
             this.Date.Text = "Date";
             this.Date.Click += new System.EventHandler(this.label8_Click);
@@ -189,7 +193,7 @@
             this.label9.ForeColor = System.Drawing.Color.Gainsboro;
             this.label9.Location = new System.Drawing.Point(531, 307);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(304, 44);
+            this.label9.Size = new System.Drawing.Size(255, 35);
             this.label9.TabIndex = 16;
             this.label9.Text = "BẢNG ĐIỀU KHIỂN";
             this.label9.Click += new System.EventHandler(this.label9_Click);

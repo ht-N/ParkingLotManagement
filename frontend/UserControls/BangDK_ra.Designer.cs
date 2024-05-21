@@ -42,7 +42,7 @@
             this.videoBox = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.time_In = new System.Windows.Forms.Label();
-            this.day_Box = new System.Windows.Forms.TextBox();
+            this.time = new System.Windows.Forms.TextBox();
             this.money = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,11 +64,11 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(927, 322);
+            this.label6.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label6.Location = new System.Drawing.Point(918, 322);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 24);
-            this.label6.TabIndex = 31;
+            this.label6.Size = new System.Drawing.Size(61, 23);
+            this.label6.TabIndex = 25;
             this.label6.Text = "Loại xe";
             // 
             // loaiXe
@@ -79,7 +79,7 @@
             this.loaiXe.Location = new System.Drawing.Point(1033, 321);
             this.loaiXe.Name = "loaiXe";
             this.loaiXe.ReadOnly = true;
-            this.loaiXe.Size = new System.Drawing.Size(302, 32);
+            this.loaiXe.Size = new System.Drawing.Size(302, 27);
             this.loaiXe.TabIndex = 30;
             // 
             // label5
@@ -87,11 +87,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(897, 235);
+            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label5.Location = new System.Drawing.Point(891, 235);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 24);
-            this.label5.TabIndex = 29;
+            this.label5.Size = new System.Drawing.Size(88, 23);
+            this.label5.TabIndex = 25;
             this.label5.Text = "Loại phiếu";
             // 
             // loaiPhieu
@@ -102,7 +102,7 @@
             this.loaiPhieu.Location = new System.Drawing.Point(1033, 235);
             this.loaiPhieu.Name = "loaiPhieu";
             this.loaiPhieu.ReadOnly = true;
-            this.loaiPhieu.Size = new System.Drawing.Size(302, 32);
+            this.loaiPhieu.Size = new System.Drawing.Size(302, 27);
             this.loaiPhieu.TabIndex = 28;
             // 
             // bienSo
@@ -113,17 +113,17 @@
             this.bienSo.Location = new System.Drawing.Point(1033, 143);
             this.bienSo.Name = "bienSo";
             this.bienSo.ReadOnly = true;
-            this.bienSo.Size = new System.Drawing.Size(302, 32);
+            this.bienSo.Size = new System.Drawing.Size(302, 27);
             this.bienSo.TabIndex = 26;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(904, 75);
+            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label3.Location = new System.Drawing.Point(903, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 24);
+            this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 25;
             this.label3.Text = "Mã phiếu";
             // 
@@ -133,7 +133,7 @@
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maPhieu.Location = new System.Drawing.Point(1033, 67);
             this.maPhieu.Name = "maPhieu";
-            this.maPhieu.Size = new System.Drawing.Size(302, 32);
+            this.maPhieu.Size = new System.Drawing.Size(302, 27);
             this.maPhieu.TabIndex = 24;
             this.maPhieu.TextChanged += new System.EventHandler(this.maPhieu_TextChanged);
             // 
@@ -145,11 +145,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(923, 146);
+            this.label4.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label4.Location = new System.Drawing.Point(914, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 24);
-            this.label4.TabIndex = 27;
+            this.label4.Size = new System.Drawing.Size(65, 23);
+            this.label4.TabIndex = 25;
             this.label4.Text = "Biển số";
             // 
             // videoBox
@@ -158,7 +158,7 @@
             this.videoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.videoBox.Location = new System.Drawing.Point(35, 25);
             this.videoBox.Name = "videoBox";
-            this.videoBox.Size = new System.Drawing.Size(832, 599);
+            this.videoBox.Size = new System.Drawing.Size(774, 599);
             this.videoBox.TabIndex = 21;
             this.videoBox.TabStop = false;
             // 
@@ -171,7 +171,7 @@
             this.label9.ForeColor = System.Drawing.Color.Gainsboro;
             this.label9.Location = new System.Drawing.Point(547, 314);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(304, 44);
+            this.label9.Size = new System.Drawing.Size(255, 35);
             this.label9.TabIndex = 34;
             this.label9.Text = "BẢNG ĐIỀU KHIỂN";
             // 
@@ -179,23 +179,23 @@
             // 
             this.time_In.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.time_In.AutoSize = true;
-            this.time_In.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.time_In.Location = new System.Drawing.Point(871, 402);
+            this.time_In.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.time_In.Location = new System.Drawing.Point(867, 402);
             this.time_In.Name = "time_In";
-            this.time_In.Size = new System.Drawing.Size(123, 24);
-            this.time_In.TabIndex = 37;
+            this.time_In.Size = new System.Drawing.Size(112, 23);
+            this.time_In.TabIndex = 25;
             this.time_In.Text = "Thời gian vào";
             // 
-            // day_Box
+            // time
             // 
-            this.day_Box.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.day_Box.Enabled = false;
-            this.day_Box.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.day_Box.Location = new System.Drawing.Point(1033, 402);
-            this.day_Box.Name = "day_Box";
-            this.day_Box.ReadOnly = true;
-            this.day_Box.Size = new System.Drawing.Size(302, 32);
-            this.day_Box.TabIndex = 39;
+            this.time.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.time.Enabled = false;
+            this.time.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.time.Location = new System.Drawing.Point(1033, 402);
+            this.time.Name = "time";
+            this.time.ReadOnly = true;
+            this.time.Size = new System.Drawing.Size(302, 27);
+            this.time.TabIndex = 39;
             // 
             // money
             // 
@@ -205,39 +205,38 @@
             this.money.Location = new System.Drawing.Point(1033, 494);
             this.money.Name = "money";
             this.money.ReadOnly = true;
-            this.money.Size = new System.Drawing.Size(302, 32);
+            this.money.Size = new System.Drawing.Size(302, 27);
             this.money.TabIndex = 40;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(904, 497);
+            this.label1.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label1.Location = new System.Drawing.Point(897, 495);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 24);
-            this.label1.TabIndex = 41;
+            this.label1.Size = new System.Drawing.Size(82, 23);
+            this.label1.TabIndex = 25;
             this.label1.Text = "Phí giữ xe";
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(353, 34);
+            this.label2.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label2.Location = new System.Drawing.Point(298, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 24);
+            this.label2.Size = new System.Drawing.Size(170, 23);
             this.label2.TabIndex = 42;
             this.label2.Text = "Biển số xe lúc vào bãi";
             // 
             // BangDK_ra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.money);
-            this.Controls.Add(this.day_Box);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.time_In);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
@@ -251,7 +250,6 @@
             this.Controls.Add(this.videoBox);
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Calibri", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BangDK_ra";
             this.Size = new System.Drawing.Size(1366, 649);
             this.Load += new System.EventHandler(this.BangDK_ra_Load);
@@ -276,7 +274,7 @@
         private System.Windows.Forms.PictureBox videoBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label time_In;
-        private System.Windows.Forms.TextBox day_Box;
+        private System.Windows.Forms.TextBox time;
         private System.Windows.Forms.TextBox money;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
