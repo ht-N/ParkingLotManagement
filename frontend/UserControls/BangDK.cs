@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Threading;
+using System.Globalization;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -18,6 +19,8 @@ namespace ParkingLotManagement.UserControls
         public BangDK()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
         }
 
         FilterInfoCollection filterInfoCollection;
@@ -83,8 +86,8 @@ namespace ParkingLotManagement.UserControls
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Time.Text = DateTime.Now.ToLongTimeString();
-            Date.Text = DateTime.Now.ToLongDateString();
+            Time.Text = DateTime.Now.ToString("T", CultureInfo.CurrentCulture);
+            Date.Text = DateTime.Now.ToString("D", CultureInfo.CurrentCulture);
         }
 
         private void bienSo_TextChanged(object sender, EventArgs e)
@@ -141,10 +144,7 @@ namespace ParkingLotManagement.UserControls
             }
 
             string absoluteDbPath = Path.GetFullPath(db_path);
-
-            // MessageBox.Show($"Absolute path to the database: {absoluteDbPath}", "Database Path", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Console.WriteLine($"Absolute path to the database: {absoluteDbPath}");
-
+            
             try
             {
                 using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
@@ -155,8 +155,7 @@ namespace ParkingLotManagement.UserControls
                                             LOAIPHIEU TEXT, 
                                             BIENSO TEXT, 
                                             LOAIXE TEXT,
-                                            THOIGIAN TEXT,
-                                            NGAY TEXT)";
+                                            THOIGIAN TEXT)";
                     using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
                     {
                         command.ExecuteNonQuery();
@@ -189,8 +188,8 @@ namespace ParkingLotManagement.UserControls
                     string lx = loaiXe.Text;
                     string time = Time.Text;
                     string date = Date.Text;
-
-                    string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN, NGAY) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date)";
+                    string thoigian = $"{time},{date}";
+                    string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Thoigian)";
 
                     using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
                     {
@@ -198,8 +197,7 @@ namespace ParkingLotManagement.UserControls
                         command.Parameters.AddWithValue("@LoaiPhieu", lp);
                         command.Parameters.AddWithValue("@BienSo", bs);
                         command.Parameters.AddWithValue("@LoaiXe", lx);
-                        command.Parameters.AddWithValue("@Time", time);
-                        command.Parameters.AddWithValue("@Date", date);
+                        command.Parameters.AddWithValue("@Thoigian", thoigian);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -211,48 +209,6 @@ namespace ParkingLotManagement.UserControls
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        static string getPlate()
-        {
-            // Use 'python' or 'python3' to use the Python executable from the PATH
-            string pythonCommand = "python"; // or "python3" depending on the environment
-
-            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
-            string modelPath= Path.Combine(projectDirectory, @"backend\model\detect.py");
-            // Specify the path to the Python script
-            string scriptPath = @"..\..\..\backend\model\detect.py";
-
-            // Create a new process to run the Python script
-            ProcessStartInfo psi = new ProcessStartInfo
-            {
-                FileName = pythonCommand,
-                Arguments = modelPath,
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            try
-            {
-                using (Process process = Process.Start(psi))
-                {
-                    // Read the output from the Python script
-                    using (System.IO.StreamReader reader = process.StandardOutput)
-                    {
-                        string result = reader.ReadToEnd();
-                        process.WaitForExit();
-                        return result; // Return the result
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"An error occurred: {e.Message}");
-                return string.Empty; // Return an empty string on error
-            }
-        }
-
 
         // Getting unique ID (not these one in the DB)
         private static ConcurrentDictionary<int, byte> generatedIDs = new ConcurrentDictionary<int, byte>();
@@ -298,6 +254,10 @@ namespace ParkingLotManagement.UserControls
                     string plate = await Program.ProcessImage(imagePath);
                     bienSo.Text = plate;
                     maPhieu.Text = getID().ToString();
+
+                    string new_file_name = Path.Combine(appDataPath, $"{maPhieu.Text}.png");
+                    Console.WriteLine("image path: " + new_file_name);
+                    System.IO.File.Move(imagePath, new_file_name);
                 }
                 catch (Exception ex)
                 {
@@ -309,7 +269,6 @@ namespace ParkingLotManagement.UserControls
                 MessageBox.Show("No image to capture!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -367,7 +326,7 @@ namespace ParkingLotManagement.UserControls
 
         public static async Task<string> ProcessImage(string imagePath)
         {
-            string url = "http://127.0.0.1:5000/detect";
+            string url = " http://127.0.0.1:5000/detect";
 
             using (var content = new MultipartFormDataContent())
             {

@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Data.SQLite;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using AForge.Video;
-using AForge.Video.DirectShow;
-using System.Diagnostics;
-using System.Net.Http;
-using System.Threading.Tasks;
+using System.IO;
+using System.Drawing;   
 
 namespace ParkingLotManagement.UserControls
 {
@@ -16,58 +11,92 @@ namespace ParkingLotManagement.UserControls
         public BangDK_ra()
         {
             InitializeComponent();
-        }
-
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice captureDevice;
-        public async Task SomeMethod()
-        {
-            string imagePath = "path/to/your/image.png";
-            string plate = await Program.ProcessImage(imagePath);
-            Console.WriteLine(plate);
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            maPhieu.TextChanged += maPhieu_TextChanged;
         }
 
         private void BangDK_ra_Load(object sender, EventArgs e)
         {
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void maPhieu_TextChanged(object sender, EventArgs e)
         {
+            FetchData();
         }
 
-        private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        private void FetchData()
         {
-            Bitmap frame = (Bitmap)eventArgs.Frame.Clone();
-            int xOffset = (videoBox.Width - frame.Width) / 2;
+            string appDataPath = "..\\..\\AppData";
+            string dbPath = Path.Combine(appDataPath, "BAIXE.db");
+            string connectionString = $"Data Source={dbPath};Version=3;";
+            string id = maPhieu.Text;
 
-            Bitmap adjustedFrame = new Bitmap(videoBox.Width, videoBox.Height);
-
-            using (Graphics g = Graphics.FromImage(adjustedFrame))
+            // If maPhieu is empty
+            if (string.IsNullOrEmpty(id))
             {
-                g.Clear(Color.Transparent);
-                g.DrawImage(frame, xOffset, 0, frame.Width, frame.Height);
+                ClearTextBoxes();
+                return;
             }
-            videoBox.Image = adjustedFrame;
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT BIENSO, LOAIPHIEU, LOAIXE, THOIGIAN FROM PHIEU WHERE MAPHIEU = @maPhieu";
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@maPhieu", maPhieu.Text);
+
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                DetachEventHandlers();
+                                bienSo.Text = reader["BIENSO"].ToString();
+                                loaiPhieu.Text = reader["LOAIPHIEU"].ToString();
+                                loaiXe.Text = reader["LOAIXE"].ToString();
+                                time.Text = reader["THOIGIAN"].ToString();
+                                AttachEventHandlers();
+                            }
+                            else
+                            {
+                                ClearTextBoxes();
+                            }
+                        }
+                    }
+                    string vehicle_pic_path = Path.Combine(appDataPath, "Vehicle_pictures", $"{id}.png");
+                    imageBox.Image = Image.FromFile(vehicle_pic_path);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
         }
 
-        private void BangDK_Closing(object sender, ControlEventArgs e)
+        // Clear text boxes if changed
+        private void ClearTextBoxes()
         {
-            if (captureDevice.IsRunning)
-                captureDevice.Stop();
+            DetachEventHandlers();
+
+            bienSo.Clear();
+            loaiPhieu.Clear();
+            loaiXe.Clear();
+            time.Clear();
+
+            AttachEventHandlers();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void DetachEventHandlers()
         {
-
+            maPhieu.TextChanged -= maPhieu_TextChanged;
+            // Add other textboxes if necessary
         }
 
+        private void AttachEventHandlers()
+        {
+            maPhieu.TextChanged += maPhieu_TextChanged;
+            // Add other textboxes if necessary
         }
-
-
+    }
 }

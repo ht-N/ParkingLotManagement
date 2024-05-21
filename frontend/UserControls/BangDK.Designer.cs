@@ -126,11 +126,10 @@
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bienSo.Enabled = false;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bienSo.Location = new System.Drawing.Point(987, 183);
+            this.bienSo.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.bienSo.Location = new System.Drawing.Point(987, 187);
             this.bienSo.Name = "bienSo";
-            this.bienSo.ReadOnly = true;
             this.bienSo.Size = new System.Drawing.Size(333, 36);
             this.bienSo.TabIndex = 8;
             this.bienSo.TextChanged += new System.EventHandler(this.bienSo_TextChanged);
@@ -165,7 +164,7 @@
             this.Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Time.AutoSize = true;
             this.Time.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Time.Location = new System.Drawing.Point(921, 541);
+            this.Time.Location = new System.Drawing.Point(1019, 540);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(57, 28);
             this.Time.TabIndex = 14;
@@ -177,7 +176,7 @@
             this.Date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Date.AutoSize = true;
             this.Date.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Date.Location = new System.Drawing.Point(921, 582);
+            this.Date.Location = new System.Drawing.Point(1019, 589);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(56, 28);
             this.Date.TabIndex = 15;
