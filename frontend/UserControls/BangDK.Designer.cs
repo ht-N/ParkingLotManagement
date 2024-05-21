@@ -90,11 +90,9 @@
             // maPhieu
             // 
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.maPhieu.Enabled = false;
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maPhieu.Location = new System.Drawing.Point(987, 80);
             this.maPhieu.Name = "maPhieu";
-            this.maPhieu.ReadOnly = true;
             this.maPhieu.Size = new System.Drawing.Size(333, 36);
             this.maPhieu.TabIndex = 6;
             this.maPhieu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -126,11 +124,9 @@
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bienSo.Enabled = false;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.bienSo.Location = new System.Drawing.Point(987, 183);
             this.bienSo.Name = "bienSo";
-            this.bienSo.ReadOnly = true;
             this.bienSo.Size = new System.Drawing.Size(333, 36);
             this.bienSo.TabIndex = 8;
             this.bienSo.TextChanged += new System.EventHandler(this.bienSo_TextChanged);

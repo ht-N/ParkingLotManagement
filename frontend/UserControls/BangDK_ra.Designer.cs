@@ -135,6 +135,7 @@
             this.maPhieu.Name = "maPhieu";
             this.maPhieu.Size = new System.Drawing.Size(302, 32);
             this.maPhieu.TabIndex = 24;
+            this.maPhieu.TextChanged += new System.EventHandler(this.maPhieu_TextChanged);
             // 
             // timer1
             // 

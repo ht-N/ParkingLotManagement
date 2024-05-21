@@ -8,6 +8,7 @@ using AForge.Video.DirectShow;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -16,58 +17,72 @@ namespace ParkingLotManagement.UserControls
         public BangDK_ra()
         {
             InitializeComponent();
+            maPhieu.TextChanged += maPhieu_TextChanged;
         }
-
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice captureDevice;
-        public async Task SomeMethod()
-        {
-            string imagePath = "path/to/your/image.png";
-            string plate = await Program.ProcessImage(imagePath);
-            Console.WriteLine(plate);
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BangDK_ra_Load(object sender, EventArgs e)
         {
-        }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        }
+        private void maPhieu_TextChanged(object sender, EventArgs e)
         {
+            //FetchData();
         }
 
-        private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            Bitmap frame = (Bitmap)eventArgs.Frame.Clone();
-            int xOffset = (videoBox.Width - frame.Width) / 2;
+        //private void FetchData()
+        //{
 
-            Bitmap adjustedFrame = new Bitmap(videoBox.Width, videoBox.Height);
+        //    string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            using (Graphics g = Graphics.FromImage(adjustedFrame))
-            {
-                g.Clear(Color.Transparent);
-                g.DrawImage(frame, xOffset, 0, frame.Width, frame.Height);
-            }
-            videoBox.Image = adjustedFrame;
-        }
-
-        private void BangDK_Closing(object sender, ControlEventArgs e)
-        {
-            if (captureDevice.IsRunning)
-                captureDevice.Stop();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        }
+        //    string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
+        //    Console.WriteLine($"dbfolderpath: {dbFolderPath}");
+        //    string connectionString = Path.Combine(dbFolderPath, "BAIXE.db");
+        //    string id = maPhieu.Text;
 
 
+        //    // If maPhieu is empty
+        //    if (string.IsNullOrEmpty(id))
+        //    {
+        //        ClearTextBoxes();
+        //        return;
+        //    }
+
+        //    using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+        //    {
+        //        try
+        //        {
+        //            connection.Open();
+        //            string 
+        //            string query = "SELECT BIENSO, LOAIPHIEU, LOAIXE, FROM YourTable WHERE ID = @ID";
+        //            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+        //            {
+        //                command.Parameters.AddWithValue("@ID", id);
+
+        //                using (SQLiteDataReader reader = command.ExecuteReader())
+        //                {
+        //                    if (reader.Read())
+        //                    {
+        //                        txtName.Text = reader["Name"].ToString();
+        //                        txtAddress.Text = reader["Address"].ToString();
+        //                    }
+        //                    else
+        //                    {
+        //                        ClearTextBoxes();
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("An error occurred: " + ex.Message);
+        //        }
+        //    }
+        //}
+
+        //// Clear text boxes if changed
+        //private void ClearTextBoxes()
+        //{
+        //    txtName.Clear();
+        //    txtAddress.Clear();
+        //}
+    }
 }

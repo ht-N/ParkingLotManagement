@@ -153,16 +153,70 @@ namespace ParkingLotManagement.UserControls
                 using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
                 {
                     connection.Open();
+
+                    // Check if the table needs to be created or modified
                     string create_table = @"CREATE TABLE IF NOT EXISTS PHIEU (
-                                            MAPHIEU INTEGER PRIMARY KEY, 
-                                            LOAIPHIEU TEXT, 
-                                            BIENSO TEXT, 
-                                            LOAIXE TEXT,
-                                            THOIGIAN TEXT,
-                                            NGAY TEXT)";
+                                MAPHIEU INTEGER PRIMARY KEY, 
+                                LOAIPHIEU TEXT, 
+                                BIENSO TEXT, 
+                                LOAIXE TEXT,
+                                TIME TEXT,
+                                NGAY TEXT,
+                                THOIGIAN TEXT)";
                     using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
                     {
                         command.ExecuteNonQuery();
+                    }
+
+                    // Check if the old table schema needs updating
+                    string column_check_query = "PRAGMA table_info(PHIEU)";
+                    using (SQLiteCommand command = new SQLiteCommand(column_check_query, connection))
+                    {
+                        bool timeColumnExists = false;
+                        bool ngayColumnExists = false;
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                if (reader["name"].ToString() == "TIME") timeColumnExists = true;
+                                if (reader["name"].ToString() == "NGAY") ngayColumnExists = true;
+                            }
+                        }
+
+                        if (!timeColumnExists || !ngayColumnExists)
+                        {
+                            // If the columns do not exist, recreate the table with the correct schema
+                            string create_temp_table = @"CREATE TABLE IF NOT EXISTS PHIEU_NEW (
+                                             MAPHIEU INTEGER PRIMARY KEY, 
+                                             LOAIPHIEU TEXT, 
+                                             BIENSO TEXT, 
+                                             LOAIXE TEXT,
+                                             TIME TEXT,
+                                             NGAY TEXT,
+                                             THOIGIAN TEXT)";
+                            using (SQLiteCommand createTempCommand = new SQLiteCommand(create_temp_table, connection))
+                            {
+                                createTempCommand.ExecuteNonQuery();
+                            }
+
+                            string copy_data = "INSERT INTO PHIEU_NEW (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE) SELECT MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE FROM PHIEU";
+                            using (SQLiteCommand copyCommand = new SQLiteCommand(copy_data, connection))
+                            {
+                                copyCommand.ExecuteNonQuery();
+                            }
+
+                            string drop_table = "DROP TABLE PHIEU";
+                            using (SQLiteCommand dropCommand = new SQLiteCommand(drop_table, connection))
+                            {
+                                dropCommand.ExecuteNonQuery();
+                            }
+
+                            string rename_table = "ALTER TABLE PHIEU_NEW RENAME TO PHIEU";
+                            using (SQLiteCommand renameCommand = new SQLiteCommand(rename_table, connection))
+                            {
+                                renameCommand.ExecuteNonQuery();
+                            }
+                        }
                     }
                 }
 
@@ -176,7 +230,7 @@ namespace ParkingLotManagement.UserControls
                     MessageBox.Show("Các trường dữ liệu đã có sai sót.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
- 
+
                 if (!int.TryParse(maPhieu.Text, out int maPhieuValue))
                 {
                     MessageBox.Show("Mã phiếu phải là số.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -192,8 +246,9 @@ namespace ParkingLotManagement.UserControls
                     string lx = loaiXe.Text;
                     string time = Time.Text;
                     string date = Date.Text;
+                    string thoigian = $"{time},{date}";
 
-                    string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN, NGAY) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date)";
+                    string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, TIME, NGAY, THOIGIAN) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Time, @Date, @ThoiGian)";
 
                     using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
                     {
@@ -203,6 +258,7 @@ namespace ParkingLotManagement.UserControls
                         command.Parameters.AddWithValue("@LoaiXe", lx);
                         command.Parameters.AddWithValue("@Time", time);
                         command.Parameters.AddWithValue("@Date", date);
+                        command.Parameters.AddWithValue("@ThoiGian", thoigian);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -213,6 +269,8 @@ namespace ParkingLotManagement.UserControls
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
 
         static string getPlate()
