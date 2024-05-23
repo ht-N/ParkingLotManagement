@@ -131,6 +131,7 @@ namespace ParkingLotManagement.UserControls
                         string result = reader.ReadToEnd();
                         process.WaitForExit();
                         Console.WriteLine("result:" + result);
+                        return result;
                     }
                 }
             }
