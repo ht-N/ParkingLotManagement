@@ -42,12 +42,12 @@
             this.imageBox = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.time_In = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.TextBox();
+            this.thoiGianVao = new System.Windows.Forms.TextBox();
             this.money = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.theDate = new System.Windows.Forms.Label();
-            this.theTime = new System.Windows.Forms.Label();
+            this.dateBox = new System.Windows.Forms.Label();
+            this.timeBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,16 +191,16 @@
             this.time_In.TabIndex = 25;
             this.time_In.Text = "Thời gian vào";
             // 
-            // time
+            // thoiGianVao
             // 
-            this.time.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.time.Enabled = false;
-            this.time.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.time.Location = new System.Drawing.Point(1033, 402);
-            this.time.Name = "time";
-            this.time.ReadOnly = true;
-            this.time.Size = new System.Drawing.Size(302, 32);
-            this.time.TabIndex = 39;
+            this.thoiGianVao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.thoiGianVao.Enabled = false;
+            this.thoiGianVao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.thoiGianVao.Location = new System.Drawing.Point(1033, 402);
+            this.thoiGianVao.Name = "thoiGianVao";
+            this.thoiGianVao.ReadOnly = true;
+            this.thoiGianVao.Size = new System.Drawing.Size(302, 32);
+            this.thoiGianVao.TabIndex = 39;
             // 
             // money
             // 
@@ -212,6 +212,7 @@
             this.money.ReadOnly = true;
             this.money.Size = new System.Drawing.Size(302, 32);
             this.money.TabIndex = 40;
+            this.money.TextChanged += new System.EventHandler(this.money_TextChanged);
             // 
             // label1
             // 
@@ -235,37 +236,37 @@
             this.label2.TabIndex = 42;
             this.label2.Text = "Biển số xe lúc vào bãi";
             // 
-            // theDate
+            // dateBox
             // 
-            this.theDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.theDate.AutoSize = true;
-            this.theDate.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.theDate.Location = new System.Drawing.Point(24, 616);
-            this.theDate.Name = "theDate";
-            this.theDate.Size = new System.Drawing.Size(87, 28);
-            this.theDate.TabIndex = 44;
-            this.theDate.Text = "theDate";
+            this.dateBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateBox.AutoSize = true;
+            this.dateBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateBox.Location = new System.Drawing.Point(24, 616);
+            this.dateBox.Name = "dateBox";
+            this.dateBox.Size = new System.Drawing.Size(56, 28);
+            this.dateBox.TabIndex = 44;
+            this.dateBox.Text = "Date";
             // 
-            // theTime
+            // timeBox
             // 
-            this.theTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.theTime.AutoSize = true;
-            this.theTime.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.theTime.Location = new System.Drawing.Point(24, 580);
-            this.theTime.Name = "theTime";
-            this.theTime.Size = new System.Drawing.Size(88, 28);
-            this.theTime.TabIndex = 43;
-            this.theTime.Text = "theTime";
+            this.timeBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timeBox.AutoSize = true;
+            this.timeBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.timeBox.Location = new System.Drawing.Point(24, 580);
+            this.timeBox.Name = "timeBox";
+            this.timeBox.Size = new System.Drawing.Size(57, 28);
+            this.timeBox.TabIndex = 43;
+            this.timeBox.Text = "Time";
             // 
             // BangDK_ra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.theDate);
-            this.Controls.Add(this.theTime);
+            this.Controls.Add(this.dateBox);
+            this.Controls.Add(this.timeBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.money);
-            this.Controls.Add(this.time);
+            this.Controls.Add(this.thoiGianVao);
             this.Controls.Add(this.time_In);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
@@ -303,11 +304,11 @@
         private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label time_In;
-        private System.Windows.Forms.TextBox time;
+        private System.Windows.Forms.TextBox thoiGianVao;
         private System.Windows.Forms.TextBox money;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label theDate;
-        private System.Windows.Forms.Label theTime;
+        private System.Windows.Forms.Label dateBox;
+        private System.Windows.Forms.Label timeBox;
     }
 }

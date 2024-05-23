@@ -5,6 +5,7 @@ using System.IO;
 using System.Drawing;
 using System.Globalization;
 using System.Threading;
+using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace ParkingLotManagement.UserControls
@@ -34,6 +35,10 @@ namespace ParkingLotManagement.UserControls
         }
 
         private void maPhieu_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void money_TextChanged(object sender, EventArgs e)
         {
         }
 
@@ -68,7 +73,8 @@ namespace ParkingLotManagement.UserControls
                                 bienSo.Text = reader["BIENSO"].ToString();
                                 loaiPhieu.Text = reader["LOAIPHIEU"].ToString();
                                 loaiXe.Text = reader["LOAIXE"].ToString();
-                                time.Text = reader["THOIGIAN"].ToString();
+                                thoiGianVao.Text = reader["THOIGIAN"].ToString();
+                                money.Text = get_Phiguixe();
                                 AttachEventHandlers();
                             }
                             else
@@ -94,6 +100,48 @@ namespace ParkingLotManagement.UserControls
             }
         }
 
+        private string get_Phiguixe()
+        {
+            string maphieu = maPhieu.Text; 
+            string time = timeBox.Text;
+            string date = dateBox.Text;
+            string thoi_gian_ra = $"{time},{date}";
+
+            string pythonCommand = "python";
+
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
+            string modelPath= Path.Combine(projectDirectory, @"backend\money.py");
+            Console.WriteLine("money path: " + modelPath);
+            // Create a new process to run the Python script
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = pythonCommand,
+                Arguments = $" {modelPath} \"{maphieu}\" \"{thoi_gian_ra}\"",
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            try
+            {
+                using (Process process = Process.Start(psi))
+                {
+                    using (System.IO.StreamReader reader = process.StandardOutput)
+                    {
+                        string result = reader.ReadToEnd();
+                        process.WaitForExit();
+                        Console.WriteLine("result:" + result);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"An error occurred: {e.Message}");
+                return string.Empty;
+            }
+        }
+
         private void ClearTextBoxes()
         {
             DetachEventHandlers();
@@ -101,8 +149,7 @@ namespace ParkingLotManagement.UserControls
             bienSo.Clear();
             loaiPhieu.Clear();
             loaiXe.Clear();
-            time.Clear();
-
+            thoiGianVao.Clear();
             AttachEventHandlers();
         }
 
@@ -131,10 +178,15 @@ namespace ParkingLotManagement.UserControls
             // Handle button1 click event
         }
 
+        // private void timer1_Tick(object sender, EventArgs e)
+        // {
+        //     timeBox.Text = DateTime.Now.ToString("T", CultureInfo.CurrentCulture);
+        //     dateBox.Text = DateTime.Now.ToString("D", CultureInfo.CurrentCulture);
+        // }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            theTime.Text = DateTime.Now.ToString("T", CultureInfo.CurrentCulture);
-            theDate.Text = DateTime.Now.ToString("D", CultureInfo.CurrentCulture);
+            timeBox.Text = DateTime.Now.ToString("HH:mm:ss.fff", CultureInfo.CurrentCulture);
+            dateBox.Text = DateTime.Now.ToString("yyyy-MM-dd", CultureInfo.CurrentCulture);
         }
     }
 }
