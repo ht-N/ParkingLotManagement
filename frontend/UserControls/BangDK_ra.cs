@@ -15,8 +15,8 @@ namespace ParkingLotManagement.UserControls
         public BangDK_ra()
         {
             InitializeComponent();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("vi-VN");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             maPhieu.KeyDown += maPhieu_KeyDown;
         }
 
@@ -185,8 +185,8 @@ namespace ParkingLotManagement.UserControls
         // }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timeBox.Text = DateTime.Now.ToString("HH:mm:ss.fff", CultureInfo.CurrentCulture);
-            dateBox.Text = DateTime.Now.ToString("yyyy-MM-dd", CultureInfo.CurrentCulture);
+            timeBox.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            dateBox.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Globalization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -19,8 +20,8 @@ namespace ParkingLotManagement.UserControls
         public BangDK()
         {
             InitializeComponent();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("vi-VN");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
         }
 
         FilterInfoCollection filterInfoCollection;
@@ -86,8 +87,8 @@ namespace ParkingLotManagement.UserControls
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Time.Text = DateTime.Now.ToString("T", CultureInfo.CurrentCulture);
-            Date.Text = DateTime.Now.ToString("D", CultureInfo.CurrentCulture);
+            Time.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            Date.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void bienSo_TextChanged(object sender, EventArgs e)
