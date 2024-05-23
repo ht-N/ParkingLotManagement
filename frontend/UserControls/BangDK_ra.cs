@@ -113,7 +113,6 @@ namespace ParkingLotManagement.UserControls
             string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
             string modelPath= Path.Combine(projectDirectory, @"backend\money.py");
             Console.WriteLine("money path: " + modelPath);
-            // Create a new process to run the Python script
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = pythonCommand,
