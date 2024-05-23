@@ -2,7 +2,7 @@
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing;   
+using System.Drawing;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -11,16 +11,24 @@ namespace ParkingLotManagement.UserControls
         public BangDK_ra()
         {
             InitializeComponent();
-            maPhieu.TextChanged += maPhieu_TextChanged;
+            maPhieu.KeyDown += maPhieu_KeyDown;
         }
 
         private void BangDK_ra_Load(object sender, EventArgs e)
         {
         }
 
+        private void maPhieu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                FetchData();
+            }
+        }
+
         private void maPhieu_TextChanged(object sender, EventArgs e)
         {
-            FetchData();
         }
 
         private void FetchData()
@@ -30,7 +38,6 @@ namespace ParkingLotManagement.UserControls
             string connectionString = $"Data Source={dbPath};Version=3;";
             string id = maPhieu.Text;
 
-            // If maPhieu is empty
             if (string.IsNullOrEmpty(id))
             {
                 ClearTextBoxes();
@@ -65,7 +72,14 @@ namespace ParkingLotManagement.UserControls
                         }
                     }
                     string vehicle_pic_path = Path.Combine(appDataPath, "Vehicle_pictures", $"{id}.png");
-                    imageBox.Image = Image.FromFile(vehicle_pic_path);
+                    if (File.Exists(vehicle_pic_path))
+                    {
+                        imageBox.Image = Image.FromFile(vehicle_pic_path);
+                    }
+                    else
+                    {
+                        imageBox.Image = null;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -74,7 +88,6 @@ namespace ParkingLotManagement.UserControls
             }
         }
 
-        // Clear text boxes if changed
         private void ClearTextBoxes()
         {
             DetachEventHandlers();
@@ -89,14 +102,27 @@ namespace ParkingLotManagement.UserControls
 
         private void DetachEventHandlers()
         {
-            maPhieu.TextChanged -= maPhieu_TextChanged;
-            // Add other textboxes if necessary
+            // Detach event handlers if necessary
         }
 
         private void AttachEventHandlers()
         {
-            maPhieu.TextChanged += maPhieu_TextChanged;
-            // Add other textboxes if necessary
+            // Attach event handlers if necessary
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Handle button2 click event
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            // Handle label5 click event
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Handle button1 click event
         }
     }
 }
