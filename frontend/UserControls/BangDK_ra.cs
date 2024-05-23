@@ -3,6 +3,9 @@ using System.Data.SQLite;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using System.Globalization;
+using System.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -11,11 +14,14 @@ namespace ParkingLotManagement.UserControls
         public BangDK_ra()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
             maPhieu.KeyDown += maPhieu_KeyDown;
         }
 
         private void BangDK_ra_Load(object sender, EventArgs e)
         {
+            timer1.Start();
         }
 
         private void maPhieu_KeyDown(object sender, KeyEventArgs e)
@@ -123,6 +129,12 @@ namespace ParkingLotManagement.UserControls
         private void button1_Click(object sender, EventArgs e)
         {
             // Handle button1 click event
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            theTime.Text = DateTime.Now.ToString("T", CultureInfo.CurrentCulture);
+            theDate.Text = DateTime.Now.ToString("D", CultureInfo.CurrentCulture);
         }
     }
 }

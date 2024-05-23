@@ -120,7 +120,7 @@
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(87, 45);
             this.guna2Button4.TabIndex = 3;
-            this.guna2Button4.Text = "Xe ra";
+            this.guna2Button4.Text = "XE RA";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click_1);
             // 
             // nightControlBox1
@@ -218,7 +218,7 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(102, 45);
             this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Xe vào";
+            this.guna2Button1.Text = "XE VÀO";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // panelContainer

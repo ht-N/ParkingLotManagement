@@ -46,6 +46,8 @@
             this.money = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.theDate = new System.Windows.Forms.Label();
+            this.theTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,6 +144,7 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label4
             // 
@@ -158,7 +161,7 @@
             // 
             this.imageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox.Location = new System.Drawing.Point(29, 71);
+            this.imageBox.Location = new System.Drawing.Point(29, 67);
             this.imageBox.Name = "imageBox";
             this.imageBox.Size = new System.Drawing.Size(832, 497);
             this.imageBox.TabIndex = 21;
@@ -226,15 +229,39 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 13.8F);
-            this.label2.Location = new System.Drawing.Point(298, 37);
+            this.label2.Location = new System.Drawing.Point(317, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 28);
             this.label2.TabIndex = 42;
             this.label2.Text = "Biển số xe lúc vào bãi";
             // 
+            // theDate
+            // 
+            this.theDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.theDate.AutoSize = true;
+            this.theDate.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.theDate.Location = new System.Drawing.Point(24, 616);
+            this.theDate.Name = "theDate";
+            this.theDate.Size = new System.Drawing.Size(87, 28);
+            this.theDate.TabIndex = 44;
+            this.theDate.Text = "theDate";
+            // 
+            // theTime
+            // 
+            this.theTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.theTime.AutoSize = true;
+            this.theTime.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.theTime.Location = new System.Drawing.Point(24, 580);
+            this.theTime.Name = "theTime";
+            this.theTime.Size = new System.Drawing.Size(88, 28);
+            this.theTime.TabIndex = 43;
+            this.theTime.Text = "theTime";
+            // 
             // BangDK_ra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.theDate);
+            this.Controls.Add(this.theTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.money);
@@ -280,5 +307,7 @@
         private System.Windows.Forms.TextBox money;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label theDate;
+        private System.Windows.Forms.Label theTime;
     }
 }
