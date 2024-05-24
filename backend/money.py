@@ -1,7 +1,6 @@
 import sqlite3
 import sys
 from datetime import datetime
-from convert import convert_vndatetime
 from time_to_money import to_money
 
 def fetch_record(maphieu, thoi_gian_ra):
@@ -13,9 +12,10 @@ def fetch_record(maphieu, thoi_gian_ra):
         query = f"SELECT * FROM PHIEU WHERE MAPHIEU = {maphieu};"
         cursor.execute(query)
         record = cursor.fetchone()
-        thoi_gian_vao = convert_vndatetime(record[4])
-        thoi_gian_ra = convert_vndatetime(thoi_gian_ra)
-        print(thoi_gian_ra)
+        format_dt = "%d-%m-%Y,%H:%M:%S"
+        thoi_gian_vao = datetime.strptime(record[4], format_dt)
+        thoi_gian_ra = datetime.strptime(thoi_gian_ra, format_dt)
+        # print(thoi_gian_ra)
         time_park = thoi_gian_ra - thoi_gian_vao
         loaiphieu = record[1]
         loaixe = record[3]
