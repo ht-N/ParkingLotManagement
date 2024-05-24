@@ -5,93 +5,63 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SQLite;
 namespace ParkingLotManagement.UserControls
 {
     public partial class ChoTrong : UserControl
     {
-        private Random random = new Random();
         private Dictionary<string, Panel> maphieuToPanelMap = new Dictionary<string, Panel>();
+        List<int> panelList = new List<int>();
+        List<int> maPhieuList = new List<int>();
+        List<string> loaiPhieuList = new List<string>();
+        List<string> loaiXeList = new List<string>();
+
         public ChoTrong()
         {
             InitializeComponent();
-            CheckDatabaseAndUpdatePanels();
-        }
-        private void CheckDatabaseAndUpdatePanels()
-        {
-            var maphieuLoaixeList = GetMaphieuLoaixeList();
-            UpdatePanels(maphieuLoaixeList);
+            UpdatePanels();
         }
 
-        private List<(string Maphieu, string Loaixe)> GetMaphieuLoaixeList()
+        private void UpdatePanels()
         {
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
-            string scriptPath= Path.Combine(projectDirectory, @"backend\parkinglot.py");
-            ProcessStartInfo psi = new ProcessStartInfo
-            {
-                FileName = "python",
-                Arguments = scriptPath,
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
+            string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
+            Console.WriteLine($"dbfolderpath: {dbFolderPath}");
+            string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
+            string absoluteDbPath = Path.GetFullPath(db_path);
 
-            List<(string Maphieu, string Loaixe)> maphieuLoaixeList = new List<(string Maphieu, string Loaixe)>();
-            using (Process process = Process.Start(psi))
+            //Select from CHOTRONG to get panel list
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
             {
-                process.WaitForExit();
-                string output = process.StandardOutput.ReadToEnd().Trim();
-                if (!string.IsNullOrEmpty(output))
+                connection.Open();
+                string query = "SELECT * FROM CHOTRONG;";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    foreach (var line in output.Split(new[] { Environment.NewLine }, StringSplitOptions.None))
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
-                        var parts = line.Split(',');
-                        if (parts.Length == 2)
+                        while (reader.Read())
                         {
-                            maphieuLoaixeList.Add((parts[0], parts[1]));
+                            maPhieuList.Add(int.Parse(reader["MAPHIEU"].ToString()));
+                            loaiPhieuList.Add(reader["LOAIPHIEU"].ToString());
+                            loaiXeList.Add(reader["LOAIXE"].ToString());
+                            panelList.Add(int.Parse(reader["CHODAU"].ToString()));
                         }
                     }
                 }
             }
-            return maphieuLoaixeList;
-        }
-
-        private void UpdatePanels(List<(string Maphieu, string Loaixe)> maphieuLoaixeList)
-        {
-            // Reset màu tất cả các panel
-            foreach (var panel in this.Controls.OfType<Panel>())
+            foreach (var num in panelList)
             {
-                panel.BackColor = SystemColors.Control; // Màu mặc định của Panel
-            }
+                string panelName = "panel" + num;
+                Control[] foundControls = Controls.Find(panelName, true);
 
-            maphieuToPanelMap.Clear();
-
-            // Lấy danh sách các panel cho xe máy và xe đạp (panel0 đến panel150)
-            var bikeAndMotorbikePanels = this.Controls.OfType<Panel>().Where(p => p.Name.StartsWith("panel") && int.Parse(p.Name.Replace("panel", "")) <= 150).ToList();
-
-            // Lấy danh sách các panel cho ô tô (panel151 đến panel200)
-            var carPanels = this.Controls.OfType<Panel>().Where(p => p.Name.StartsWith("panel") && int.Parse(p.Name.Replace("panel", "")) > 150).ToList();
-
-            // Chọn các panel cho xe đạp và xe máy
-            foreach (var (maphieu, loaixe) in maphieuLoaixeList.Where(x => x.Loaixe == "Xe máy"))
-            {
-                if (bikeAndMotorbikePanels.Count == 0) break;
-                int index = random.Next(bikeAndMotorbikePanels.Count);
-                var panel = bikeAndMotorbikePanels[index];
-                panel.BackColor = loaixe == "Xe đạp" ? Color.Blue : Color.Green;
-                maphieuToPanelMap[maphieu] = panel;
-                bikeAndMotorbikePanels.RemoveAt(index); // Đảm bảo không tô màu lại panel đã chọn
-            }
-
-            // Chọn các panel cho ô tô
-            foreach (var (maphieu, loaixe) in maphieuLoaixeList.Where(x => x.Loaixe == "Ô tô"))
-            {
-                if (carPanels.Count == 0) break;
-                int index = random.Next(carPanels.Count);
-                var panel = carPanels[index];
-                panel.BackColor = Color.Green;
-                maphieuToPanelMap[maphieu] = panel;
-                carPanels.RemoveAt(index); // Đảm bảo không tô màu lại panel đã chọn
+                if (foundControls.Length > 0)
+                {
+                    Panel panel = foundControls[0] as Panel;
+                    if (panel != null)
+                    {
+                        panel.BackColor = Color.Green;
+                    }
+                }
             }
         }
     }

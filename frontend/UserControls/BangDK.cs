@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Threading;
 using System.Globalization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
@@ -148,6 +149,15 @@ namespace ParkingLotManagement.UserControls
             
             try
             {
+                int mp = int.Parse(maPhieu.Text);
+                string lp = loaiPhieu.Text;
+                string bs = bienSo.Text;
+                string lx = loaiXe.Text;
+                string time = Time.Text;
+                string date = Date.Text;
+                string thoigian = $"{time},{date}";
+                List<int> panelList = new List<int>();
+                //Create PHIEU table
                 using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
                 {
                     connection.Open();
@@ -163,8 +173,7 @@ namespace ParkingLotManagement.UserControls
                     }
                 }
 
-                if (string.IsNullOrWhiteSpace(maPhieu.Text) ||
-                    string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
+                if (string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
                     string.IsNullOrWhiteSpace(bienSo.Text) ||
                     string.IsNullOrWhiteSpace(loaiXe.Text) ||
                     string.IsNullOrWhiteSpace(Time.Text) ||
@@ -179,17 +188,26 @@ namespace ParkingLotManagement.UserControls
                     MessageBox.Show("Mã phiếu phải là số.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+                
+                //Create CHOTRONG table
                 using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
                 {
                     connection.Open();
-                    int mp = int.Parse(maPhieu.Text);
-                    string lp = loaiPhieu.Text;
-                    string bs = bienSo.Text;
-                    string lx = loaiXe.Text;
-                    string time = Time.Text;
-                    string date = Date.Text;
-                    string thoigian = $"{time},{date}";
+                    string create_table = @"CREATE TABLE IF NOT EXISTS CHOTRONG (
+                                            MAPHIEU INTEGER PRIMARY KEY, 
+                                            LOAIPHIEU TEXT, 
+                                            LOAIXE TEXT,
+                                            CHODAU INTEGER)";
+                    using (SQLiteCommand command = new SQLiteCommand(create_table, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                }
+                
+                //Insert into PHIEU
+                using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+                {
+                    connection.Open();
                     string insert_query = "INSERT INTO PHIEU (MAPHIEU, LOAIPHIEU, BIENSO, LOAIXE, THOIGIAN) VALUES (@MaPhieu, @LoaiPhieu, @BienSo, @LoaiXe, @Thoigian)";
 
                     using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
@@ -201,6 +219,42 @@ namespace ParkingLotManagement.UserControls
                         command.Parameters.AddWithValue("@Thoigian", thoigian);
                         command.ExecuteNonQuery();
                     }
+                }
+
+                //Select from CHOTRONG to get panel list
+                using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+                {
+                    connection.Open();
+                    string query = "SELECT CHODAU FROM CHOTRONG;";
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Assuming CHODAU is of type string
+                                panelList.Add(int.Parse(reader["CHODAU"].ToString()));
+                            }
+                        }
+                    }
+                }
+                
+
+                //Insert into CHOTRONG
+                using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+                {
+                    connection.Open();
+                    string insert_query = "INSERT INTO CHOTRONG (MAPHIEU, LOAIPHIEU, LOAIXE, CHODAU) VALUES (@MaPhieu, @LoaiPhieu, @LoaiXe, @ChoDau)";
+                    int chodau = getRandomPanel(lx, panelList);
+                    using (SQLiteCommand command = new SQLiteCommand(insert_query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaPhieu", mp);
+                        command.Parameters.AddWithValue("@LoaiPhieu", lp);
+                        command.Parameters.AddWithValue("@LoaiXe", lx);
+                        command.Parameters.AddWithValue("@ChoDau", chodau);
+                        command.ExecuteNonQuery();
+                    }
+                    panelList.Add(chodau);
                 }
 
                 MessageBox.Show("Xe đã vào bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -223,6 +277,28 @@ namespace ParkingLotManagement.UserControls
             } while (!generatedIDs.TryAdd(newID, 0));
 
             return newID;
+        }
+
+        static int getRandomPanel(string loaiXe, List<int> panelList)
+        {
+            int panel;
+            if(loaiXe == "Xe máy")
+            {
+                do
+                {
+                    panel = random.Value.Next(1, 151);  
+                }
+                while(panelList.Contains(panel));
+            }
+            else
+            {
+                do 
+                {
+                    panel = random.Value.Next(151, 201);
+                }
+                while(panelList.Contains(panel));
+            }
+            return panel;
         }
 
         private async void Capture_Click(object sender, EventArgs e)
