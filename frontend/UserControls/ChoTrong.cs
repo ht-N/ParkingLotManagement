@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.IO;
 namespace ParkingLotManagement.UserControls
 {
     public partial class ChoTrong : UserControl
@@ -24,10 +24,13 @@ namespace ParkingLotManagement.UserControls
 
         private List<(string Maphieu, string Loaixe)> GetMaphieuLoaixeList()
         {
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
+            string scriptPath= Path.Combine(projectDirectory, @"backend\parkinglot.py");
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = "python",
-                Arguments = "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\backend\\parkinglot.py\"",
+                Arguments = scriptPath,
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
