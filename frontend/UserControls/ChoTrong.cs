@@ -12,10 +12,6 @@ namespace ParkingLotManagement.UserControls
     {
         private Dictionary<string, Panel> maphieuToPanelMap = new Dictionary<string, Panel>();
         List<int> panelList = new List<int>();
-        List<int> maPhieuList = new List<int>();
-        List<string> loaiPhieuList = new List<string>();
-        List<string> loaiXeList = new List<string>();
-
         public ChoTrong()
         {
             InitializeComponent();
@@ -41,9 +37,6 @@ namespace ParkingLotManagement.UserControls
                     {
                         while (reader.Read())
                         {
-                            maPhieuList.Add(int.Parse(reader["MAPHIEU"].ToString()));
-                            loaiPhieuList.Add(reader["LOAIPHIEU"].ToString());
-                            loaiXeList.Add(reader["LOAIXE"].ToString());
                             panelList.Add(int.Parse(reader["CHODAU"].ToString()));
                         }
                     }
