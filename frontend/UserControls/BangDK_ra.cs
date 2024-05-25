@@ -138,6 +138,7 @@ namespace ParkingLotManagement.UserControls
             loaiPhieu.Clear();
             loaiXe.Clear();
             thoiGianVao.Clear();
+            money.Clear();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -148,7 +149,48 @@ namespace ParkingLotManagement.UserControls
 
         private void xuatButton_Click(object sender, EventArgs e)
         {
-            
+            string appDataPath = "..\\..\\AppData";
+            string dbPath = Path.Combine(appDataPath, "BAIXE.db");
+            string connectionString = $"Data Source={dbPath};Version=3;";
+            string id = maPhieu.Text;
+
+            if (string.IsNullOrEmpty(id))
+            {
+                ClearTextBoxes();
+                return;
+            }
+
+            if (imageBox.Image != null)
+            {
+                imageBox.Image.Dispose();
+                imageBox.Image = null;
+            }
+            ClearTextBoxes();
+            maPhieu.Clear();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "DELETE FROM PHIEU WHERE MAPHIEU = @maPhieu;";
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@maPhieu", id);
+                        command.ExecuteNonQuery();
+                    }
+
+                    string vehicle_pic_path = Path.Combine(appDataPath, "Vehicle_pictures", $"{id}.png");
+                    if (System.IO.File.Exists(vehicle_pic_path))
+                    {
+                        System.IO.File.Delete(vehicle_pic_path);
+                    }
+                    MessageBox.Show("Xe ra khỏi bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
         }
     }
 }

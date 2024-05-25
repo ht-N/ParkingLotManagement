@@ -29,7 +29,7 @@ namespace ParkingLotManagement.UserControls
             using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
             {
                 connection.Open();
-                string query = "SELECT * FROM CHOTRONG;";
+                string query = "SELECT CHODAU FROM PHIEU;";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())

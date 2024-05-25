@@ -42,7 +42,7 @@
             this.Time = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.Capture_picture = new System.Windows.Forms.Button();
             this.loaiPhieu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.loaiXe = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -65,7 +65,7 @@
             this.cboDevice.FormattingEnabled = true;
             this.cboDevice.Location = new System.Drawing.Point(240, 537);
             this.cboDevice.Name = "cboDevice";
-            this.cboDevice.Size = new System.Drawing.Size(611, 27);
+            this.cboDevice.Size = new System.Drawing.Size(611, 32);
             this.cboDevice.TabIndex = 3;
             // 
             // label2
@@ -75,7 +75,7 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(15, 540);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 19);
+            this.label2.Size = new System.Drawing.Size(219, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Camera đang được chọn:";
             // 
@@ -92,7 +92,7 @@
             this.maPhieu.Location = new System.Drawing.Point(987, 80);
             this.maPhieu.Name = "maPhieu";
             this.maPhieu.ReadOnly = true;
-            this.maPhieu.Size = new System.Drawing.Size(333, 30);
+            this.maPhieu.Size = new System.Drawing.Size(333, 36);
             this.maPhieu.TabIndex = 6;
             // 
             // label3
@@ -102,7 +102,7 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(882, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 23);
+            this.label3.Size = new System.Drawing.Size(100, 28);
             this.label3.TabIndex = 7;
             this.label3.Text = "Mã phiếu";
             // 
@@ -113,7 +113,7 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(882, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 23);
+            this.label4.Size = new System.Drawing.Size(79, 28);
             this.label4.TabIndex = 9;
             this.label4.Text = "Biển số";
             // 
@@ -124,7 +124,7 @@
             this.bienSo.ImeMode = System.Windows.Forms.ImeMode.On;
             this.bienSo.Location = new System.Drawing.Point(987, 187);
             this.bienSo.Name = "bienSo";
-            this.bienSo.Size = new System.Drawing.Size(333, 30);
+            this.bienSo.Size = new System.Drawing.Size(333, 36);
             this.bienSo.TabIndex = 8;
             // 
             // label5
@@ -135,7 +135,7 @@
             this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(882, 299);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 23);
+            this.label5.Size = new System.Drawing.Size(107, 28);
             this.label5.TabIndex = 11;
             this.label5.Text = "Loại phiếu";
             // 
@@ -146,7 +146,7 @@
             this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(882, 403);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 23);
+            this.label6.Size = new System.Drawing.Size(75, 28);
             this.label6.TabIndex = 13;
             this.label6.Text = "Loại xe";
             // 
@@ -157,7 +157,7 @@
             this.Time.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Time.Location = new System.Drawing.Point(1019, 540);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(47, 23);
+            this.Time.Size = new System.Drawing.Size(57, 28);
             this.Time.TabIndex = 14;
             this.Time.Text = "Time";
             // 
@@ -168,7 +168,7 @@
             this.Date.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Date.Location = new System.Drawing.Point(1019, 589);
             this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(46, 23);
+            this.Date.Size = new System.Drawing.Size(56, 28);
             this.Date.TabIndex = 15;
             this.Date.Text = "Date";
             // 
@@ -181,21 +181,21 @@
             this.label9.ForeColor = System.Drawing.Color.Gainsboro;
             this.label9.Location = new System.Drawing.Point(531, 307);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(255, 35);
+            this.label9.Size = new System.Drawing.Size(304, 44);
             this.label9.TabIndex = 16;
             this.label9.Text = "BẢNG ĐIỀU KHIỂN";
             // 
-            // button2
+            // saveButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(882, 480);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(438, 35);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.saveButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.saveButton.Location = new System.Drawing.Point(882, 480);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(438, 35);
+            this.saveButton.TabIndex = 18;
+            this.saveButton.Text = "Lưu";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // Capture_picture
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.loaiXe);
             this.Controls.Add(this.loaiPhieu);
             this.Controls.Add(this.Capture_picture);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Time);
             this.Controls.Add(this.label6);
@@ -292,7 +292,7 @@
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button Capture_picture;
         private Guna.UI2.WinForms.Guna2ComboBox loaiPhieu;
         private Guna.UI2.WinForms.Guna2ComboBox loaiXe;
