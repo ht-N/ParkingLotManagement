@@ -58,7 +58,6 @@
             this.videoBox.Size = new System.Drawing.Size(832, 497);
             this.videoBox.TabIndex = 2;
             this.videoBox.TabStop = false;
-            this.videoBox.Click += new System.EventHandler(this.videoBox_Click);
             // 
             // cboDevice
             // 
@@ -68,7 +67,6 @@
             this.cboDevice.Name = "cboDevice";
             this.cboDevice.Size = new System.Drawing.Size(611, 27);
             this.cboDevice.TabIndex = 3;
-            this.cboDevice.SelectedIndexChanged += new System.EventHandler(this.cboDevice_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -80,7 +78,6 @@
             this.label2.Size = new System.Drawing.Size(174, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Camera đang được chọn:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // timer1
             // 
@@ -97,7 +94,6 @@
             this.maPhieu.ReadOnly = true;
             this.maPhieu.Size = new System.Drawing.Size(333, 30);
             this.maPhieu.TabIndex = 6;
-            this.maPhieu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -109,7 +105,6 @@
             this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "Mã phiếu";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -121,7 +116,6 @@
             this.label4.Size = new System.Drawing.Size(65, 23);
             this.label4.TabIndex = 9;
             this.label4.Text = "Biển số";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // bienSo
             // 
@@ -132,7 +126,6 @@
             this.bienSo.Name = "bienSo";
             this.bienSo.Size = new System.Drawing.Size(333, 30);
             this.bienSo.TabIndex = 8;
-            this.bienSo.TextChanged += new System.EventHandler(this.bienSo_TextChanged);
             // 
             // label5
             // 
@@ -145,7 +138,6 @@
             this.label5.Size = new System.Drawing.Size(88, 23);
             this.label5.TabIndex = 11;
             this.label5.Text = "Loại phiếu";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -157,7 +149,6 @@
             this.label6.Size = new System.Drawing.Size(61, 23);
             this.label6.TabIndex = 13;
             this.label6.Text = "Loại xe";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Time
             // 
@@ -169,7 +160,6 @@
             this.Time.Size = new System.Drawing.Size(47, 23);
             this.Time.TabIndex = 14;
             this.Time.Text = "Time";
-            this.Time.Click += new System.EventHandler(this.label7_Click);
             // 
             // Date
             // 
@@ -181,7 +171,6 @@
             this.Date.Size = new System.Drawing.Size(46, 23);
             this.Date.TabIndex = 15;
             this.Date.Text = "Date";
-            this.Date.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -195,7 +184,6 @@
             this.label9.Size = new System.Drawing.Size(255, 35);
             this.label9.TabIndex = 16;
             this.label9.Text = "BẢNG ĐIỀU KHIỂN";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // button2
             // 
@@ -239,7 +227,6 @@
             this.loaiPhieu.Name = "loaiPhieu";
             this.loaiPhieu.Size = new System.Drawing.Size(333, 36);
             this.loaiPhieu.TabIndex = 21;
-            this.loaiPhieu.SelectedIndexChanged += new System.EventHandler(this.loaiPhieu_SelectedIndexChanged);
             // 
             // loaiXe
             // 
@@ -260,7 +247,6 @@
             this.loaiXe.Name = "loaiXe";
             this.loaiXe.Size = new System.Drawing.Size(333, 36);
             this.loaiXe.TabIndex = 22;
-            this.loaiXe.SelectedIndexChanged += new System.EventHandler(this.loaiXe_SelectedIndexChanged);
             // 
             // BangDK
             // 

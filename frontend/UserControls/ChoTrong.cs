@@ -10,7 +10,6 @@ namespace ParkingLotManagement.UserControls
 {
     public partial class ChoTrong : UserControl
     {
-        private Dictionary<string, Panel> maphieuToPanelMap = new Dictionary<string, Panel>();
         List<int> panelList = new List<int>();
         public ChoTrong()
         {

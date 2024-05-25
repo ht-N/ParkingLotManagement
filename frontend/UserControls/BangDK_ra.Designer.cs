@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button2 = new System.Windows.Forms.Button();
+            this.xuatButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.loaiXe = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,17 +51,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // xuatButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(908, 559);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(427, 41);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Xuất";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.xuatButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xuatButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.xuatButton.Location = new System.Drawing.Point(908, 559);
+            this.xuatButton.Name = "xuatButton";
+            this.xuatButton.Size = new System.Drawing.Size(427, 41);
+            this.xuatButton.TabIndex = 35;
+            this.xuatButton.Text = "Xuất";
+            this.xuatButton.UseVisualStyleBackColor = true;
+            this.xuatButton.Click += new System.EventHandler(this.xuatButton_Click);
             // 
             // label6
             // 
@@ -96,7 +96,6 @@
             this.label5.Size = new System.Drawing.Size(107, 28);
             this.label5.TabIndex = 25;
             this.label5.Text = "Loại phiếu";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // loaiPhieu
             // 
@@ -139,7 +138,6 @@
             this.maPhieu.Name = "maPhieu";
             this.maPhieu.Size = new System.Drawing.Size(302, 32);
             this.maPhieu.TabIndex = 24;
-            this.maPhieu.TextChanged += new System.EventHandler(this.maPhieu_TextChanged);
             // 
             // timer1
             // 
@@ -212,7 +210,6 @@
             this.money.ReadOnly = true;
             this.money.Size = new System.Drawing.Size(302, 32);
             this.money.TabIndex = 40;
-            this.money.TextChanged += new System.EventHandler(this.money_TextChanged);
             // 
             // label1
             // 
@@ -268,7 +265,7 @@
             this.Controls.Add(this.money);
             this.Controls.Add(this.thoiGianVao);
             this.Controls.Add(this.time_In);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.xuatButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.loaiXe);
             this.Controls.Add(this.label5);
@@ -291,7 +288,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button xuatButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox loaiXe;
         private System.Windows.Forms.Label label5;

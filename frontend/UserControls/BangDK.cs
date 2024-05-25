@@ -18,27 +18,22 @@ namespace ParkingLotManagement.UserControls
 {
     public partial class BangDK : UserControl
     {
+        FilterInfoCollection filterInfoCollection;
+        VideoCaptureDevice captureDevice;
+        
         public BangDK()
         {
             InitializeComponent();
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
         }
-
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice captureDevice;
-        public async Task SomeMethod()
-        {
-            string imagePath = "path/to/your/image.png";
-            string plate = await Program.ProcessImage(imagePath);
-            Console.WriteLine(plate);
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
+        // public async Task SomeMethod()
+        // {
+        //     string imagePath = "path/to/your/image.png";
+        //     string plate = await Program.ProcessImage(imagePath);
+        //     Console.WriteLine(plate);
+        // }
 
         private void BangDK_Load(object sender, EventArgs e)
         {
@@ -54,15 +49,6 @@ namespace ParkingLotManagement.UserControls
             captureDevice.NewFrame += CaptureDevice_NewFrame;
             captureDevice.Start();
             timer1.Start();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
         }
 
         private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -90,46 +76,6 @@ namespace ParkingLotManagement.UserControls
         {
             Time.Text = DateTime.Now.ToString("dd-MM-yyyy");
             Date.Text = DateTime.Now.ToString("HH:mm:ss");
-        }
-
-        private void bienSo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -345,41 +291,6 @@ namespace ParkingLotManagement.UserControls
             {
                 MessageBox.Show("No image to capture!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboDevice_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loaiPhieu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loaiXe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void videoBox_Click(object sender, EventArgs e)
-        {
-
         }
     }
 

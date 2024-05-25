@@ -34,14 +34,6 @@ namespace ParkingLotManagement.UserControls
             }
         }
 
-        private void maPhieu_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void money_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void FetchData()
         {
             string appDataPath = "..\\..\\AppData";
@@ -69,13 +61,11 @@ namespace ParkingLotManagement.UserControls
                         {
                             if (reader.Read())
                             {
-                                DetachEventHandlers();
                                 bienSo.Text = reader["BIENSO"].ToString();
                                 loaiPhieu.Text = reader["LOAIPHIEU"].ToString();
                                 loaiXe.Text = reader["LOAIXE"].ToString();
                                 thoiGianVao.Text = reader["THOIGIAN"].ToString();
                                 money.Text = get_Phiguixe();
-                                AttachEventHandlers();
                             }
                             else
                             {
@@ -144,49 +134,21 @@ namespace ParkingLotManagement.UserControls
 
         private void ClearTextBoxes()
         {
-            DetachEventHandlers();
-
             bienSo.Clear();
             loaiPhieu.Clear();
             loaiXe.Clear();
             thoiGianVao.Clear();
-            AttachEventHandlers();
         }
 
-        private void DetachEventHandlers()
-        {
-            // Detach event handlers if necessary
-        }
-
-        private void AttachEventHandlers()
-        {
-            // Attach event handlers if necessary
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            // Handle button2 click event
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            // Handle label5 click event
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Handle button1 click event
-        }
-
-        // private void timer1_Tick(object sender, EventArgs e)
-        // {
-        //     timeBox.Text = DateTime.Now.ToString("T", CultureInfo.CurrentCulture);
-        //     dateBox.Text = DateTime.Now.ToString("D", CultureInfo.CurrentCulture);
-        // }
         private void timer1_Tick(object sender, EventArgs e)
         {
             timeBox.Text = DateTime.Now.ToString("dd-MM-yyyy");
             dateBox.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void xuatButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
