@@ -62,20 +62,23 @@
             // cboDevice
             // 
             this.cboDevice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboDevice.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDevice.FormattingEnabled = true;
             this.cboDevice.Location = new System.Drawing.Point(240, 537);
             this.cboDevice.Name = "cboDevice";
-            this.cboDevice.Size = new System.Drawing.Size(611, 32);
+            this.cboDevice.Size = new System.Drawing.Size(611, 41);
             this.cboDevice.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label2.Location = new System.Drawing.Point(15, 540);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 24);
+            this.label2.Size = new System.Drawing.Size(222, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Camera đang được chọn:";
             // 
@@ -87,8 +90,11 @@
             // maPhieu
             // 
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.maPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.maPhieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.maPhieu.Enabled = false;
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.maPhieu.ForeColor = System.Drawing.Color.Gainsboro;
             this.maPhieu.Location = new System.Drawing.Point(987, 80);
             this.maPhieu.Name = "maPhieu";
             this.maPhieu.ReadOnly = true;
@@ -99,10 +105,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(882, 84);
+            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label3.Location = new System.Drawing.Point(869, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 28);
+            this.label3.Size = new System.Drawing.Size(102, 28);
             this.label3.TabIndex = 7;
             this.label3.Text = "Mã phiếu";
             // 
@@ -110,17 +117,21 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(882, 191);
+            this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label4.Location = new System.Drawing.Point(869, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 28);
+            this.label4.Size = new System.Drawing.Size(81, 28);
             this.label4.TabIndex = 9;
             this.label4.Text = "Biển số";
             // 
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bienSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.bienSo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.bienSo.ForeColor = System.Drawing.Color.Gainsboro;
             this.bienSo.ImeMode = System.Windows.Forms.ImeMode.On;
             this.bienSo.Location = new System.Drawing.Point(987, 187);
             this.bienSo.Name = "bienSo";
@@ -132,10 +143,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(882, 299);
+            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label5.Location = new System.Drawing.Point(869, 297);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 28);
+            this.label5.Size = new System.Drawing.Size(110, 28);
             this.label5.TabIndex = 11;
             this.label5.Text = "Loại phiếu";
             // 
@@ -143,10 +155,11 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(882, 403);
+            this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label6.Location = new System.Drawing.Point(869, 401);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 28);
+            this.label6.Size = new System.Drawing.Size(78, 28);
             this.label6.TabIndex = 13;
             this.label6.Text = "Loại xe";
             // 
@@ -154,10 +167,11 @@
             // 
             this.Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Time.AutoSize = true;
-            this.Time.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Time.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.Time.Location = new System.Drawing.Point(1019, 540);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(57, 28);
+            this.Time.Size = new System.Drawing.Size(73, 35);
             this.Time.TabIndex = 14;
             this.Time.Text = "Time";
             // 
@@ -165,10 +179,11 @@
             // 
             this.Date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Date.AutoSize = true;
-            this.Date.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Date.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.Date.Location = new System.Drawing.Point(1019, 589);
             this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(56, 28);
+            this.Date.Size = new System.Drawing.Size(71, 35);
             this.Date.TabIndex = 15;
             this.Date.Text = "Date";
             // 
@@ -188,37 +203,45 @@
             // saveButton
             // 
             this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.saveButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.saveButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.saveButton.ForeColor = System.Drawing.Color.Black;
             this.saveButton.Location = new System.Drawing.Point(882, 480);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(438, 35);
             this.saveButton.TabIndex = 18;
             this.saveButton.Text = "Lưu";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // Capture_picture
             // 
             this.Capture_picture.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Capture_picture.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Capture_picture.Location = new System.Drawing.Point(19, 582);
+            this.Capture_picture.BackColor = System.Drawing.Color.Gainsboro;
+            this.Capture_picture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Capture_picture.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Capture_picture.ForeColor = System.Drawing.Color.Black;
+            this.Capture_picture.Location = new System.Drawing.Point(19, 589);
             this.Capture_picture.Name = "Capture_picture";
-            this.Capture_picture.Size = new System.Drawing.Size(841, 35);
+            this.Capture_picture.Size = new System.Drawing.Size(832, 35);
             this.Capture_picture.TabIndex = 20;
             this.Capture_picture.Text = "Chụp";
-            this.Capture_picture.UseVisualStyleBackColor = true;
+            this.Capture_picture.UseVisualStyleBackColor = false;
             this.Capture_picture.Click += new System.EventHandler(this.Capture_Click);
             // 
             // loaiPhieu
             // 
             this.loaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loaiPhieu.BackColor = System.Drawing.Color.Transparent;
+            this.loaiPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.loaiPhieu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiPhieu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.loaiPhieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.loaiPhieu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiPhieu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiPhieu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiPhieu.ForeColor = System.Drawing.Color.Black;
+            this.loaiPhieu.ForeColor = System.Drawing.Color.Gainsboro;
             this.loaiPhieu.ItemHeight = 30;
             this.loaiPhieu.Items.AddRange(new object[] {
             "Ngày",
@@ -231,13 +254,15 @@
             // loaiXe
             // 
             this.loaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loaiXe.BackColor = System.Drawing.Color.Transparent;
+            this.loaiXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.loaiXe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiXe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.loaiXe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.loaiXe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiXe.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiXe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiXe.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiXe.ForeColor = System.Drawing.Color.Black;
+            this.loaiXe.ForeColor = System.Drawing.Color.Gainsboro;
             this.loaiXe.ItemHeight = 30;
             this.loaiXe.Items.AddRange(new object[] {
             "Xe máy",
@@ -251,6 +276,7 @@
             // BangDK
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.Controls.Add(this.loaiXe);
             this.Controls.Add(this.loaiPhieu);
             this.Controls.Add(this.Capture_picture);
@@ -267,7 +293,8 @@
             this.Controls.Add(this.cboDevice);
             this.Controls.Add(this.videoBox);
             this.Controls.Add(this.label9);
-            this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.Name = "BangDK";
             this.Size = new System.Drawing.Size(1366, 649);
             this.Load += new System.EventHandler(this.BangDK_Load);

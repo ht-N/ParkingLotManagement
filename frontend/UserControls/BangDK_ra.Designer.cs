@@ -54,31 +54,38 @@
             // xuatButton
             // 
             this.xuatButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xuatButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.xuatButton.Location = new System.Drawing.Point(908, 559);
+            this.xuatButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.xuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.xuatButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.xuatButton.ForeColor = System.Drawing.Color.Black;
+            this.xuatButton.Location = new System.Drawing.Point(886, 580);
             this.xuatButton.Name = "xuatButton";
-            this.xuatButton.Size = new System.Drawing.Size(427, 41);
+            this.xuatButton.Size = new System.Drawing.Size(449, 41);
             this.xuatButton.TabIndex = 35;
             this.xuatButton.Text = "Xuất";
-            this.xuatButton.UseVisualStyleBackColor = true;
+            this.xuatButton.UseVisualStyleBackColor = false;
             this.xuatButton.Click += new System.EventHandler(this.xuatButton_Click);
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label6.Location = new System.Drawing.Point(881, 321);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 28);
+            this.label6.Size = new System.Drawing.Size(78, 28);
             this.label6.TabIndex = 25;
             this.label6.Text = "Loại xe";
             // 
             // loaiXe
             // 
             this.loaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loaiXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.loaiXe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.loaiXe.Enabled = false;
             this.loaiXe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiXe.ForeColor = System.Drawing.Color.Gainsboro;
             this.loaiXe.Location = new System.Drawing.Point(1033, 321);
             this.loaiXe.Name = "loaiXe";
             this.loaiXe.ReadOnly = true;
@@ -90,18 +97,22 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label5.Location = new System.Drawing.Point(881, 239);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 28);
+            this.label5.Size = new System.Drawing.Size(110, 28);
             this.label5.TabIndex = 25;
             this.label5.Text = "Loại phiếu";
             // 
             // loaiPhieu
             // 
             this.loaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loaiPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.loaiPhieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.loaiPhieu.Enabled = false;
             this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiPhieu.ForeColor = System.Drawing.Color.Gainsboro;
             this.loaiPhieu.Location = new System.Drawing.Point(1033, 235);
             this.loaiPhieu.Name = "loaiPhieu";
             this.loaiPhieu.ReadOnly = true;
@@ -111,8 +122,11 @@
             // bienSo
             // 
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bienSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.bienSo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bienSo.Enabled = false;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.bienSo.ForeColor = System.Drawing.Color.Gainsboro;
             this.bienSo.Location = new System.Drawing.Point(1033, 155);
             this.bienSo.Name = "bienSo";
             this.bienSo.ReadOnly = true;
@@ -123,17 +137,21 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label3.Location = new System.Drawing.Point(881, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 28);
+            this.label3.Size = new System.Drawing.Size(102, 28);
             this.label3.TabIndex = 25;
             this.label3.Text = "Mã phiếu";
             // 
             // maPhieu
             // 
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.maPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.maPhieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.maPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.maPhieu.ForeColor = System.Drawing.Color.Gainsboro;
             this.maPhieu.Location = new System.Drawing.Point(1033, 71);
             this.maPhieu.Name = "maPhieu";
             this.maPhieu.Size = new System.Drawing.Size(302, 32);
@@ -148,10 +166,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label4.Location = new System.Drawing.Point(881, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 28);
+            this.label4.Size = new System.Drawing.Size(81, 28);
             this.label4.TabIndex = 25;
             this.label4.Text = "Biển số";
             // 
@@ -182,18 +201,22 @@
             // 
             this.time_In.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.time_In.AutoSize = true;
-            this.time_In.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.time_In.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.time_In.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.time_In.Location = new System.Drawing.Point(881, 402);
             this.time_In.Name = "time_In";
-            this.time_In.Size = new System.Drawing.Size(135, 28);
+            this.time_In.Size = new System.Drawing.Size(140, 28);
             this.time_In.TabIndex = 25;
             this.time_In.Text = "Thời gian vào";
             // 
             // thoiGianVao
             // 
             this.thoiGianVao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.thoiGianVao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.thoiGianVao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thoiGianVao.Enabled = false;
             this.thoiGianVao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.thoiGianVao.ForeColor = System.Drawing.Color.Gainsboro;
             this.thoiGianVao.Location = new System.Drawing.Point(1033, 402);
             this.thoiGianVao.Name = "thoiGianVao";
             this.thoiGianVao.ReadOnly = true;
@@ -203,8 +226,11 @@
             // money
             // 
             this.money.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.money.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.money.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.money.Enabled = false;
             this.money.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.money.ForeColor = System.Drawing.Color.Gainsboro;
             this.money.Location = new System.Drawing.Point(1033, 494);
             this.money.Name = "money";
             this.money.ReadOnly = true;
@@ -215,10 +241,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label1.Location = new System.Drawing.Point(881, 494);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 28);
+            this.label1.Size = new System.Drawing.Size(106, 28);
             this.label1.TabIndex = 25;
             this.label1.Text = "Phí giữ xe";
             // 
@@ -226,10 +253,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.label2.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label2.Location = new System.Drawing.Point(317, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 28);
+            this.label2.Size = new System.Drawing.Size(214, 28);
             this.label2.TabIndex = 42;
             this.label2.Text = "Biển số xe lúc vào bãi";
             // 
@@ -237,10 +265,11 @@
             // 
             this.dateBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateBox.AutoSize = true;
-            this.dateBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.dateBox.Location = new System.Drawing.Point(24, 616);
             this.dateBox.Name = "dateBox";
-            this.dateBox.Size = new System.Drawing.Size(56, 28);
+            this.dateBox.Size = new System.Drawing.Size(58, 28);
             this.dateBox.TabIndex = 44;
             this.dateBox.Text = "Date";
             // 
@@ -248,16 +277,18 @@
             // 
             this.timeBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeBox.AutoSize = true;
-            this.timeBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.timeBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.timeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.timeBox.Location = new System.Drawing.Point(24, 580);
             this.timeBox.Name = "timeBox";
-            this.timeBox.Size = new System.Drawing.Size(57, 28);
+            this.timeBox.Size = new System.Drawing.Size(60, 28);
             this.timeBox.TabIndex = 43;
             this.timeBox.Text = "Time";
             // 
             // BangDK_ra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.Controls.Add(this.dateBox);
             this.Controls.Add(this.timeBox);
             this.Controls.Add(this.label2);
@@ -277,6 +308,7 @@
             this.Controls.Add(this.imageBox);
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Calibri", 12F);
+            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.Name = "BangDK_ra";
             this.Size = new System.Drawing.Size(1366, 649);
             this.Load += new System.EventHandler(this.BangDK_ra_Load);
