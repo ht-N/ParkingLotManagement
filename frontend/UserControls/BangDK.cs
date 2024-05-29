@@ -89,6 +89,42 @@ namespace ParkingLotManagement.UserControls
             Date.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
+        public static async Task<string> getPlate(string imagePath)
+        {
+            string pythonCommand = "python";
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
+            string modelPath = Path.Combine(projectDirectory, @"backend\my_api.py");
+
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = pythonCommand,
+                Arguments = $" {modelPath} \"{imagePath}\"",
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            try
+            {
+                using (Process process = Process.Start(psi))
+                {
+                    using (System.IO.StreamReader reader = process.StandardOutput)
+                    {
+                        string result = reader.ReadToEnd();
+                        process.WaitForExit();
+                        Console.WriteLine("plate:" + result);
+                        return result;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"An error occurred: {e.Message}");
+                return string.Empty;
+            }
+        }
+
         private async void Capture_Click(object sender, EventArgs e)
         {
             if (videoBox.Image != null)
@@ -104,19 +140,15 @@ namespace ParkingLotManagement.UserControls
                     Directory.CreateDirectory(appDataPath);
                 }
                 int imageIndex = 0;
-                string imagePath;
-                do
-                {
-                    imagePath = Path.Combine(appDataPath, $"xe_{imageIndex}.png");
-                    imageIndex++;
-                } while (File.Exists(imagePath));
+                string imagePath = Path.Combine(appDataPath, $"xe_{imageIndex}.png");
 
                 try
                 {
                     capturedImage.Save(imagePath, System.Drawing.Imaging.ImageFormat.Png);
                     MessageBox.Show("Image captured and saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
-                    string plate = await Program.ProcessImage(imagePath);
+                    // string plate = await Program.ProcessImage(imagePath);
+                    string plate = await getPlate(imagePath);
                     bienSo.Text = plate;
                     maPhieu.Text = getID().ToString();
 
@@ -282,39 +314,39 @@ namespace ParkingLotManagement.UserControls
         }
     }
 
-    class Program
-    {
-        private static readonly HttpClient client = new HttpClient();
+    // class Program
+    // {
+    //     private static readonly HttpClient client = new HttpClient();
 
-        static async Task<int> Main(string[] args)
-        {
-            if (args.Length < 1)
-            {
-                Console.WriteLine("Usage: Program <imagePath>");
-                return 1;
-            }
+    //     static async Task<int> Main(string[] args)
+    //     {
+    //         if (args.Length < 1)
+    //         {
+    //             Console.WriteLine("Usage: Program <imagePath>");
+    //             return 1;
+    //         }
 
-            string imagePath = args[0];
-            string response = await ProcessImage(imagePath);
-            Console.WriteLine(response);
-            return 0;
-        }
+    //         string imagePath = args[0];
+    //         string response = await ProcessImage(imagePath);
+    //         Console.WriteLine(response);
+    //         return 0;
+    //     }
 
-        public static async Task<string> ProcessImage(string imagePath)
-        {
-            string url = "http://127.0.0.1:5000/detect";
+    //     public static async Task<string> ProcessImage(string imagePath)
+    //     {
+    //         string url = "http://127.0.0.1:5000/detect";
 
-            using (var content = new MultipartFormDataContent())
-            {
-                byte[] imageData = File.ReadAllBytes(imagePath);
-                var imageContent = new ByteArrayContent(imageData);
-                content.Add(imageContent, "image", Path.GetFileName(imagePath));
+    //         using (var content = new MultipartFormDataContent())
+    //         {
+    //             byte[] imageData = File.ReadAllBytes(imagePath);
+    //             var imageContent = new ByteArrayContent(imageData);
+    //             content.Add(imageContent, "image", Path.GetFileName(imagePath));
 
-                var response = await client.PostAsync(url, content);
-                var responseString = await response.Content.ReadAsStringAsync();
+    //             var response = await client.PostAsync(url, content);
+    //             var responseString = await response.Content.ReadAsStringAsync();
 
-                return responseString;
-            }
-        }
-    }
+    //             return responseString;
+    //         }
+    //     }
+    // }
 }
