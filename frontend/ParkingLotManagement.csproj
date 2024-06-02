@@ -186,6 +186,12 @@
   <ItemGroup>
     <None Include="assets\maximize.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\car_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\motor_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -101,12 +101,12 @@ namespace ParkingLotManagement.UserControls
 
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
-            string modelPath= Path.Combine(projectDirectory, @"backend\money.py");
-            Console.WriteLine("money path: " + modelPath);
+            string scriptPath= Path.Combine(projectDirectory, @"backend\money.py");
+            Console.WriteLine("money path: " + scriptPath);
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = pythonCommand,
-                Arguments = $" {modelPath} \"{maphieu}\" \"{thoi_gian_ra}\"",
+                Arguments = $" {scriptPath} \"{maphieu}\" \"{thoi_gian_ra}\"",
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
