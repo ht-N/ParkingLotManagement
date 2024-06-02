@@ -94,12 +94,12 @@ namespace ParkingLotManagement.UserControls
             string pythonCommand = "python";
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
-            string modelPath = Path.Combine(projectDirectory, @"backend\my_api.py");
+            string scriptPath = Path.Combine(projectDirectory, @"backend\my_api.py");
 
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = pythonCommand,
-                Arguments = $" {modelPath} \"{imagePath}\"",
+                Arguments = $" {scriptPath} \"{imagePath}\"",
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
@@ -145,7 +145,7 @@ namespace ParkingLotManagement.UserControls
                 try
                 {
                     capturedImage.Save(imagePath, System.Drawing.Imaging.ImageFormat.Png);
-                    MessageBox.Show("Image captured and saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Console.WriteLine("Image captured and saved successfully!");
                     
                     // string plate = await Program.ProcessImage(imagePath);
                     string plate = await getPlate(imagePath);
@@ -158,12 +158,12 @@ namespace ParkingLotManagement.UserControls
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An error occurred while saving the image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"An error occurred while saving the image: {ex.Message}");
                 }
             }
             else
             {
-                MessageBox.Show("No image to capture!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               Console.WriteLine("No image to capture!");
             }
         }
 
@@ -273,7 +273,7 @@ namespace ParkingLotManagement.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
 

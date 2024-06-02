@@ -20,18 +20,12 @@ namespace ParkingLotManagement.UserControls
             getCarSlot();
         }
         
-        static int[] ParseTwoNumbers(string input)
+        static int[] getNumber(string input)
         {
-            // Tách chuỗi dựa trên dấu xuống dòng
             string[] lines = input.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-            
-            // Chuyển đổi các phần tử của mảng chuỗi thành số nguyên
             int[] numbers = new int[2];
             for (int i = 0; i < 2; i++)
-            {
                 numbers[i] = int.Parse(lines[i].Trim());
-            }
-            
             return numbers;
         }
 
@@ -59,9 +53,7 @@ namespace ParkingLotManagement.UserControls
                     {
                         string result = reader.ReadToEnd();
                         process.WaitForExit();
-                        Console.WriteLine("result:" + result);
-                        
-                        int[] numbers = ParseTwoNumbers(result);
+                        int[] numbers = getNumber(result);
                         carSlot.Text = numbers[0].ToString();
                         motorSlot.Text = numbers[1].ToString();
                     }
