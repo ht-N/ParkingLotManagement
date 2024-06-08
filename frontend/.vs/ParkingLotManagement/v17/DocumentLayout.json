@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\usercontrols\\chotrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\chotrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\usercontrols\\baocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\baocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\usercontrols\\bangdk_ra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\bangdk_ra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\usercontrols\\bangdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\bangdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|c:\\users\\hello\\source\\repos\\parkinglotmanagement\\frontend\\usercontrols\\chotrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\chotrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|c:\\users\\hello\\source\\repos\\parkinglotmanagement\\frontend\\usercontrols\\bangdk_ra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\bangdk_ra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|c:\\users\\hello\\source\\repos\\parkinglotmanagement\\frontend\\usercontrols\\chotrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\chotrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\usercontrols\\bangdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\bangdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|c:\\users\\hello\\source\\repos\\parkinglotmanagement\\frontend\\usercontrols\\baocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5761E63B-2E90-41B7-B2A6-B5F188EDF597}|ParkingLotManagement.csproj|solutionrelative:usercontrols\\baocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,8 +46,7 @@
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-27T11:17:08.119Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -77,35 +72,21 @@
               "RelativeDocumentMoniker": "UserControls\\BangDK_ra.cs",
               "ToolTip": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\UserControls\\BangDK_ra.cs",
               "RelativeToolTip": "UserControls\\BangDK_ra.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAMwBIAAABNAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAIwEMAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T15:53:25.42Z",
+              "WhenOpened": "2024-06-08T08:39:58.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ChoTrong.cs",
-              "DocumentMoniker": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\UserControls\\ChoTrong.cs",
-              "RelativeDocumentMoniker": "UserControls\\ChoTrong.cs",
-              "ToolTip": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\UserControls\\ChoTrong.cs",
-              "RelativeToolTip": "UserControls\\ChoTrong.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T15:28:16.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "BangDK.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\UserControls\\BangDK.cs",
               "RelativeDocumentMoniker": "UserControls\\BangDK.cs",
               "ToolTip": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\UserControls\\BangDK.cs [Design]",
               "RelativeToolTip": "UserControls\\BangDK.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T14:55:17.514Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-27T14:55:17.514Z"
             },
             {
               "$type": "Document",
@@ -121,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ChoTrong.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\UserControls\\ChoTrong.cs",
               "RelativeDocumentMoniker": "UserControls\\ChoTrong.cs",
@@ -133,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "BaoCao.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hello\\source\\repos\\ParkingLotManagement\\frontend\\UserControls\\BaoCao.cs",
               "RelativeDocumentMoniker": "UserControls\\BaoCao.cs",
