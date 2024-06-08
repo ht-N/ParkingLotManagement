@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ChoTrong = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.motorSlot = new System.Windows.Forms.Label();
@@ -36,24 +39,27 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.vehicleRateChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pdfButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.doanhThuThang = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.phieuThang = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.doanhThuTuan = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.phieuNgay = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.phieuNgay = new System.Windows.Forms.Label();
-            this.phieuThang = new System.Windows.Forms.Label();
-            this.doanhThuTuan = new System.Windows.Forms.Label();
-            this.doanhThuThang = new System.Windows.Forms.Label();
-            this.pdfButton = new System.Windows.Forms.Button();
             this.ChoTrong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleRateChart)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -84,7 +90,7 @@
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
             this.label3.Location = new System.Drawing.Point(190, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 23);
+            this.label3.Size = new System.Drawing.Size(93, 28);
             this.label3.TabIndex = 48;
             this.label3.Text = "Bike slot";
             // 
@@ -96,7 +102,7 @@
             this.motorSlot.ForeColor = System.Drawing.Color.Gainsboro;
             this.motorSlot.Location = new System.Drawing.Point(289, 76);
             this.motorSlot.Name = "motorSlot";
-            this.motorSlot.Size = new System.Drawing.Size(95, 23);
+            this.motorSlot.Size = new System.Drawing.Size(112, 28);
             this.motorSlot.TabIndex = 47;
             this.motorSlot.Text = "Motor slot";
             // 
@@ -108,7 +114,7 @@
             this.carSlot.ForeColor = System.Drawing.Color.Gainsboro;
             this.carSlot.Location = new System.Drawing.Point(78, 76);
             this.carSlot.Name = "carSlot";
-            this.carSlot.Size = new System.Drawing.Size(70, 23);
+            this.carSlot.Size = new System.Drawing.Size(83, 28);
             this.carSlot.TabIndex = 46;
             this.carSlot.Text = "Car slot";
             // 
@@ -142,7 +148,7 @@
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(139, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 23);
+            this.label2.Size = new System.Drawing.Size(104, 28);
             this.label2.TabIndex = 43;
             this.label2.Text = "Chỗ trống";
             // 
@@ -150,10 +156,28 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.vehicleRateChart);
             this.panel2.Location = new System.Drawing.Point(61, 308);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(405, 305);
             this.panel2.TabIndex = 5;
+            // 
+            // vehicleRateChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.vehicleRateChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.vehicleRateChart.Legends.Add(legend1);
+            this.vehicleRateChart.Location = new System.Drawing.Point(38, 26);
+            this.vehicleRateChart.Name = "vehicleRateChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            this.vehicleRateChart.Series.Add(series1);
+            this.vehicleRateChart.Size = new System.Drawing.Size(294, 225);
+            this.vehicleRateChart.TabIndex = 0;
+            this.vehicleRateChart.Text = "chart1";
             // 
             // panel3
             // 
@@ -170,6 +194,18 @@
             this.panel3.Size = new System.Drawing.Size(847, 590);
             this.panel3.TabIndex = 6;
             // 
+            // pdfButton
+            // 
+            this.pdfButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.pdfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pdfButton.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold);
+            this.pdfButton.Location = new System.Drawing.Point(21, 537);
+            this.pdfButton.Name = "pdfButton";
+            this.pdfButton.Size = new System.Drawing.Size(801, 34);
+            this.pdfButton.TabIndex = 10;
+            this.pdfButton.Text = "Xuất PDF";
+            this.pdfButton.UseVisualStyleBackColor = false;
+            // 
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -182,6 +218,18 @@
             this.panel6.Size = new System.Drawing.Size(372, 199);
             this.panel6.TabIndex = 9;
             // 
+            // doanhThuThang
+            // 
+            this.doanhThuThang.AutoSize = true;
+            this.doanhThuThang.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.doanhThuThang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.doanhThuThang.Location = new System.Drawing.Point(27, 54);
+            this.doanhThuThang.Name = "doanhThuThang";
+            this.doanhThuThang.Size = new System.Drawing.Size(428, 146);
+            this.doanhThuThang.TabIndex = 5;
+            this.doanhThuThang.Text = "000000";
+            this.doanhThuThang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -190,7 +238,7 @@
             this.label8.ForeColor = System.Drawing.Color.Gainsboro;
             this.label8.Location = new System.Drawing.Point(125, 15);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(236, 23);
+            this.label8.Size = new System.Drawing.Size(284, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "Doanh thu tháng (triệu VND)";
             // 
@@ -206,6 +254,18 @@
             this.panel5.Size = new System.Drawing.Size(372, 199);
             this.panel5.TabIndex = 8;
             // 
+            // phieuThang
+            // 
+            this.phieuThang.AutoSize = true;
+            this.phieuThang.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.phieuThang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.phieuThang.Location = new System.Drawing.Point(27, 49);
+            this.phieuThang.Name = "phieuThang";
+            this.phieuThang.Size = new System.Drawing.Size(428, 146);
+            this.phieuThang.TabIndex = 3;
+            this.phieuThang.Text = "000000";
+            this.phieuThang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -213,7 +273,7 @@
             this.label5.ForeColor = System.Drawing.Color.Gainsboro;
             this.label5.Location = new System.Drawing.Point(104, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(257, 23);
+            this.label5.Size = new System.Drawing.Size(311, 28);
             this.label5.TabIndex = 2;
             this.label5.Text = "Số phiếu tháng được phát hành";
             // 
@@ -229,6 +289,18 @@
             this.panel4.Size = new System.Drawing.Size(394, 199);
             this.panel4.TabIndex = 8;
             // 
+            // doanhThuTuan
+            // 
+            this.doanhThuTuan.AutoSize = true;
+            this.doanhThuTuan.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.doanhThuTuan.ForeColor = System.Drawing.Color.Gainsboro;
+            this.doanhThuTuan.Location = new System.Drawing.Point(49, 54);
+            this.doanhThuTuan.Name = "doanhThuTuan";
+            this.doanhThuTuan.Size = new System.Drawing.Size(428, 146);
+            this.doanhThuTuan.TabIndex = 4;
+            this.doanhThuTuan.Text = "000000";
+            this.doanhThuTuan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -236,7 +308,7 @@
             this.label7.ForeColor = System.Drawing.Color.Gainsboro;
             this.label7.Location = new System.Drawing.Point(19, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(227, 23);
+            this.label7.Size = new System.Drawing.Size(273, 28);
             this.label7.TabIndex = 4;
             this.label7.Text = "Doanh thu tuần (triệu VND)";
             // 
@@ -252,6 +324,18 @@
             this.panel1.Size = new System.Drawing.Size(394, 199);
             this.panel1.TabIndex = 7;
             // 
+            // phieuNgay
+            // 
+            this.phieuNgay.AutoSize = true;
+            this.phieuNgay.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.phieuNgay.ForeColor = System.Drawing.Color.Gainsboro;
+            this.phieuNgay.Location = new System.Drawing.Point(49, 49);
+            this.phieuNgay.Name = "phieuNgay";
+            this.phieuNgay.Size = new System.Drawing.Size(428, 146);
+            this.phieuNgay.TabIndex = 2;
+            this.phieuNgay.Text = "000000";
+            this.phieuNgay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -259,7 +343,7 @@
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
             this.label4.Location = new System.Drawing.Point(19, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(249, 23);
+            this.label4.Size = new System.Drawing.Size(302, 28);
             this.label4.TabIndex = 1;
             this.label4.Text = "Số phiếu ngày được phát hành";
             // 
@@ -270,69 +354,9 @@
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(379, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 23);
+            this.label1.Size = new System.Drawing.Size(113, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "THỐNG KÊ";
-            // 
-            // phieuNgay
-            // 
-            this.phieuNgay.AutoSize = true;
-            this.phieuNgay.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.phieuNgay.ForeColor = System.Drawing.Color.Gainsboro;
-            this.phieuNgay.Location = new System.Drawing.Point(49, 49);
-            this.phieuNgay.Name = "phieuNgay";
-            this.phieuNgay.Size = new System.Drawing.Size(344, 117);
-            this.phieuNgay.TabIndex = 2;
-            this.phieuNgay.Text = "000000";
-            this.phieuNgay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // phieuThang
-            // 
-            this.phieuThang.AutoSize = true;
-            this.phieuThang.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.phieuThang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.phieuThang.Location = new System.Drawing.Point(27, 49);
-            this.phieuThang.Name = "phieuThang";
-            this.phieuThang.Size = new System.Drawing.Size(344, 117);
-            this.phieuThang.TabIndex = 3;
-            this.phieuThang.Text = "000000";
-            this.phieuThang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // doanhThuTuan
-            // 
-            this.doanhThuTuan.AutoSize = true;
-            this.doanhThuTuan.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.doanhThuTuan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.doanhThuTuan.Location = new System.Drawing.Point(49, 54);
-            this.doanhThuTuan.Name = "doanhThuTuan";
-            this.doanhThuTuan.Size = new System.Drawing.Size(344, 117);
-            this.doanhThuTuan.TabIndex = 4;
-            this.doanhThuTuan.Text = "000000";
-            this.doanhThuTuan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // doanhThuThang
-            // 
-            this.doanhThuThang.AutoSize = true;
-            this.doanhThuThang.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.doanhThuThang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.doanhThuThang.Location = new System.Drawing.Point(27, 54);
-            this.doanhThuThang.Name = "doanhThuThang";
-            this.doanhThuThang.Size = new System.Drawing.Size(344, 117);
-            this.doanhThuThang.TabIndex = 5;
-            this.doanhThuThang.Text = "000000";
-            this.doanhThuThang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pdfButton
-            // 
-            this.pdfButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.pdfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pdfButton.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold);
-            this.pdfButton.Location = new System.Drawing.Point(21, 537);
-            this.pdfButton.Name = "pdfButton";
-            this.pdfButton.Size = new System.Drawing.Size(801, 34);
-            this.pdfButton.TabIndex = 10;
-            this.pdfButton.Text = "Xuất PDF";
-            this.pdfButton.UseVisualStyleBackColor = false;
             // 
             // BaoCao
             // 
@@ -347,6 +371,8 @@
             this.ChoTrong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleRateChart)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -385,5 +411,6 @@
         private System.Windows.Forms.Label doanhThuTuan;
         private System.Windows.Forms.Label phieuNgay;
         private System.Windows.Forms.Button pdfButton;
+        private System.Windows.Forms.DataVisualization.Charting.Chart vehicleRateChart;
     }
 }

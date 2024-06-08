@@ -35,12 +35,19 @@ namespace ParkingLotManagement.UserControls
             {
                 cboDevice.Items.Add(filterInfo.Name);
             }
-            cboDevice.SelectedIndex = 0;
-
-            captureDevice = new VideoCaptureDevice(filterInfoCollection[cboDevice.SelectedIndex].MonikerString);
-            captureDevice.NewFrame += CaptureDevice_NewFrame;
-            captureDevice.Start();
-            timer1.Start();
+            try
+            {
+                cboDevice.SelectedIndex = 0;
+                captureDevice = new VideoCaptureDevice(filterInfoCollection[cboDevice.SelectedIndex].MonikerString);
+                captureDevice.NewFrame += CaptureDevice_NewFrame;
+                captureDevice.Start();
+                timer1.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No camera found");
+                cboDevice.SelectedIndex = -1;
+            }
         }
 
         protected override void OnVisibleChanged(EventArgs e)
