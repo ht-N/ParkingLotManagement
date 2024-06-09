@@ -131,7 +131,7 @@
             this.bienSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.bienSo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bienSo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.bienSo.ForeColor = System.Drawing.Color.White;
             this.bienSo.ImeMode = System.Windows.Forms.ImeMode.On;
             this.bienSo.Location = new System.Drawing.Point(987, 187);
             this.bienSo.Name = "bienSo";
@@ -241,7 +241,7 @@
             this.loaiPhieu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiPhieu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiPhieu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.loaiPhieu.ForeColor = System.Drawing.Color.White;
             this.loaiPhieu.ItemHeight = 30;
             this.loaiPhieu.Items.AddRange(new object[] {
             "Ngày",
@@ -262,7 +262,7 @@
             this.loaiXe.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiXe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiXe.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.loaiXe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.loaiXe.ForeColor = System.Drawing.Color.White;
             this.loaiXe.ItemHeight = 30;
             this.loaiXe.Items.AddRange(new object[] {
             "Xe máy",

@@ -126,7 +126,7 @@
             this.bienSo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bienSo.Enabled = false;
             this.bienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bienSo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.bienSo.ForeColor = System.Drawing.Color.White;
             this.bienSo.Location = new System.Drawing.Point(1033, 155);
             this.bienSo.Name = "bienSo";
             this.bienSo.ReadOnly = true;
