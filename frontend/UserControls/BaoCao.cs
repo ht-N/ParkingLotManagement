@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Data.SQLite;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -139,6 +141,66 @@ namespace ParkingLotManagement.UserControls
             }
             List<int> tmp = new List<int> { 0, 0, 0 };
             return tmp;
+        }
+
+
+        private void FetchData()
+        {
+            string appDataPath = "..\\..\\AppData";
+            string dbPath = Path.Combine(appDataPath, "BAIXE.db");
+            string connectionString = $"Data Source={dbPath};Version=3;";
+            string query = @"SELECT LOAIPHIEU, COUNT(*) as Count
+                            FROM PHIEU
+                            GROUP BY LOAIPHIEU";
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    SQLiteDataReader reader = command.ExecuteReader();
+
+                    int thangCount = 0;
+                    int ngayCount = 0;
+
+                    while (reader.Read())
+                    {
+                        string loaiPhieu = reader["LOAIPHIEU"].ToString();
+                        int count = Convert.ToInt32(reader["Count"]);
+
+                        if (loaiPhieu == "Tháng")
+                        {
+                            thangCount = count;
+                        }
+                        else if (loaiPhieu == "Ngày")
+                        {
+                            ngayCount = count;
+                        }
+                    }
+
+                    reader.Close();
+
+                    // Update labels
+                    phieuNgay.Text = ngayCount.ToString();
+                    phieuThang.Text = thangCount.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void BaoCao_Load(object sender, EventArgs e)
+        {
+            FetchData();
+        }
+
+        private void phieuNgay_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ChoTrong = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.motorSlot = new System.Windows.Forms.Label();
@@ -164,17 +164,17 @@
             // 
             // vehicleRateChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.vehicleRateChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.vehicleRateChart.Legends.Add(legend1);
-            this.vehicleRateChart.Location = new System.Drawing.Point(38, 26);
+            chartArea11.Name = "ChartArea1";
+            this.vehicleRateChart.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.vehicleRateChart.Legends.Add(legend11);
+            this.vehicleRateChart.Location = new System.Drawing.Point(57, 42);
             this.vehicleRateChart.Name = "vehicleRateChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "s1";
-            this.vehicleRateChart.Series.Add(series1);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series11.Legend = "Legend1";
+            series11.Name = "s1";
+            this.vehicleRateChart.Series.Add(series11);
             this.vehicleRateChart.Size = new System.Drawing.Size(294, 225);
             this.vehicleRateChart.TabIndex = 0;
             this.vehicleRateChart.Text = "chart1";
@@ -223,11 +223,12 @@
             this.doanhThuThang.AutoSize = true;
             this.doanhThuThang.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.doanhThuThang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.doanhThuThang.Location = new System.Drawing.Point(27, 54);
+            this.doanhThuThang.Location = new System.Drawing.Point(246, 53);
             this.doanhThuThang.Name = "doanhThuThang";
-            this.doanhThuThang.Size = new System.Drawing.Size(428, 146);
+            this.doanhThuThang.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.doanhThuThang.Size = new System.Drawing.Size(123, 146);
             this.doanhThuThang.TabIndex = 5;
-            this.doanhThuThang.Text = "000000";
+            this.doanhThuThang.Text = "0";
             this.doanhThuThang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
@@ -259,11 +260,12 @@
             this.phieuThang.AutoSize = true;
             this.phieuThang.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.phieuThang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.phieuThang.Location = new System.Drawing.Point(27, 49);
+            this.phieuThang.Location = new System.Drawing.Point(246, 52);
             this.phieuThang.Name = "phieuThang";
-            this.phieuThang.Size = new System.Drawing.Size(428, 146);
+            this.phieuThang.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.phieuThang.Size = new System.Drawing.Size(123, 146);
             this.phieuThang.TabIndex = 3;
-            this.phieuThang.Text = "000000";
+            this.phieuThang.Text = "0";
             this.phieuThang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
@@ -294,11 +296,12 @@
             this.doanhThuTuan.AutoSize = true;
             this.doanhThuTuan.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.doanhThuTuan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.doanhThuTuan.Location = new System.Drawing.Point(49, 54);
+            this.doanhThuTuan.Location = new System.Drawing.Point(268, 52);
             this.doanhThuTuan.Name = "doanhThuTuan";
-            this.doanhThuTuan.Size = new System.Drawing.Size(428, 146);
+            this.doanhThuTuan.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.doanhThuTuan.Size = new System.Drawing.Size(123, 146);
             this.doanhThuTuan.TabIndex = 4;
-            this.doanhThuTuan.Text = "000000";
+            this.doanhThuTuan.Text = "0";
             this.doanhThuTuan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
@@ -329,12 +332,14 @@
             this.phieuNgay.AutoSize = true;
             this.phieuNgay.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.phieuNgay.ForeColor = System.Drawing.Color.Gainsboro;
-            this.phieuNgay.Location = new System.Drawing.Point(49, 49);
+            this.phieuNgay.Location = new System.Drawing.Point(270, 49);
             this.phieuNgay.Name = "phieuNgay";
-            this.phieuNgay.Size = new System.Drawing.Size(428, 146);
+            this.phieuNgay.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.phieuNgay.Size = new System.Drawing.Size(123, 146);
             this.phieuNgay.TabIndex = 2;
-            this.phieuNgay.Text = "000000";
-            this.phieuNgay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.phieuNgay.Text = "0";
+            this.phieuNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.phieuNgay.Click += new System.EventHandler(this.phieuNgay_Click);
             // 
             // label4
             // 
@@ -367,6 +372,7 @@
             this.Controls.Add(this.ChoTrong);
             this.Name = "BaoCao";
             this.Size = new System.Drawing.Size(1366, 649);
+            this.Load += new System.EventHandler(this.BaoCao_Load);
             this.ChoTrong.ResumeLayout(false);
             this.ChoTrong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
