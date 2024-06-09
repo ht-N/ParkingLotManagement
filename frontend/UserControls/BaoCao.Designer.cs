@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ChoTrong = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.motorSlot = new System.Windows.Forms.Label();
@@ -164,17 +164,18 @@
             // 
             // vehicleRateChart
             // 
-            chartArea11.Name = "ChartArea1";
-            this.vehicleRateChart.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.vehicleRateChart.Legends.Add(legend11);
+            chartArea1.Name = "ChartArea1";
+            this.vehicleRateChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.vehicleRateChart.Legends.Add(legend1);
             this.vehicleRateChart.Location = new System.Drawing.Point(57, 42);
             this.vehicleRateChart.Name = "vehicleRateChart";
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series11.Legend = "Legend1";
-            series11.Name = "s1";
-            this.vehicleRateChart.Series.Add(series11);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            this.vehicleRateChart.Series.Add(series1);
             this.vehicleRateChart.Size = new System.Drawing.Size(294, 225);
             this.vehicleRateChart.TabIndex = 0;
             this.vehicleRateChart.Text = "chart1";
@@ -339,7 +340,6 @@
             this.phieuNgay.TabIndex = 2;
             this.phieuNgay.Text = "0";
             this.phieuNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.phieuNgay.Click += new System.EventHandler(this.phieuNgay_Click);
             // 
             // label4
             // 

@@ -19,42 +19,10 @@ namespace ParkingLotManagement.UserControls
         public BaoCao()
         {
             InitializeComponent();
-            getCarSlot();
-            List<int> vehicle_rate = getVehicleRate();
-            for (int i = 0; i < vehicle_rate.Count; i++) 
-            {
-                Console.WriteLine(vehicle_rate[i]);
-            }
-
-            // int carRate = vehicle_rate[0]/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
-            // int motorRate = vehicle_rate[1]/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
-            // int bikeRate = vehicle_rate[2]/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
-
-            int carRate = vehicle_rate[0];
-            int motorRate = vehicle_rate[1];
-            int bikeRate = vehicle_rate[2];
-
-            vehicleRateChart.Series["s1"].Points.Clear();
-
-            vehicleRateChart.Series["s1"].Points.AddXY("Ô tô", carRate);
-            vehicleRateChart.Series["s1"].Points[0].Label = carRate.ToString();
-            vehicleRateChart.Series["s1"].Points[0].LegendText = "Ô tô";
-
-            vehicleRateChart.Series["s1"].Points.AddXY("Xe máy", motorRate);
-            vehicleRateChart.Series["s1"].Points[1].Label = motorRate.ToString();
-            vehicleRateChart.Series["s1"].Points[1].LegendText = "Xe máy";
-
-            vehicleRateChart.Series["s1"].Points.AddXY("Xe đạp", bikeRate);
-            vehicleRateChart.Series["s1"].Points[2].Label = bikeRate.ToString();
-            vehicleRateChart.Series["s1"].Points[2].LegendText = "Xe đạp";
-
-            vehicleRateChart.Series["s1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-
-            vehicleRateChart.Series["s1"].Points[0].Color = Color.Blue;
-            vehicleRateChart.Series["s1"].Points[1].Color = Color.Orange;
-            vehicleRateChart.Series["s1"].Points[2].Color = Color.Red;
+            getSlot();
+            updateChart();
         }
-        
+
         static List<int> getNumListFromString(string input)
         {
             string[] lines = input.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
@@ -66,7 +34,7 @@ namespace ParkingLotManagement.UserControls
             return numbers;
         }
 
-        private void getCarSlot()
+        private void getSlot()
         {
             string pythonCommand = "python";
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -143,6 +111,37 @@ namespace ParkingLotManagement.UserControls
             return tmp;
         }
 
+        private void updateChart()
+        {
+            List<int> vehicle_rate = getVehicleRate();
+            for (int i = 0; i < vehicle_rate.Count; i++) 
+                Console.WriteLine(vehicle_rate[i]);
+
+            float carRate = vehicle_rate[0] * 100/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
+            float motorRate = vehicle_rate[1] * 100/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
+            float bikeRate =  vehicle_rate[2] * 100/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
+            Console.WriteLine("car rate: " + carRate + "\nmotor rate: " + motorRate + "\nbike rate: " + bikeRate);
+            vehicleRateChart.Series["s1"].Points.Clear();
+
+            vehicleRateChart.Series["s1"].Points.AddXY("Ô tô", carRate);
+            vehicleRateChart.Series["s1"].Points[0].Label = carRate.ToString() + "%";
+            vehicleRateChart.Series["s1"].Points[0].LegendText = "Ô tô";
+
+            vehicleRateChart.Series["s1"].Points.AddXY("Xe máy", motorRate);
+            vehicleRateChart.Series["s1"].Points[1].Label = motorRate.ToString() + "%";
+            vehicleRateChart.Series["s1"].Points[1].LegendText = "Xe máy";
+
+            vehicleRateChart.Series["s1"].Points.AddXY("Xe đạp", bikeRate);
+            vehicleRateChart.Series["s1"].Points[2].Label = bikeRate.ToString() + "%";
+            vehicleRateChart.Series["s1"].Points[2].LegendText = "Xe đạp";
+
+            vehicleRateChart.Series["s1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+
+            vehicleRateChart.Series["s1"].Points[0].Color = Color.Blue;
+            vehicleRateChart.Series["s1"].Points[1].Color = Color.Orange;
+            vehicleRateChart.Series["s1"].Points[2].Color = Color.Red;
+        }
+
 
         private void FetchData()
         {
@@ -196,11 +195,6 @@ namespace ParkingLotManagement.UserControls
         private void BaoCao_Load(object sender, EventArgs e)
         {
             FetchData();
-        }
-
-        private void phieuNgay_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
