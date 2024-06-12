@@ -65,7 +65,11 @@ namespace ParkingLotManagement.UserControls
                                 loaiPhieu.Text = reader["LOAIPHIEU"].ToString();
                                 loaiXe.Text = reader["LOAIXE"].ToString();
                                 thoiGianVao.Text = reader["THOIGIAN"].ToString();
-                                money.Text = get_Phiguixe();
+                                DateTime tmp = DateTime.Parse(thoiGianVao.Text);
+                                if(IsMoreThanOneMonthApart(tmp, DateTime.Now))
+                                    money.Text = get_Phiguixe();
+                                else
+                                    money.Text = "0VND";
                             }
                             else
                             {
@@ -88,6 +92,16 @@ namespace ParkingLotManagement.UserControls
                     MessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
+        }
+
+        private bool IsMoreThanOneMonthApart(DateTime datetime1, DateTime datetime2)
+        {
+            int monthsDifference = ((datetime2.Year - datetime1.Year) * 12) + datetime2.Month - datetime1.Month;
+
+            // Adjust for the day of the month
+            if (datetime2.Day < datetime1.Day)
+                monthsDifference--;
+            return monthsDifference > 1;
         }
 
         private string get_Phiguixe()
@@ -165,32 +179,67 @@ namespace ParkingLotManagement.UserControls
                 imageBox.Image.Dispose();
                 imageBox.Image = null;
             }
-            ClearTextBoxes();
-            maPhieu.Clear();
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            
+            if(money.Text != "0VND")
             {
-                try
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
-                    connection.Open();
-                    string query = "DELETE FROM PHIEU WHERE MAPHIEU = @maPhieu;";
-                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    try
                     {
-                        command.Parameters.AddWithValue("@maPhieu", id);
-                        command.ExecuteNonQuery();
-                    }
+                        connection.Open();
+                        string query = "DELETE FROM PHIEU WHERE MAPHIEU = @maPhieu;";
+                        using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@maPhieu", id);
+                            command.ExecuteNonQuery();
+                        }
 
-                    string vehicle_pic_path = Path.Combine(appDataPath, "Vehicle_pictures", $"{id}.png");
-                    if (System.IO.File.Exists(vehicle_pic_path))
-                    {
-                        System.IO.File.Delete(vehicle_pic_path);
+                        string vehicle_pic_path = Path.Combine(appDataPath, "Vehicle_pictures", $"{id}.png");
+                        if (System.IO.File.Exists(vehicle_pic_path))
+                        {
+                            System.IO.File.Delete(vehicle_pic_path);
+                        }
+                        MessageBox.Show("Xe ra khỏi bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    MessageBox.Show("Xe ra khỏi bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred: " + ex.Message);
+                    }
                 }
             }
+            else
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+                        string trongbai = "Không";
+                        int chodau = 0;
+                        string query = "UPDATE PHIEU SET TRONGBAI = @trongBai, CHODAU = @choDau WHERE MAPHIEU = @maPhieu";
+                        using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@maPhieu", id);
+                            command.Parameters.AddWithValue("@trongBai", trongbai);
+                            command.Parameters.AddWithValue("@choDau", chodau);
+                            command.ExecuteNonQuery();
+                        }
+
+                        string vehicle_pic_path = Path.Combine(appDataPath, "Vehicle_pictures", $"{id}.png");
+                        if (System.IO.File.Exists(vehicle_pic_path))
+                        {
+                            System.IO.File.Delete(vehicle_pic_path);
+                        }
+                        MessageBox.Show("Xe ra khỏi bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred: " + ex.Message);
+                    }
+                }
+            }
+            ClearTextBoxes();
+            maPhieu.Clear();
         }
     }
 }
