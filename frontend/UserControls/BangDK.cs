@@ -19,6 +19,7 @@ namespace ParkingLotManagement.UserControls
     {
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice captureDevice;
+
         
         List<int> panelList = new List<int>();
         
@@ -28,6 +29,16 @@ namespace ParkingLotManagement.UserControls
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
         }
+
+
+
+        private void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+
+        
 
         private void BangDK_Load(object sender, EventArgs e)
         {
@@ -136,6 +147,7 @@ namespace ParkingLotManagement.UserControls
 
         private async void Capture_Click(object sender, EventArgs e)
         {
+            
             if (videoBox.Image != null)
             {
                 Bitmap capturedImage = new Bitmap(videoBox.Image);
@@ -143,6 +155,10 @@ namespace ParkingLotManagement.UserControls
                 string currentDirectory = Directory.GetCurrentDirectory();
                 string projectRoot = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
                 string appDataPath = Path.Combine(projectRoot, "frontend", "AppData", "Vehicle_pictures");
+
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
+                string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
                 Console.WriteLine("AppDataPath: " + appDataPath);
                 if (!Directory.Exists(appDataPath))
                 {
@@ -150,7 +166,7 @@ namespace ParkingLotManagement.UserControls
                 }
                 int imageIndex = 0;
                 string imagePath = Path.Combine(appDataPath, $"xe_{imageIndex}.png");
-
+                Console.WriteLine(getID().ToString());
                 try
                 {
                     capturedImage.Save(imagePath, System.Drawing.Imaging.ImageFormat.Png);
@@ -164,41 +180,40 @@ namespace ParkingLotManagement.UserControls
                     string new_file_name = Path.Combine(appDataPath, $"{maPhieu.Text}.png");
                     Console.WriteLine("image path: " + new_file_name);
                     System.IO.File.Move(imagePath, new_file_name);
-
-                    string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                    string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
-                    string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
-
-                    //Check Phieu Thang
-                    using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+                    if(is_PhieuThang(bienSo.Text)!=0)
                     {
-                        connection.Open();
-                        string query = "SELECT * FROM PHIEU WHERE MAPHIEU = @maPhieu";
-                        using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                        using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
                         {
-                            command.Parameters.AddWithValue("@maPhieu", maPhieu.Text);
-                            using (SQLiteDataReader reader = command.ExecuteReader())
+                            connection.Open();
+                            string query = "SELECT * FROM PHIEU WHERE MAPHIEU = @maPhieu";
+                            using (SQLiteCommand command = new SQLiteCommand(query, connection))
                             {
-                                if(reader.Read())
+                                command.Parameters.AddWithValue("@maPhieu", maPhieu.Text);
+                                using (SQLiteDataReader reader = command.ExecuteReader())
                                 {
-                                    bienSo.Text = reader["BIENSO"].ToString();
-                                    Console.WriteLine(reader["LOAIPHIEU"] + " " + reader["LOAIXE"]);
-                                    loaiPhieu.Text = reader["LOAIPHIEU"].ToString();
-                                    loaiXe.Text = reader["LOAIXE"].ToString();
+                                    if(reader.Read())
+                                    {
+                                        bienSo.Text = reader["BIENSO"].ToString();
+                                        Console.WriteLine(reader["LOAIPHIEU"] + " " + reader["LOAIXE"]);
+                                        loaiPhieu.Text = reader["LOAIPHIEU"].ToString();
+                                        loaiXe.Text = reader["LOAIXE"].ToString();
+                                    }
                                 }
                             }
-                        }
-                        string trongbai = "Có";
-                        int chodau = getRandomPanel(loaiXe.Text, panelList);
-                        query = "UPDATE PHIEU SET TRONGBAI = @trongBai, CHODAU = @choDau WHERE MAPHIEU = @maPhieu";
-                        using (SQLiteCommand command = new SQLiteCommand(query, connection))
-                        {
-                            command.Parameters.AddWithValue("@maPhieu", maPhieu.Text);
-                            command.Parameters.AddWithValue("@trongBai", trongbai);
-                            command.Parameters.AddWithValue("@choDau", chodau);
-                            command.ExecuteNonQuery();
-                        }
-                    } 
+                            string trongbai = "Có";
+                            int chodau = getRandomPanel(loaiXe.Text, panelList);
+                            query = "UPDATE PHIEU SET TRONGBAI = @trongBai, CHODAU = @choDau WHERE MAPHIEU = @maPhieu";
+                            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@maPhieu", maPhieu.Text);
+                                command.Parameters.AddWithValue("@trongBai", trongbai);
+                                command.Parameters.AddWithValue("@choDau", chodau);
+                                command.ExecuteNonQuery();
+                            }
+                        } 
+                    }
+                    //Check Phieu Thang
+                    
                 }
                 catch (Exception ex)
                 {
@@ -227,12 +242,28 @@ namespace ParkingLotManagement.UserControls
             Console.WriteLine($"dbfolderpath: {dbFolderPath}");
             string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
 
-            if (!Directory.Exists(dbFolderPath))
-            {
-                Directory.CreateDirectory(dbFolderPath);
-            }
+            // if (!Directory.Exists(dbFolderPath))
+            // {
+            //     Directory.CreateDirectory(dbFolderPath);
+            // }
 
             string absoluteDbPath = Path.GetFullPath(db_path);
+
+            if (string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
+                string.IsNullOrWhiteSpace(bienSo.Text) ||
+                string.IsNullOrWhiteSpace(loaiXe.Text))
+            {
+                this.Alert("Các trường dữ liệu đã có sai sót.", Form_Alert.enmType.Error);
+                //MessageBox.Show("Các trường dữ liệu đã có sai sót.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(maPhieu.Text, out int maPhieuValue))
+            {
+                this.Alert("Mã phiếu phải là số.", Form_Alert.enmType.Error);
+                //MessageBox.Show("Mã phiếu phải là số.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             
             try
             {
@@ -312,24 +343,10 @@ namespace ParkingLotManagement.UserControls
                     }
                 }
 
-                if (string.IsNullOrWhiteSpace(loaiPhieu.Text) ||
-                    string.IsNullOrWhiteSpace(bienSo.Text) ||
-                    string.IsNullOrWhiteSpace(loaiXe.Text) ||
-                    string.IsNullOrWhiteSpace(Time.Text) ||
-                    string.IsNullOrWhiteSpace(Date.Text))
-                {
-                    MessageBox.Show("Các trường dữ liệu đã có sai sót.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
- 
-                if (!int.TryParse(maPhieu.Text, out int maPhieuValue))
-                {
-                    MessageBox.Show("Mã phiếu phải là số.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 ClearTextBoxes();
-                MessageBox.Show("Xe đã vào bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Alert("Xe đã vào bãi.", Form_Alert.enmType.Success);
+                // MessageBox.Show("Xe đã vào bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
@@ -339,19 +356,16 @@ namespace ParkingLotManagement.UserControls
 
         private int is_PhieuThang(string bienSo)
         {
-            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            // string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            // string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
+            // Console.WriteLine($"dbfolderpath: {dbFolderPath}");
+            // string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
 
-            string dbFolderPath = Path.Combine(baseDirectory, "..\\..\\AppData");
-            Console.WriteLine($"dbfolderpath: {dbFolderPath}");
-            string db_path = Path.Combine(dbFolderPath, "BAIXE.db");
-
-            if (!Directory.Exists(dbFolderPath))
-            {
-                Directory.CreateDirectory(dbFolderPath);
-            }
-
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string projectRoot = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
+            string db_path = Path.Combine(projectRoot, "frontend", "AppData", "BAIXE.db");
             string absoluteDbPath = Path.GetFullPath(db_path);
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={db_path};Version=3;Mode=ReadWrite;journal mode=Off;", true))
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={absoluteDbPath};Version=3;Mode=ReadWrite;journal mode=Off;", true))
             {
                 connection.Open();
                 string query = "SELECT * FROM PHIEU WHERE BIENSO = @BienSo";
@@ -361,8 +375,11 @@ namespace ParkingLotManagement.UserControls
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         if(reader.Read())
+                        {
+                            Console.WriteLine(reader["MAPHIEU"].ToString());
                             return int.Parse(reader["MAPHIEU"].ToString());
-                        Console.WriteLine(reader["MAPHIEU"].ToString());
+                        }
+                        
                     }   
                 }
             }
@@ -372,6 +389,7 @@ namespace ParkingLotManagement.UserControls
         // Getting unique ID (not these one in the DB)
         private static ConcurrentDictionary<int, byte> generatedIDs = new ConcurrentDictionary<int, byte>();
         private static ThreadLocal<Random> random = new ThreadLocal<Random>(() => new Random());
+
         private int getID()
         {
             if(is_PhieuThang(bienSo.Text) == 0)

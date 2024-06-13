@@ -64,7 +64,6 @@
             this.cboDevice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboDevice.BackColor = System.Drawing.Color.Gainsboro;
             this.cboDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboDevice.FormattingEnabled = true;
             this.cboDevice.Location = new System.Drawing.Point(240, 537);
             this.cboDevice.Name = "cboDevice";
             this.cboDevice.Size = new System.Drawing.Size(611, 41);
