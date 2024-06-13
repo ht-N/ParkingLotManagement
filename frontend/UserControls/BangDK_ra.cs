@@ -30,15 +30,25 @@ namespace ParkingLotManagement.UserControls
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-                FetchData();
+                getID_info();
             }
         }
-
-        private void FetchData()
+        
+        private void Alert(string msg, Form_Alert.enmType type)
         {
-            string appDataPath = "..\\..\\AppData";
-            string dbPath = Path.Combine(appDataPath, "BAIXE.db");
-            string connectionString = $"Data Source={dbPath};Version=3;";
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+
+        private void getID_info()
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string projectRoot = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
+            string appDataPath = Path.Combine(projectRoot, "frontend", "AppData");
+            string db_path = Path.Combine(appDataPath, "BAIXE.db");
+            string absoluteDbPath = Path.GetFullPath(db_path);
+            Console.WriteLine("dbpath: " + absoluteDbPath);
+            string connectionString = $"Data Source={absoluteDbPath};Version=3;";
             string id = maPhieu.Text;
 
             if (string.IsNullOrEmpty(id))
@@ -56,16 +66,17 @@ namespace ParkingLotManagement.UserControls
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@maPhieu", maPhieu.Text);
-
                         using (SQLiteDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                        
                                 bienSo.Text = reader["BIENSO"].ToString();
                                 loaiPhieu.Text = reader["LOAIPHIEU"].ToString();
                                 loaiXe.Text = reader["LOAIXE"].ToString();
                                 thoiGianVao.Text = reader["THOIGIAN"].ToString();
-                                DateTime tmp = DateTime.Parse(thoiGianVao.Text);
+                                string format = "dd-MM-yyyy,HH:mm:ss";
+                                DateTime tmp = DateTime.ParseExact(thoiGianVao.Text, format, CultureInfo.InvariantCulture);
                                 if(IsMoreThanOneMonthApart(tmp, DateTime.Now))
                                     money.Text = get_Phiguixe();
                                 else
@@ -73,6 +84,7 @@ namespace ParkingLotManagement.UserControls
                             }
                             else
                             {
+                                this.Alert("Mã phiếu không tồn tại trong hệ thống", Form_Alert.enmType.Warning);
                                 ClearTextBoxes();
                             }
                         }
@@ -89,7 +101,7 @@ namespace ParkingLotManagement.UserControls
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    Console.WriteLine("An error occured: " + ex.Message);
                 }
             }
         }
@@ -199,11 +211,11 @@ namespace ParkingLotManagement.UserControls
                         {
                             System.IO.File.Delete(vehicle_pic_path);
                         }
-                        MessageBox.Show("Xe ra khỏi bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Alert("Xe ra khỏi bãi.", Form_Alert.enmType.Success);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred: " + ex.Message);
+                        Console.WriteLine("An error occured: " + ex.Message);
                     }
                 }
             }
@@ -230,11 +242,11 @@ namespace ParkingLotManagement.UserControls
                         {
                             System.IO.File.Delete(vehicle_pic_path);
                         }
-                        MessageBox.Show("Xe ra khỏi bãi.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Alert("Xe ra khỏi bãi.", Form_Alert.enmType.Success);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred: " + ex.Message);
+                        Console.WriteLine("An error occured: " + ex.Message);
                     }
                 }
             }

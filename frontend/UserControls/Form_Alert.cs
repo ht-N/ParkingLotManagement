@@ -35,13 +35,6 @@ namespace ParkingLotManagement.UserControls
         private Form_Alert.enmAction action;
         private int x, y;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            timer1.Interval = 1;
-            action = enmAction.close;
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             switch(this.action)
@@ -78,12 +71,18 @@ namespace ParkingLotManagement.UserControls
             }
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            timer1.Interval = 1;
+            action = enmAction.close;
+        }
+
         public void showAlert(string msg, enmType type)
         {
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
             string fname;
-            for(int i=0;i<10;i++)
+            for(int i=1;i<10;i++)
             {
                 fname = "alert" + i.ToString();
                 Form_Alert frm = (Form_Alert)Application.OpenForms[fname];
@@ -92,7 +91,7 @@ namespace ParkingLotManagement.UserControls
                 {
                     this.Name = fname;
                     this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15;
-                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i;
+                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;
                     this.Location = new Point(this.x, this.y);
                     break;
                 }

@@ -19,8 +19,6 @@ namespace ParkingLotManagement.UserControls
     {
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice captureDevice;
-
-        
         List<int> panelList = new List<int>();
         
         public BangDK()
