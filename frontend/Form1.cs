@@ -27,6 +27,10 @@ namespace ParkingLotManagement
             BangDK uc = new BangDK();
             AddUserControl(uc);
             previousWindowState = this.WindowState;
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            
         }
 
         private void AddUserControl(UserControl userControl)
@@ -142,6 +146,17 @@ namespace ParkingLotManagement
         {
             BangDK_ra uc = new BangDK_ra();
             AddUserControl(uc);
+        }
+
+        private void Form1_Resize(object sender, System.EventArgs e)
+        {
+        Control control = (Control)sender;
+                
+        // Ensure the Form remains square (Height = Width).
+        if(control.Size.Height != control.Size.Width)
+        {
+            control.Size = new Size(control.Size.Width, control.Size.Width);
+        }
         }
     }
 }

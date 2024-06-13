@@ -54,7 +54,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1366, 48);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
@@ -67,7 +66,6 @@
             this.label2.Size = new System.Drawing.Size(351, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "@UIT - 22520003 - 22520105";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label1
             // 
@@ -80,7 +78,6 @@
             this.label1.Size = new System.Drawing.Size(494, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "HỆ THỐNG QUẢN LÍ BÃI ĐỖ XE THÔNG MINH";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panel2
             // 
@@ -96,7 +93,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1366, 46);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDoubleClick);
             // 
             // guna2Button4
@@ -147,7 +143,6 @@
             this.nightControlBox1.Name = "nightControlBox1";
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 0;
-            this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click);
             // 
             // guna2Button3
             // 
@@ -233,7 +228,6 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1366, 674);
             this.panelContainer.TabIndex = 2;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // guna2DragControl1
             // 
