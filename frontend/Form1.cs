@@ -30,7 +30,7 @@ namespace ParkingLotManagement
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
-            
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void AddUserControl(UserControl userControl)
@@ -41,56 +41,7 @@ namespace ParkingLotManagement
             userControl.BringToFront();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaButton1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             ChoTrong uc = new ChoTrong();
@@ -103,28 +54,10 @@ namespace ParkingLotManagement
             AddUserControl(uc);
         }
 
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             BaoCao uc = new BaoCao();
             AddUserControl(uc);
-        }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
-        
-
-        private void nightControlBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         // Doubleclick to make the app maximized
