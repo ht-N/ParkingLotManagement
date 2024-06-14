@@ -149,6 +149,12 @@
     <Compile Include="UserControls\ChoTrong.Designer.cs">
       <DependentUpon>ChoTrong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Form_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Form_Alert.Designer.cs">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ChoTrong.resx">
       <DependentUpon>ChoTrong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Form_Alert.resx">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -205,6 +214,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\reporting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons8_cancel_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
