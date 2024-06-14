@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.videoBox = new System.Windows.Forms.PictureBox();
-            this.cboDevice = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.maPhieu = new System.Windows.Forms.TextBox();
@@ -46,6 +45,7 @@
             this.Capture_picture = new System.Windows.Forms.Button();
             this.loaiPhieu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.loaiXe = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboDevice = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,16 +58,6 @@
             this.videoBox.Size = new System.Drawing.Size(832, 497);
             this.videoBox.TabIndex = 2;
             this.videoBox.TabStop = false;
-            // 
-            // cboDevice
-            // 
-            this.cboDevice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboDevice.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboDevice.Location = new System.Drawing.Point(240, 537);
-            this.cboDevice.Name = "cboDevice";
-            this.cboDevice.Size = new System.Drawing.Size(611, 41);
-            this.cboDevice.TabIndex = 3;
             // 
             // label2
             // 
@@ -272,10 +262,27 @@
             this.loaiXe.Size = new System.Drawing.Size(333, 36);
             this.loaiXe.TabIndex = 22;
             // 
+            // cboDevice
+            // 
+            this.cboDevice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboDevice.BackColor = System.Drawing.Color.Transparent;
+            this.cboDevice.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDevice.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboDevice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboDevice.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.cboDevice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboDevice.ItemHeight = 30;
+            this.cboDevice.Location = new System.Drawing.Point(232, 533);
+            this.cboDevice.Name = "cboDevice";
+            this.cboDevice.Size = new System.Drawing.Size(619, 36);
+            this.cboDevice.TabIndex = 23;
+            // 
             // BangDK
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Controls.Add(this.cboDevice);
             this.Controls.Add(this.loaiXe);
             this.Controls.Add(this.loaiPhieu);
             this.Controls.Add(this.Capture_picture);
@@ -289,7 +296,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.maPhieu);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cboDevice);
             this.Controls.Add(this.videoBox);
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -306,7 +312,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox videoBox;
-        private System.Windows.Forms.ComboBox cboDevice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox maPhieu;
@@ -322,5 +327,6 @@
         private System.Windows.Forms.Button Capture_picture;
         private Guna.UI2.WinForms.Guna2ComboBox loaiPhieu;
         private Guna.UI2.WinForms.Guna2ComboBox loaiXe;
+        private Guna.UI2.WinForms.Guna2ComboBox cboDevice;
     }
 }
