@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3Banh = new System.Windows.Forms.Label();
+            this.label2Banh = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -241,29 +241,29 @@
             this.panel1.Size = new System.Drawing.Size(27, 48);
             this.panel1.TabIndex = 3;
             // 
-            // label3
+            // label3Banh
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(627, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 27);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Chỗ trống dành cho ô tô:";
+            this.label3Banh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3Banh.AutoSize = true;
+            this.label3Banh.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
+            this.label3Banh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label3Banh.Location = new System.Drawing.Point(627, 9);
+            this.label3Banh.Name = "label3Banh";
+            this.label3Banh.Size = new System.Drawing.Size(300, 27);
+            this.label3Banh.TabIndex = 38;
+            this.label3Banh.Text = "Chỗ trống dành cho ô tô:";
             // 
-            // label2
+            // label2Banh
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(43, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(384, 27);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Chỗ trống dành cho xe hai bánh:";
+            this.label2Banh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2Banh.AutoSize = true;
+            this.label2Banh.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
+            this.label2Banh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label2Banh.Location = new System.Drawing.Point(43, 9);
+            this.label2Banh.Name = "label2Banh";
+            this.label2Banh.Size = new System.Drawing.Size(384, 27);
+            this.label2Banh.TabIndex = 37;
+            this.label2Banh.Text = "Chỗ trống dành cho xe hai bánh:";
             // 
             // panel20
             // 
@@ -2060,8 +2060,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3Banh);
+            this.Controls.Add(this.label2Banh);
             this.Controls.Add(this.panel191);
             this.Controls.Add(this.panel181);
             this.Controls.Add(this.panel192);
@@ -2271,8 +2271,8 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3Banh;
+        private System.Windows.Forms.Label label2Banh;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel18;

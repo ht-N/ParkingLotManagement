@@ -102,3 +102,4 @@ C:\Users\hello\Source\Repos\ParkingLotManagement\frontend\obj\Debug\ParkingLotMa
 C:\Users\hello\source\repos\ParkingLotManagement\frontend\bin\Debug\ReaLTaiizor.dll
 C:\Users\hello\source\repos\ParkingLotManagement\frontend\bin\Debug\ReaLTaiizor.xml
 C:\Users\hello\source\repos\ParkingLotManagement\frontend\obj\Debug\ParkingLotManagement.UserControls.BangDK_ra.resources
+C:\Users\hello\source\repos\ParkingLotManagement\frontend\obj\Debug\ParkingLotManagement.UserControls.Form_Alert.resources

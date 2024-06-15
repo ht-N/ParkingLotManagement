@@ -30,22 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.xuatButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelLoaiXe = new System.Windows.Forms.Label();
             this.loaiXe = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelLoaiPhieu = new System.Windows.Forms.Label();
             this.loaiPhieu = new System.Windows.Forms.TextBox();
             this.bienSo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelMaPhieu = new System.Windows.Forms.Label();
             this.maPhieu = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelBienSo = new System.Windows.Forms.Label();
             this.imageBox = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.time_In = new System.Windows.Forms.Label();
             this.thoiGianVao = new System.Windows.Forms.TextBox();
             this.money = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelPhi = new System.Windows.Forms.Label();
+            this.labelTaken = new System.Windows.Forms.Label();
             this.dateBox = new System.Windows.Forms.Label();
             this.timeBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
@@ -66,17 +66,17 @@
             this.xuatButton.UseVisualStyleBackColor = false;
             this.xuatButton.Click += new System.EventHandler(this.xuatButton_Click);
             // 
-            // label6
+            // labelLoaiXe
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label6.Location = new System.Drawing.Point(881, 321);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 28);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Loại xe";
+            this.labelLoaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoaiXe.AutoSize = true;
+            this.labelLoaiXe.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelLoaiXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelLoaiXe.Location = new System.Drawing.Point(881, 321);
+            this.labelLoaiXe.Name = "labelLoaiXe";
+            this.labelLoaiXe.Size = new System.Drawing.Size(78, 28);
+            this.labelLoaiXe.TabIndex = 25;
+            this.labelLoaiXe.Text = "Loại xe";
             // 
             // loaiXe
             // 
@@ -92,18 +92,18 @@
             this.loaiXe.Size = new System.Drawing.Size(302, 32);
             this.loaiXe.TabIndex = 30;
             // 
-            // label5
+            // labelLoaiPhieu
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label5.Location = new System.Drawing.Point(881, 239);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 28);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Loại phiếu";
+            this.labelLoaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoaiPhieu.AutoSize = true;
+            this.labelLoaiPhieu.BackColor = System.Drawing.Color.Transparent;
+            this.labelLoaiPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelLoaiPhieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelLoaiPhieu.Location = new System.Drawing.Point(881, 239);
+            this.labelLoaiPhieu.Name = "labelLoaiPhieu";
+            this.labelLoaiPhieu.Size = new System.Drawing.Size(110, 28);
+            this.labelLoaiPhieu.TabIndex = 25;
+            this.labelLoaiPhieu.Text = "Loại phiếu";
             // 
             // loaiPhieu
             // 
@@ -133,17 +133,17 @@
             this.bienSo.Size = new System.Drawing.Size(302, 32);
             this.bienSo.TabIndex = 26;
             // 
-            // label3
+            // labelMaPhieu
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(881, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 28);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Mã phiếu";
+            this.labelMaPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelMaPhieu.AutoSize = true;
+            this.labelMaPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelMaPhieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelMaPhieu.Location = new System.Drawing.Point(881, 71);
+            this.labelMaPhieu.Name = "labelMaPhieu";
+            this.labelMaPhieu.Size = new System.Drawing.Size(102, 28);
+            this.labelMaPhieu.TabIndex = 25;
+            this.labelMaPhieu.Text = "Mã phiếu";
             // 
             // maPhieu
             // 
@@ -162,17 +162,17 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label4
+            // labelBienSo
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label4.Location = new System.Drawing.Point(881, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 28);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Biển số";
+            this.labelBienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelBienSo.AutoSize = true;
+            this.labelBienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelBienSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelBienSo.Location = new System.Drawing.Point(881, 159);
+            this.labelBienSo.Name = "labelBienSo";
+            this.labelBienSo.Size = new System.Drawing.Size(81, 28);
+            this.labelBienSo.TabIndex = 25;
+            this.labelBienSo.Text = "Biển số";
             // 
             // imageBox
             // 
@@ -237,29 +237,29 @@
             this.money.Size = new System.Drawing.Size(302, 32);
             this.money.TabIndex = 40;
             // 
-            // label1
+            // labelPhi
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label1.Location = new System.Drawing.Point(881, 494);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 28);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Phí giữ xe";
+            this.labelPhi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPhi.AutoSize = true;
+            this.labelPhi.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelPhi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelPhi.Location = new System.Drawing.Point(881, 494);
+            this.labelPhi.Name = "labelPhi";
+            this.labelPhi.Size = new System.Drawing.Size(106, 28);
+            this.labelPhi.TabIndex = 25;
+            this.labelPhi.Text = "Phí giữ xe";
             // 
-            // label2
+            // labelTaken
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(317, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 28);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Biển số xe lúc vào bãi";
+            this.labelTaken.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTaken.AutoSize = true;
+            this.labelTaken.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelTaken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelTaken.Location = new System.Drawing.Point(317, 32);
+            this.labelTaken.Name = "labelTaken";
+            this.labelTaken.Size = new System.Drawing.Size(214, 28);
+            this.labelTaken.TabIndex = 42;
+            this.labelTaken.Text = "Biển số xe lúc vào bãi";
             // 
             // dateBox
             // 
@@ -291,20 +291,20 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.Controls.Add(this.dateBox);
             this.Controls.Add(this.timeBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelTaken);
+            this.Controls.Add(this.labelPhi);
             this.Controls.Add(this.money);
             this.Controls.Add(this.thoiGianVao);
             this.Controls.Add(this.time_In);
             this.Controls.Add(this.xuatButton);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelLoaiXe);
             this.Controls.Add(this.loaiXe);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelLoaiPhieu);
             this.Controls.Add(this.loaiPhieu);
             this.Controls.Add(this.bienSo);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelMaPhieu);
             this.Controls.Add(this.maPhieu);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelBienSo);
             this.Controls.Add(this.imageBox);
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Calibri", 12F);
@@ -321,22 +321,22 @@
         #endregion
 
         private System.Windows.Forms.Button xuatButton;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelLoaiXe;
         private System.Windows.Forms.TextBox loaiXe;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelLoaiPhieu;
         private System.Windows.Forms.TextBox loaiPhieu;
         private System.Windows.Forms.TextBox bienSo;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelMaPhieu;
         private System.Windows.Forms.TextBox maPhieu;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelBienSo;
         private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label time_In;
         private System.Windows.Forms.TextBox thoiGianVao;
         private System.Windows.Forms.TextBox money;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelPhi;
+        private System.Windows.Forms.Label labelTaken;
         private System.Windows.Forms.Label dateBox;
         private System.Windows.Forms.Label timeBox;
     }

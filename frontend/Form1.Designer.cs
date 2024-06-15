@@ -33,11 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.tab_XeRa = new Guna.UI2.WinForms.Guna2Button();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.tab_BaoCao = new Guna.UI2.WinForms.Guna2Button();
+            this.tab_ChoTrong = new Guna.UI2.WinForms.Guna2Button();
+            this.tab_XeVao = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel1.SuspendLayout();
@@ -83,11 +83,11 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.guna2Button4);
+            this.panel2.Controls.Add(this.tab_XeRa);
             this.panel2.Controls.Add(this.nightControlBox1);
-            this.panel2.Controls.Add(this.guna2Button3);
-            this.panel2.Controls.Add(this.guna2Button2);
-            this.panel2.Controls.Add(this.guna2Button1);
+            this.panel2.Controls.Add(this.tab_BaoCao);
+            this.panel2.Controls.Add(this.tab_ChoTrong);
+            this.panel2.Controls.Add(this.tab_XeVao);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -95,30 +95,30 @@
             this.panel2.TabIndex = 1;
             this.panel2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDoubleClick);
             // 
-            // guna2Button4
+            // tab_XeRa
             // 
-            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button4.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button4.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button4.Location = new System.Drawing.Point(108, 0);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(87, 45);
-            this.guna2Button4.TabIndex = 3;
-            this.guna2Button4.Text = "XE RA";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click_1);
+            this.tab_XeRa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tab_XeRa.Animated = true;
+            this.tab_XeRa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_XeRa.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.tab_XeRa.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.tab_XeRa.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_XeRa.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.tab_XeRa.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.tab_XeRa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.tab_XeRa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.tab_XeRa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.tab_XeRa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.tab_XeRa.FillColor = System.Drawing.Color.Transparent;
+            this.tab_XeRa.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tab_XeRa.ForeColor = System.Drawing.Color.Black;
+            this.tab_XeRa.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_XeRa.Location = new System.Drawing.Point(108, 0);
+            this.tab_XeRa.Name = "tab_XeRa";
+            this.tab_XeRa.Size = new System.Drawing.Size(87, 45);
+            this.tab_XeRa.TabIndex = 3;
+            this.tab_XeRa.Text = "XE RA";
+            this.tab_XeRa.Click += new System.EventHandler(this.guna2Button4_Click_1);
             // 
             // nightControlBox1
             // 
@@ -144,81 +144,81 @@
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 0;
             // 
-            // guna2Button3
+            // tab_BaoCao
             // 
-            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button3.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button3.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button3.Location = new System.Drawing.Point(421, 0);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(114, 45);
-            this.guna2Button3.TabIndex = 2;
-            this.guna2Button3.Text = "BÁO CÁO";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            this.tab_BaoCao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tab_BaoCao.Animated = true;
+            this.tab_BaoCao.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_BaoCao.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.tab_BaoCao.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.tab_BaoCao.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_BaoCao.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.tab_BaoCao.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.tab_BaoCao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.tab_BaoCao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.tab_BaoCao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.tab_BaoCao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.tab_BaoCao.FillColor = System.Drawing.Color.Transparent;
+            this.tab_BaoCao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tab_BaoCao.ForeColor = System.Drawing.Color.Black;
+            this.tab_BaoCao.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_BaoCao.Location = new System.Drawing.Point(421, 0);
+            this.tab_BaoCao.Name = "tab_BaoCao";
+            this.tab_BaoCao.Size = new System.Drawing.Size(114, 45);
+            this.tab_BaoCao.TabIndex = 2;
+            this.tab_BaoCao.Text = "BÁO CÁO";
+            this.tab_BaoCao.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // guna2Button2
+            // tab_ChoTrong
             // 
-            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button2.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button2.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button2.Location = new System.Drawing.Point(201, 0);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(214, 45);
-            this.guna2Button2.TabIndex = 1;
-            this.guna2Button2.Text = "CHỖ TRỐNG HIỆN TẠI";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.tab_ChoTrong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tab_ChoTrong.Animated = true;
+            this.tab_ChoTrong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_ChoTrong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.tab_ChoTrong.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.tab_ChoTrong.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_ChoTrong.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.tab_ChoTrong.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.tab_ChoTrong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.tab_ChoTrong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.tab_ChoTrong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.tab_ChoTrong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.tab_ChoTrong.FillColor = System.Drawing.Color.Transparent;
+            this.tab_ChoTrong.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tab_ChoTrong.ForeColor = System.Drawing.Color.Black;
+            this.tab_ChoTrong.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_ChoTrong.Location = new System.Drawing.Point(201, 0);
+            this.tab_ChoTrong.Name = "tab_ChoTrong";
+            this.tab_ChoTrong.Size = new System.Drawing.Size(214, 45);
+            this.tab_ChoTrong.TabIndex = 1;
+            this.tab_ChoTrong.Text = "CHỖ TRỐNG HIỆN TẠI";
+            this.tab_ChoTrong.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // guna2Button1
+            // tab_XeVao
             // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.Checked = true;
-            this.guna2Button1.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button1.Location = new System.Drawing.Point(0, -1);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(102, 45);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "XE VÀO";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.tab_XeVao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tab_XeVao.Animated = true;
+            this.tab_XeVao.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_XeVao.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.tab_XeVao.Checked = true;
+            this.tab_XeVao.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_XeVao.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.tab_XeVao.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.tab_XeVao.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.tab_XeVao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.tab_XeVao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.tab_XeVao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.tab_XeVao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.tab_XeVao.FillColor = System.Drawing.Color.Transparent;
+            this.tab_XeVao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tab_XeVao.ForeColor = System.Drawing.Color.Black;
+            this.tab_XeVao.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.tab_XeVao.Location = new System.Drawing.Point(0, -1);
+            this.tab_XeVao.Name = "tab_XeVao";
+            this.tab_XeVao.Size = new System.Drawing.Size(102, 45);
+            this.tab_XeVao.TabIndex = 0;
+            this.tab_XeVao.Text = "XE VÀO";
+            this.tab_XeVao.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // panelContainer
             // 
@@ -259,14 +259,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button tab_XeVao;
+        private Guna.UI2.WinForms.Guna2Button tab_ChoTrong;
+        private Guna.UI2.WinForms.Guna2Button tab_BaoCao;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button tab_XeRa;
     }
 }
 

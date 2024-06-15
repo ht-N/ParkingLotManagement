@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.videoBox = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelCam = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.maPhieu = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelMaPhieu = new System.Windows.Forms.Label();
+            this.labelBienSo = new System.Windows.Forms.Label();
             this.bienSo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelLoaiPhieu = new System.Windows.Forms.Label();
+            this.labelLoaiXe = new System.Windows.Forms.Label();
             this.Time = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,17 +59,17 @@
             this.videoBox.TabIndex = 2;
             this.videoBox.TabStop = false;
             // 
-            // label2
+            // labelCam
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(15, 540);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Camera đang được chọn:";
+            this.labelCam.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCam.AutoSize = true;
+            this.labelCam.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelCam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelCam.Location = new System.Drawing.Point(15, 540);
+            this.labelCam.Name = "labelCam";
+            this.labelCam.Size = new System.Drawing.Size(222, 24);
+            this.labelCam.TabIndex = 4;
+            this.labelCam.Text = "Camera đang được chọn:";
             // 
             // timer1
             // 
@@ -90,29 +90,29 @@
             this.maPhieu.Size = new System.Drawing.Size(333, 36);
             this.maPhieu.TabIndex = 6;
             // 
-            // label3
+            // labelMaPhieu
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(869, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 28);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Mã phiếu";
+            this.labelMaPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelMaPhieu.AutoSize = true;
+            this.labelMaPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelMaPhieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelMaPhieu.Location = new System.Drawing.Point(869, 82);
+            this.labelMaPhieu.Name = "labelMaPhieu";
+            this.labelMaPhieu.Size = new System.Drawing.Size(102, 28);
+            this.labelMaPhieu.TabIndex = 7;
+            this.labelMaPhieu.Text = "Mã phiếu";
             // 
-            // label4
+            // labelBienSo
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label4.Location = new System.Drawing.Point(869, 189);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 28);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Biển số";
+            this.labelBienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelBienSo.AutoSize = true;
+            this.labelBienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelBienSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelBienSo.Location = new System.Drawing.Point(869, 189);
+            this.labelBienSo.Name = "labelBienSo";
+            this.labelBienSo.Size = new System.Drawing.Size(81, 28);
+            this.labelBienSo.TabIndex = 9;
+            this.labelBienSo.Text = "Biển số";
             // 
             // bienSo
             // 
@@ -127,30 +127,30 @@
             this.bienSo.Size = new System.Drawing.Size(333, 36);
             this.bienSo.TabIndex = 8;
             // 
-            // label5
+            // labelLoaiPhieu
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label5.Location = new System.Drawing.Point(869, 297);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 28);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Loại phiếu";
+            this.labelLoaiPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoaiPhieu.AutoSize = true;
+            this.labelLoaiPhieu.BackColor = System.Drawing.Color.Transparent;
+            this.labelLoaiPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelLoaiPhieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelLoaiPhieu.Location = new System.Drawing.Point(869, 297);
+            this.labelLoaiPhieu.Name = "labelLoaiPhieu";
+            this.labelLoaiPhieu.Size = new System.Drawing.Size(110, 28);
+            this.labelLoaiPhieu.TabIndex = 11;
+            this.labelLoaiPhieu.Text = "Loại phiếu";
             // 
-            // label6
+            // labelLoaiXe
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label6.Location = new System.Drawing.Point(869, 401);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 28);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Loại xe";
+            this.labelLoaiXe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoaiXe.AutoSize = true;
+            this.labelLoaiXe.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelLoaiXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelLoaiXe.Location = new System.Drawing.Point(869, 401);
+            this.labelLoaiXe.Name = "labelLoaiXe";
+            this.labelLoaiXe.Size = new System.Drawing.Size(78, 28);
+            this.labelLoaiXe.TabIndex = 13;
+            this.labelLoaiXe.Text = "Loại xe";
             // 
             // Time
             // 
@@ -289,13 +289,13 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Time);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelLoaiXe);
+            this.Controls.Add(this.labelLoaiPhieu);
+            this.Controls.Add(this.labelBienSo);
             this.Controls.Add(this.bienSo);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelMaPhieu);
             this.Controls.Add(this.maPhieu);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelCam);
             this.Controls.Add(this.videoBox);
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -312,14 +312,14 @@
 
         #endregion
         private System.Windows.Forms.PictureBox videoBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelCam;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox maPhieu;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelMaPhieu;
+        private System.Windows.Forms.Label labelBienSo;
         private System.Windows.Forms.TextBox bienSo;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelLoaiPhieu;
+        private System.Windows.Forms.Label labelLoaiXe;
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label label9;
