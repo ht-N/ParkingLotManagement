@@ -13,6 +13,9 @@ def to_money(loaiphieu, loaixe, dt:datetime):
             result = (result/4)*3
         elif(loaixe == 'Ô tô'):
             result = (result/2)*15
+        else:
+            result = (result/4)*1
+
     else:
         if(loaixe == 'Xe máy'):
             result = 150
