@@ -4,7 +4,6 @@ from datetime import datetime
 from time_to_money import to_money
 
 def fetch_record(maphieu, thoi_gian_ra):
-    # Define the path to your SQLite database
     db_path = r'..\\..\\AppData\\BAIXE.db'
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
@@ -20,14 +19,12 @@ def fetch_record(maphieu, thoi_gian_ra):
         loaiphieu = record[1]
         loaixe = record[3]
         print(to_money(loaiphieu, loaixe, time_park))
-
     except sqlite3.Error as e:
         print("An error occurred:", e)
     
     finally:
         cursor.close()
         conn.close()
-
 
 if __name__ == "__main__":
     if(len(sys.argv) != 3):

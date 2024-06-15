@@ -1,7 +1,23 @@
 import sqlite3
+import pandas as pd
+
+def get_weekly_and_monthly_revenue(db_path):
+    conn = sqlite3.connect(db_path)
+    query = "SELECT * FROM DOANHTHU"
+    df = pd.read_sql_query(query, conn)
+    df['THOIGIAN'] = pd.to_datetime(df['THOIGIAN'], dayfirst=True)
+    df.set_index('THOIGIAN', inplace=True)
+    weekly_revenue = df['DOANHTHUNGAY'].resample('W').sum()
+    monthly_revenue = df['DOANHTHUNGAY'].resample('M').sum()
+    conn.close()
+    return weekly_revenue, monthly_revenue
+
+def main():
+    db_path = r"..\\..\\AppData\\BAIXE.db"
+    weekly_revenue, monthly_revenue = get_weekly_and_monthly_revenue(db_path)
+    print(weekly_revenue.iloc[-1], monthly_revenue.iloc[-1], sep="\n")
 
 def get_slot():
-    # Define the path to your SQLite database
     db_path = r'..\\..\\AppData\\BAIXE.db'
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
@@ -25,3 +41,4 @@ def get_slot():
 
 if __name__ == "__main__":
     get_slot()
+    main()

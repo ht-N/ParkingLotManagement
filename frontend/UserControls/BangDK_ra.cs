@@ -73,6 +73,7 @@ namespace ParkingLotManagement.UserControls
 
         private void CheckAndAddNewRow()
         {
+            Console.WriteLine("Hello");
             string currentDate = DateTime.Now.ToString("dd-MM-yyyy");
 
             using (SQLiteConnection connection = new SQLiteConnection(GetConnectionString()))
@@ -84,8 +85,9 @@ namespace ParkingLotManagement.UserControls
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@ngay", currentDate);
+                        
                         int count = Convert.ToInt32(command.ExecuteScalar());
-
+                        Console.WriteLine(count);
                         if (count == 0)
                         {
                             AddNewRowToDoanhThu();
@@ -256,6 +258,7 @@ namespace ParkingLotManagement.UserControls
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             string projectRoot = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
+            Console.WriteLine(Path.Combine(projectRoot, "frontend", "AppData"));
             return Path.Combine(projectRoot, "frontend", "AppData");
         }
 

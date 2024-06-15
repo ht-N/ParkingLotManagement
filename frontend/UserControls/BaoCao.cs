@@ -21,6 +21,7 @@ namespace ParkingLotManagement.UserControls
             InitializeComponent();
             getSlot();
             updateChart();
+            FetchData();
         }
 
         static List<int> getNumListFromString(string input)
@@ -34,7 +35,7 @@ namespace ParkingLotManagement.UserControls
             return numbers;
         }
 
-        private void getSlot()
+        private void getSlotAndDoanhThu()
         {
             string pythonCommand = "python";
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -65,6 +66,8 @@ namespace ParkingLotManagement.UserControls
                         }
                         carSlot.Text = numbers[0].ToString();
                         motorSlot.Text = numbers[1].ToString();
+                        doanhThuTuan.Text = numbers[2].ToString();
+                        doanhThuThang.Text = numbers[3].ToString();
                     }
                 }
             }
@@ -198,11 +201,6 @@ namespace ParkingLotManagement.UserControls
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
-        }
-
-        private void BaoCao_Load(object sender, EventArgs e)
-        {
-            FetchData();
         }
     }
 }
