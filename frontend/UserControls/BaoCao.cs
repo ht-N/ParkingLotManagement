@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -140,6 +140,14 @@ namespace ParkingLotManagement.UserControls
             vehicleRateChart.Series["s1"].Points[0].Color = Color.Blue;
             vehicleRateChart.Series["s1"].Points[1].Color = Color.Orange;
             vehicleRateChart.Series["s1"].Points[2].Color = Color.Red;
+
+            vehicleRateChart.Legends[0].ForeColor = Color.White;
+            vehicleRateChart.Legends[0].Font = new Font("Calibri", 13, FontStyle.Regular);
+            // foreach (var point in vehicleRateChart.Series["s1"].Points)
+            // {
+            //     // point.Font = new Font("Calibri", 13, FontStyle.Regular);
+            //     point.LabelForeColor = Color.White;
+            // }
         }
 
 
