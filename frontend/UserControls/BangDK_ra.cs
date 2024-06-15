@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.IO;
@@ -40,6 +40,11 @@ namespace ParkingLotManagement.UserControls
             frm.showAlert(msg, type);
         }
 
+        private void updateDoanhThu()
+        {
+
+        }
+
         private void getID_info()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
@@ -77,10 +82,17 @@ namespace ParkingLotManagement.UserControls
                                 thoiGianVao.Text = reader["THOIGIAN"].ToString();
                                 string format = "dd-MM-yyyy,HH:mm:ss";
                                 DateTime tmp = DateTime.ParseExact(thoiGianVao.Text, format, CultureInfo.InvariantCulture);
-                                if(IsMoreThanOneMonthApart(tmp, DateTime.Now))
-                                    money.Text = get_Phiguixe();
+                                if(loaiPhieu.Text == "Tháng")
+                                {
+                                    if(IsMoreThanOneMonthApart(tmp, DateTime.Now))
+                                        money.Text = get_Phiguixe();
+                                    else
+                                        money.Text = "0VND";
+                                }   
                                 else
-                                    money.Text = "0VND";
+                                {
+                                    money.Text = get_Phiguixe();
+                                }
                             }
                             else
                             {
@@ -194,6 +206,7 @@ namespace ParkingLotManagement.UserControls
             
             if(money.Text != "0VND")
             {
+                // Delete from PHIEU table
                 using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
                     try
@@ -221,6 +234,7 @@ namespace ParkingLotManagement.UserControls
             }
             else
             {
+                // Update PHIEU table
                 using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
                     try
