@@ -1,4 +1,4 @@
-﻿namespace ParkingLotManagement.UserControls
+namespace ParkingLotManagement.UserControls
 {
     partial class BaoCao
     {
@@ -32,7 +32,6 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ChoTrong = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.motorSlot = new System.Windows.Forms.Label();
             this.carSlot = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -71,7 +70,6 @@
             // 
             this.ChoTrong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ChoTrong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.ChoTrong.Controls.Add(this.label3);
             this.ChoTrong.Controls.Add(this.motorSlot);
             this.ChoTrong.Controls.Add(this.carSlot);
             this.ChoTrong.Controls.Add(this.pictureBox2);
@@ -82,25 +80,13 @@
             this.ChoTrong.Size = new System.Drawing.Size(405, 260);
             this.ChoTrong.TabIndex = 4;
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(190, 185);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 28);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Bike slot";
-            // 
             // motorSlot
             // 
             this.motorSlot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.motorSlot.AutoSize = true;
             this.motorSlot.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.motorSlot.ForeColor = System.Drawing.Color.Gainsboro;
-            this.motorSlot.Location = new System.Drawing.Point(289, 76);
+            this.motorSlot.Location = new System.Drawing.Point(93, 194);
             this.motorSlot.Name = "motorSlot";
             this.motorSlot.Size = new System.Drawing.Size(112, 28);
             this.motorSlot.TabIndex = 47;
@@ -112,7 +98,7 @@
             this.carSlot.AutoSize = true;
             this.carSlot.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.carSlot.ForeColor = System.Drawing.Color.Gainsboro;
-            this.carSlot.Location = new System.Drawing.Point(78, 76);
+            this.carSlot.Location = new System.Drawing.Point(93, 90);
             this.carSlot.Name = "carSlot";
             this.carSlot.Size = new System.Drawing.Size(83, 28);
             this.carSlot.TabIndex = 46;
@@ -122,7 +108,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::ParkingLotManagement.Properties.Resources.motor_icon;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(231, 63);
+            this.pictureBox2.Location = new System.Drawing.Point(20, 167);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(52, 55);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,11 +150,14 @@
             // 
             // vehicleRateChart
             // 
+            this.vehicleRateChart.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             chartArea1.Name = "ChartArea1";
             this.vehicleRateChart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             legend1.Name = "Legend1";
             this.vehicleRateChart.Legends.Add(legend1);
-            this.vehicleRateChart.Location = new System.Drawing.Point(57, 42);
+            this.vehicleRateChart.Location = new System.Drawing.Point(3, 3);
             this.vehicleRateChart.Name = "vehicleRateChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -176,7 +165,7 @@
             series1.Legend = "Legend1";
             series1.Name = "s1";
             this.vehicleRateChart.Series.Add(series1);
-            this.vehicleRateChart.Size = new System.Drawing.Size(294, 225);
+            this.vehicleRateChart.Size = new System.Drawing.Size(399, 299);
             this.vehicleRateChart.TabIndex = 0;
             this.vehicleRateChart.Text = "chart1";
             // 
@@ -402,7 +391,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label carSlot;
         private System.Windows.Forms.Label motorSlot;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
