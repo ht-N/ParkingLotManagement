@@ -84,12 +84,12 @@
             this.loaiXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiXe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.loaiXe.Enabled = false;
-            this.loaiXe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiXe.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loaiXe.ForeColor = System.Drawing.Color.Gainsboro;
             this.loaiXe.Location = new System.Drawing.Point(1033, 321);
             this.loaiXe.Name = "loaiXe";
             this.loaiXe.ReadOnly = true;
-            this.loaiXe.Size = new System.Drawing.Size(302, 32);
+            this.loaiXe.Size = new System.Drawing.Size(302, 40);
             this.loaiXe.TabIndex = 30;
             // 
             // labelLoaiPhieu
@@ -111,12 +111,12 @@
             this.loaiPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiPhieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.loaiPhieu.Enabled = false;
-            this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loaiPhieu.ForeColor = System.Drawing.Color.Gainsboro;
             this.loaiPhieu.Location = new System.Drawing.Point(1033, 235);
             this.loaiPhieu.Name = "loaiPhieu";
             this.loaiPhieu.ReadOnly = true;
-            this.loaiPhieu.Size = new System.Drawing.Size(302, 32);
+            this.loaiPhieu.Size = new System.Drawing.Size(302, 40);
             this.loaiPhieu.TabIndex = 28;
             // 
             // bienSo
@@ -125,12 +125,12 @@
             this.bienSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.bienSo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bienSo.Enabled = false;
-            this.bienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.bienSo.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.bienSo.ForeColor = System.Drawing.Color.White;
             this.bienSo.Location = new System.Drawing.Point(1033, 155);
             this.bienSo.Name = "bienSo";
             this.bienSo.ReadOnly = true;
-            this.bienSo.Size = new System.Drawing.Size(302, 32);
+            this.bienSo.Size = new System.Drawing.Size(302, 40);
             this.bienSo.TabIndex = 26;
             // 
             // labelMaPhieu
@@ -150,11 +150,11 @@
             this.maPhieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.maPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.maPhieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maPhieu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.maPhieu.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maPhieu.ForeColor = System.Drawing.Color.Gainsboro;
             this.maPhieu.Location = new System.Drawing.Point(1033, 71);
             this.maPhieu.Name = "maPhieu";
-            this.maPhieu.Size = new System.Drawing.Size(302, 32);
+            this.maPhieu.Size = new System.Drawing.Size(302, 40);
             this.maPhieu.TabIndex = 24;
             // 
             // timer1
@@ -203,7 +203,7 @@
             this.time_In.AutoSize = true;
             this.time_In.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.time_In.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.time_In.Location = new System.Drawing.Point(881, 402);
+            this.time_In.Location = new System.Drawing.Point(881, 408);
             this.time_In.Name = "time_In";
             this.time_In.Size = new System.Drawing.Size(140, 28);
             this.time_In.TabIndex = 25;
@@ -215,12 +215,12 @@
             this.thoiGianVao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.thoiGianVao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thoiGianVao.Enabled = false;
-            this.thoiGianVao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.thoiGianVao.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.thoiGianVao.ForeColor = System.Drawing.Color.Gainsboro;
             this.thoiGianVao.Location = new System.Drawing.Point(1033, 402);
             this.thoiGianVao.Name = "thoiGianVao";
             this.thoiGianVao.ReadOnly = true;
-            this.thoiGianVao.Size = new System.Drawing.Size(302, 32);
+            this.thoiGianVao.Size = new System.Drawing.Size(302, 40);
             this.thoiGianVao.TabIndex = 39;
             // 
             // money
@@ -229,12 +229,12 @@
             this.money.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.money.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.money.Enabled = false;
-            this.money.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.money.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.money.ForeColor = System.Drawing.Color.Gainsboro;
             this.money.Location = new System.Drawing.Point(1033, 494);
             this.money.Name = "money";
             this.money.ReadOnly = true;
-            this.money.Size = new System.Drawing.Size(302, 32);
+            this.money.Size = new System.Drawing.Size(302, 40);
             this.money.TabIndex = 40;
             // 
             // labelPhi

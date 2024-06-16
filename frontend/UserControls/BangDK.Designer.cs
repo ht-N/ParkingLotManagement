@@ -82,12 +82,12 @@
             this.maPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.maPhieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.maPhieu.Enabled = false;
-            this.maPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.maPhieu.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maPhieu.ForeColor = System.Drawing.Color.Gainsboro;
             this.maPhieu.Location = new System.Drawing.Point(987, 80);
             this.maPhieu.Name = "maPhieu";
             this.maPhieu.ReadOnly = true;
-            this.maPhieu.Size = new System.Drawing.Size(333, 36);
+            this.maPhieu.Size = new System.Drawing.Size(333, 40);
             this.maPhieu.TabIndex = 6;
             // 
             // labelMaPhieu
@@ -119,12 +119,12 @@
             this.bienSo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bienSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.bienSo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bienSo.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.bienSo.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.bienSo.ForeColor = System.Drawing.Color.White;
             this.bienSo.ImeMode = System.Windows.Forms.ImeMode.On;
             this.bienSo.Location = new System.Drawing.Point(987, 187);
             this.bienSo.Name = "bienSo";
-            this.bienSo.Size = new System.Drawing.Size(333, 36);
+            this.bienSo.Size = new System.Drawing.Size(333, 40);
             this.bienSo.TabIndex = 8;
             // 
             // labelLoaiPhieu
@@ -229,7 +229,7 @@
             this.loaiPhieu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiPhieu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiPhieu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiPhieu.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loaiPhieu.ForeColor = System.Drawing.Color.White;
             this.loaiPhieu.ItemHeight = 30;
             this.loaiPhieu.Items.AddRange(new object[] {
@@ -250,7 +250,7 @@
             this.loaiXe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.loaiXe.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loaiXe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.loaiXe.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.loaiXe.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loaiXe.ForeColor = System.Drawing.Color.White;
             this.loaiXe.ItemHeight = 30;
             this.loaiXe.Items.AddRange(new object[] {
