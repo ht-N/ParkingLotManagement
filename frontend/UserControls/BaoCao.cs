@@ -40,7 +40,7 @@ namespace ParkingLotManagement.UserControls
             string pythonCommand = "python";
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
-            string scriptPath= Path.Combine(projectDirectory, @"backend\slot.py");
+            string scriptPath= Path.Combine(projectDirectory, @"backend\slot_and_doanhthu.py");
             Console.WriteLine("script path: " + scriptPath);
             ProcessStartInfo psi = new ProcessStartInfo
             {
