@@ -1,6 +1,8 @@
 import sqlite3
 import pandas as pd
 
+db_path = r'..\\..\\AppData\\BAIXE.db'
+
 def get_weekly_and_monthly_revenue(db_path):
     conn = sqlite3.connect(db_path)
     query = "SELECT * FROM DOANHTHU"
@@ -13,12 +15,11 @@ def get_weekly_and_monthly_revenue(db_path):
     return weekly_revenue, monthly_revenue
 
 def main():
-    db_path = r"..\\..\\AppData\\BAIXE.db"
     weekly_revenue, monthly_revenue = get_weekly_and_monthly_revenue(db_path)
     print(weekly_revenue.iloc[-1], monthly_revenue.iloc[-1], sep="\n")
 
 def get_slot():
-    db_path = r'..\\..\\AppData\\BAIXE.db'
+    
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     car = "Ô tô"
