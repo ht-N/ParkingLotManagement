@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Diagnostics;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Data.SQLite;
 
 namespace ParkingLotManagement.UserControls
 {
@@ -19,9 +17,12 @@ namespace ParkingLotManagement.UserControls
         public BaoCao()
         {
             InitializeComponent();
-            getSlotAndDoanhThu();
-            updateChart();
-            FetchData();
+            LoadData();
+        }
+
+        private async void LoadData()
+        {
+            await Task.WhenAll(getSlotAndDoanhThu(), updateChart(), getSoLuongPhieu());
         }
 
         static List<int> getNumListFromString(string input)
@@ -35,12 +36,12 @@ namespace ParkingLotManagement.UserControls
             return numbers;
         }
 
-        private void getSlotAndDoanhThu()
+        private async Task getSlotAndDoanhThu()
         {
             string pythonCommand = "python";
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
-            string scriptPath= Path.Combine(projectDirectory, @"backend\slot_and_doanhthu.py");
+            string scriptPath = Path.Combine(projectDirectory, @"backend\slot_and_doanhthu.py");
             Console.WriteLine("script path: " + scriptPath);
             ProcessStartInfo psi = new ProcessStartInfo
             {
@@ -55,15 +56,14 @@ namespace ParkingLotManagement.UserControls
             {
                 using (Process process = Process.Start(psi))
                 {
-                    using (System.IO.StreamReader reader = process.StandardOutput)
+                    using (StreamReader reader = process.StandardOutput)
                     {
-                        string result = reader.ReadToEnd();
-                        process.WaitForExit();
+                        string result = await reader.ReadToEndAsync();
+                        await process.WaitForExitAsync();
                         List<int> numbers = getNumListFromString(result);
-                        for(int i=0;i<numbers.Count;i++)
-                        {
+                        for (int i = 0; i < numbers.Count; i++)
                             Console.WriteLine(numbers[i]);
-                        }
+                
                         carSlot.Text = numbers[0].ToString();
                         motorSlot.Text = numbers[1].ToString();
                         doanhThuTuan.Text = numbers[2].ToString();
@@ -77,12 +77,12 @@ namespace ParkingLotManagement.UserControls
             }
         }
 
-        private List<int> getVehicleRate()
+        private async Task<List<int>> getVehicleRate()
         {
             string pythonCommand = "python";
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\"));
-            string scriptPath= Path.Combine(projectDirectory, @"backend\vehicle_rate.py");
+            string scriptPath = Path.Combine(projectDirectory, @"backend\vehicle_rate.py");
             Console.WriteLine("script path: " + scriptPath);
             ProcessStartInfo psi = new ProcessStartInfo
             {
@@ -96,10 +96,10 @@ namespace ParkingLotManagement.UserControls
             {
                 using (Process process = Process.Start(psi))
                 {
-                    using (System.IO.StreamReader reader = process.StandardOutput)
+                    using (StreamReader reader = process.StandardOutput)
                     {
-                        string result = reader.ReadToEnd();
-                        process.WaitForExit();
+                        string result = await reader.ReadToEndAsync();
+                        await process.WaitForExitAsync();
                         List<int> numbers = getNumListFromString(result);
                         Console.WriteLine("List vehicle rate: " + numbers);
                         return numbers;
@@ -114,15 +114,15 @@ namespace ParkingLotManagement.UserControls
             return tmp;
         }
 
-        private void updateChart()
+        private async Task updateChart()
         {
-            List<int> vehicle_rate = getVehicleRate();
-            for (int i = 0; i < vehicle_rate.Count; i++) 
+            List<int> vehicle_rate = await getVehicleRate();
+            for (int i = 0; i < vehicle_rate.Count; i++)
                 Console.WriteLine(vehicle_rate[i]);
 
-            float carRate = vehicle_rate[0] * 100/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
-            float motorRate = vehicle_rate[1] * 100/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
-            float bikeRate =  vehicle_rate[2] * 100/(vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
+            float carRate = vehicle_rate[0] * 100 / (vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
+            float motorRate = vehicle_rate[1] * 100 / (vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
+            float bikeRate = vehicle_rate[2] * 100 / (vehicle_rate[0] + vehicle_rate[1] + vehicle_rate[2]);
             Console.WriteLine("car rate: " + carRate + "\nmotor rate: " + motorRate + "\nbike rate: " + bikeRate);
             vehicleRateChart.Series["s1"].Points.Clear();
 
@@ -146,15 +146,9 @@ namespace ParkingLotManagement.UserControls
 
             vehicleRateChart.Legends[0].ForeColor = Color.White;
             vehicleRateChart.Legends[0].Font = new Font("Calibri", 13, FontStyle.Regular);
-            // foreach (var point in vehicleRateChart.Series["s1"].Points)
-            // {
-            //     // point.Font = new Font("Calibri", 13, FontStyle.Regular);
-            //     point.LabelForeColor = Color.White;
-            // }
         }
 
-
-        private void FetchData()
+        private async Task getSoLuongPhieu()
         {
             string appDataPath = "..\\..\\AppData";
             string dbPath = Path.Combine(appDataPath, "BAIXE.db");
@@ -169,38 +163,55 @@ namespace ParkingLotManagement.UserControls
 
                 try
                 {
-                    connection.Open();
-                    SQLiteDataReader reader = command.ExecuteReader();
-
-                    int thangCount = 0;
-                    int ngayCount = 0;
-
-                    while (reader.Read())
+                    await connection.OpenAsync();
+                    using (SQLiteDataReader reader = (SQLiteDataReader)await command.ExecuteReaderAsync())
                     {
-                        string loaiPhieu = reader["LOAIPHIEU"].ToString();
-                        int count = Convert.ToInt32(reader["Count"]);
+                        int thangCount = 0;
+                        int ngayCount = 0;
+                        while (await reader.ReadAsync())
+                        {
+                            string loaiPhieu = reader["LOAIPHIEU"].ToString();
+                            int count = Convert.ToInt32(reader["Count"]);
 
-                        if (loaiPhieu == "Tháng")
-                        {
-                            thangCount = count;
+                            if (loaiPhieu == "Tháng")
+                                thangCount = count;
+                            else if (loaiPhieu == "Ngày")
+                                ngayCount = count;
                         }
-                        else if (loaiPhieu == "Ngày")
-                        {
-                            ngayCount = count;
-                        }
+
+                        // Update labels
+                        phieuNgay.Text = ngayCount.ToString();
+                        phieuThang.Text = thangCount.ToString();
                     }
-
-                    reader.Close();
-
-                    // Update labels
-                    phieuNgay.Text = ngayCount.ToString();
-                    phieuThang.Text = thangCount.ToString();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+
+    public static class ProcessExtensions
+    {
+        public static Task WaitForExitAsync(this Process process, CancellationToken cancellationToken = default)
+        {
+            if (process.HasExited) return Task.CompletedTask;
+
+            var tcs = new TaskCompletionSource<object>();
+            process.EnableRaisingEvents = true;
+            process.Exited += (sender, args) => tcs.TrySetResult(null);
+            if (cancellationToken != default)
+            {
+                cancellationToken.Register(() => tcs.SetCanceled());
+            }
+
+            return process.HasExited ? Task.CompletedTask : tcs.Task;
         }
     }
 }

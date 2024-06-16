@@ -28,9 +28,9 @@ namespace ParkingLotManagement.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ChoTrong = new System.Windows.Forms.Panel();
             this.motorSlot = new System.Windows.Forms.Label();
             this.carSlot = new System.Windows.Forms.Label();
@@ -40,7 +40,6 @@ namespace ParkingLotManagement.UserControls
             this.panel2 = new System.Windows.Forms.Panel();
             this.vehicleRateChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pdfButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.doanhThuThang = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -134,7 +133,7 @@ namespace ParkingLotManagement.UserControls
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(114, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 41);
+            this.label2.Size = new System.Drawing.Size(152, 40);
             this.label2.TabIndex = 43;
             this.label2.Text = "Chỗ trống";
             // 
@@ -151,20 +150,20 @@ namespace ParkingLotManagement.UserControls
             // vehicleRateChart
             // 
             this.vehicleRateChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            chartArea7.Name = "ChartArea1";
-            this.vehicleRateChart.ChartAreas.Add(chartArea7);
-            legend7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            legend7.Name = "Legend1";
-            this.vehicleRateChart.Legends.Add(legend7);
+            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            chartArea3.Name = "ChartArea1";
+            this.vehicleRateChart.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            legend3.Name = "Legend1";
+            this.vehicleRateChart.Legends.Add(legend3);
             this.vehicleRateChart.Location = new System.Drawing.Point(3, 3);
             this.vehicleRateChart.Name = "vehicleRateChart";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            series7.Legend = "Legend1";
-            series7.Name = "s1";
-            this.vehicleRateChart.Series.Add(series7);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            series3.Legend = "Legend1";
+            series3.Name = "s1";
+            this.vehicleRateChart.Series.Add(series3);
             this.vehicleRateChart.Size = new System.Drawing.Size(399, 299);
             this.vehicleRateChart.TabIndex = 0;
             this.vehicleRateChart.Text = "chart1";
@@ -173,7 +172,6 @@ namespace ParkingLotManagement.UserControls
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.pdfButton);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
@@ -184,18 +182,6 @@ namespace ParkingLotManagement.UserControls
             this.panel3.Size = new System.Drawing.Size(847, 590);
             this.panel3.TabIndex = 6;
             // 
-            // pdfButton
-            // 
-            this.pdfButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.pdfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pdfButton.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold);
-            this.pdfButton.Location = new System.Drawing.Point(21, 537);
-            this.pdfButton.Name = "pdfButton";
-            this.pdfButton.Size = new System.Drawing.Size(801, 34);
-            this.pdfButton.TabIndex = 10;
-            this.pdfButton.Text = "Xuất PDF";
-            this.pdfButton.UseVisualStyleBackColor = false;
-            // 
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -203,9 +189,9 @@ namespace ParkingLotManagement.UserControls
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.doanhThuThang);
             this.panel6.Controls.Add(this.label8);
-            this.panel6.Location = new System.Drawing.Point(454, 311);
+            this.panel6.Location = new System.Drawing.Point(454, 330);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(372, 199);
+            this.panel6.Size = new System.Drawing.Size(372, 207);
             this.panel6.TabIndex = 9;
             // 
             // doanhThuThang
@@ -242,7 +228,7 @@ namespace ParkingLotManagement.UserControls
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(454, 61);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(372, 199);
+            this.panel5.Size = new System.Drawing.Size(372, 213);
             this.panel5.TabIndex = 8;
             // 
             // phieuThang
@@ -276,10 +262,11 @@ namespace ParkingLotManagement.UserControls
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.doanhThuTuan);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(25, 311);
+            this.panel4.Location = new System.Drawing.Point(25, 330);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(394, 199);
+            this.panel4.Size = new System.Drawing.Size(394, 207);
             this.panel4.TabIndex = 8;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // doanhThuTuan
             // 
@@ -314,7 +301,7 @@ namespace ParkingLotManagement.UserControls
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(25, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(394, 199);
+            this.panel1.Size = new System.Drawing.Size(394, 213);
             this.panel1.TabIndex = 7;
             // 
             // phieuNgay
@@ -348,7 +335,7 @@ namespace ParkingLotManagement.UserControls
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(379, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 41);
+            this.label1.Size = new System.Drawing.Size(160, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "THỐNG KÊ";
             // 
@@ -403,7 +390,6 @@ namespace ParkingLotManagement.UserControls
         private System.Windows.Forms.Label phieuThang;
         private System.Windows.Forms.Label doanhThuTuan;
         private System.Windows.Forms.Label phieuNgay;
-        private System.Windows.Forms.Button pdfButton;
         private System.Windows.Forms.DataVisualization.Charting.Chart vehicleRateChart;
     }
 }
