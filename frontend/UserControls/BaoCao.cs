@@ -19,7 +19,7 @@ namespace ParkingLotManagement.UserControls
         public BaoCao()
         {
             InitializeComponent();
-            getSlot();
+            getSlotAndDoanhThu();
             updateChart();
             FetchData();
         }
