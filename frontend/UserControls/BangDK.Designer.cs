@@ -63,11 +63,11 @@
             // 
             this.labelCam.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCam.AutoSize = true;
-            this.labelCam.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelCam.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelCam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.labelCam.Location = new System.Drawing.Point(15, 540);
             this.labelCam.Name = "labelCam";
-            this.labelCam.Size = new System.Drawing.Size(222, 24);
+            this.labelCam.Size = new System.Drawing.Size(309, 35);
             this.labelCam.TabIndex = 4;
             this.labelCam.Text = "Camera đang được chọn:";
             // 
@@ -194,7 +194,7 @@
             this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.saveButton.BackColor = System.Drawing.Color.Gainsboro;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.saveButton.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.saveButton.ForeColor = System.Drawing.Color.Black;
             this.saveButton.Location = new System.Drawing.Point(882, 480);
             this.saveButton.Name = "saveButton";
@@ -209,7 +209,7 @@
             this.Capture_picture.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Capture_picture.BackColor = System.Drawing.Color.Gainsboro;
             this.Capture_picture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Capture_picture.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Capture_picture.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Capture_picture.ForeColor = System.Drawing.Color.Black;
             this.Capture_picture.Location = new System.Drawing.Point(19, 589);
             this.Capture_picture.Name = "Capture_picture";
@@ -273,9 +273,9 @@
             this.cboDevice.Font = new System.Drawing.Font("Calibri", 13.8F);
             this.cboDevice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboDevice.ItemHeight = 30;
-            this.cboDevice.Location = new System.Drawing.Point(232, 533);
+            this.cboDevice.Location = new System.Drawing.Point(267, 533);
             this.cboDevice.Name = "cboDevice";
-            this.cboDevice.Size = new System.Drawing.Size(619, 36);
+            this.cboDevice.Size = new System.Drawing.Size(584, 36);
             this.cboDevice.TabIndex = 23;
             // 
             // BangDK

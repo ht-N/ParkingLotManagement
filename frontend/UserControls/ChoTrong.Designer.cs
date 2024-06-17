@@ -245,11 +245,11 @@
             // 
             this.label3Banh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3Banh.AutoSize = true;
-            this.label3Banh.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
+            this.label3Banh.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3Banh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label3Banh.Location = new System.Drawing.Point(627, 9);
             this.label3Banh.Name = "label3Banh";
-            this.label3Banh.Size = new System.Drawing.Size(300, 27);
+            this.label3Banh.Size = new System.Drawing.Size(401, 37);
             this.label3Banh.TabIndex = 38;
             this.label3Banh.Text = "Chỗ trống dành cho ô tô:";
             // 
@@ -257,11 +257,11 @@
             // 
             this.label2Banh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2Banh.AutoSize = true;
-            this.label2Banh.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
+            this.label2Banh.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2Banh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label2Banh.Location = new System.Drawing.Point(43, 9);
             this.label2Banh.Name = "label2Banh";
-            this.label2Banh.Size = new System.Drawing.Size(384, 27);
+            this.label2Banh.Size = new System.Drawing.Size(513, 37);
             this.label2Banh.TabIndex = 37;
             this.label2Banh.Text = "Chỗ trống dành cho xe hai bánh:";
             // 

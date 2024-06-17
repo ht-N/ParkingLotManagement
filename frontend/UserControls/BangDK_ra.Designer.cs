@@ -56,7 +56,7 @@
             this.xuatButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.xuatButton.BackColor = System.Drawing.Color.Gainsboro;
             this.xuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xuatButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.xuatButton.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.xuatButton.ForeColor = System.Drawing.Color.Black;
             this.xuatButton.Location = new System.Drawing.Point(886, 580);
             this.xuatButton.Name = "xuatButton";
@@ -253,11 +253,11 @@
             // 
             this.labelTaken.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTaken.AutoSize = true;
-            this.labelTaken.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelTaken.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelTaken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.labelTaken.Location = new System.Drawing.Point(317, 32);
+            this.labelTaken.Location = new System.Drawing.Point(316, 18);
             this.labelTaken.Name = "labelTaken";
-            this.labelTaken.Size = new System.Drawing.Size(214, 28);
+            this.labelTaken.Size = new System.Drawing.Size(282, 37);
             this.labelTaken.TabIndex = 42;
             this.labelTaken.Text = "Biển số xe lúc vào bãi";
             // 
@@ -265,11 +265,11 @@
             // 
             this.dateBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateBox.AutoSize = true;
-            this.dateBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateBox.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dateBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.dateBox.Location = new System.Drawing.Point(24, 616);
             this.dateBox.Name = "dateBox";
-            this.dateBox.Size = new System.Drawing.Size(58, 28);
+            this.dateBox.Size = new System.Drawing.Size(71, 35);
             this.dateBox.TabIndex = 44;
             this.dateBox.Text = "Date";
             // 
@@ -277,11 +277,11 @@
             // 
             this.timeBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeBox.AutoSize = true;
-            this.timeBox.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.timeBox.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.timeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.timeBox.Location = new System.Drawing.Point(24, 580);
             this.timeBox.Name = "timeBox";
-            this.timeBox.Size = new System.Drawing.Size(60, 28);
+            this.timeBox.Size = new System.Drawing.Size(73, 35);
             this.timeBox.TabIndex = 43;
             this.timeBox.Text = "Time";
             // 
