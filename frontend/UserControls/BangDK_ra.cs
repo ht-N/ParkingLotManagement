@@ -171,11 +171,9 @@ namespace ParkingLotManagement.UserControls
         private bool IsMoreThanOneMonthApart(DateTime datetime1, DateTime datetime2)
         {
             int monthsDifference = ((datetime2.Year - datetime1.Year) * 12) + datetime2.Month - datetime1.Month;
-
-            // Adjust for the day of the month
             if (datetime2.Day < datetime1.Day)
                 monthsDifference--;
-            return monthsDifference > 1;
+            return monthsDifference >= 1;
         }
 
         private string get_Phiguixe()
