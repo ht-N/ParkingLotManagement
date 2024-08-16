@@ -30,7 +30,7 @@ The main app: This repo was built on Visual Studio 2022 (for reproducible result
 
 License plate detector (yolo server): Check out this repo https://github.com/ltgbao04/yolo_server.git.
 
-`Note: `ensure the url in [my_api.py](backend/my_api.py) matches the server's IP.
+`Note:` ensure the url in [my_api.py](backend/my_api.py) matches the server's IP.
 
 ## Usage
 1. Make sure the server is running before starting the app.
