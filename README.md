@@ -1,6 +1,6 @@
 # Parking Lot Management System
 
-## What it does
+## About
 Our app uses an already-existing repo on github to detect license plate from customers. For more information, check [Requirements and setup](#requirements-and-setup)
 
 * Check whether a vehicle is allowed to go in or not.
